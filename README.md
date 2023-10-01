@@ -7,8 +7,8 @@ Welcome to `Nameless Defence`, my second independent Unity game project. This 2D
 Nameless Defence is a base-building defense game where your goal is to survive in a challenging environment. As a player, you will face waves of relentless enemies, and your success depends on your ability to build, manage resources, and strategize effectively.
 
 ## Tech Stack
-Unity Game Engine v2022.3.8f1
-C#
+- Unity Game Engine v2022.3.8f1
+- C#
 
 ## Acknowledgments
 N/A

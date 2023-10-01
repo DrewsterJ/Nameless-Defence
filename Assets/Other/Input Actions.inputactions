@@ -6,22 +6,22 @@
             "id": "20ee8677-acbc-42a5-af54-5921b734b4f2",
             "actions": [
                 {
-                    "name": "WASD Movement",
-                    "type": "Button",
+                    "name": "WASD",
+                    "type": "Value",
                     "id": "44814903-7465-478c-aba6-8dfdb55de814",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
-                    "name": "Arrow Key Movement",
-                    "type": "Button",
+                    "name": "Arrows",
+                    "type": "Value",
                     "id": "a1b7abef-92e9-4770-b5d3-c59fd3b377f8",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -32,7 +32,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "WASD Movement",
+                    "action": "WASD",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -43,7 +43,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "WASD Movement",
+                    "action": "WASD",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -54,7 +54,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "WASD Movement",
+                    "action": "WASD",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -65,7 +65,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "WASD Movement",
+                    "action": "WASD",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -76,7 +76,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Arrow Key Movement",
+                    "action": "Arrows",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -87,7 +87,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Arrow Key Movement",
+                    "action": "Arrows",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -98,7 +98,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Arrow Key Movement",
+                    "action": "Arrows",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -109,7 +109,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Arrow Key Movement",
+                    "action": "Arrows",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

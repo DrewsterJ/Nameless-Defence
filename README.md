@@ -13,5 +13,8 @@ Nameless Defence is a base-building defense game where your goal is to survive i
 ## Acknowledgments
 N/A
 
+## Discussion
+Please see the [discussions](https://github.com/DrewsterJ/Nameless-Defence/discussions) section for discussing new ideas, concerns, etc.
+
 ## License
 Nameless Defence is open-source and licensed under the MIT License. You are free to use, modify, and distribute the game as per the terms of the MIT License. See the [LICENSE](LICENSE) file for details.

@@ -12,12 +12,14 @@ public class PlayerController : MonoBehaviour
     // Stores player movement speed
     public int speed;
 
+    // Stores the rigid body for the Player game object
     private Rigidbody2D rb;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         
+        // Verify variables contain expected data
         Debug.Assert(speed != 0, "Player speed is 0");
         Debug.Assert(rb != null);
         Debug.Assert(moveInput != null);

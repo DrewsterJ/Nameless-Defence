@@ -16,23 +16,16 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer sr;
     public Animator anim;
     
-    // Player model sprites
-    public Sprite upDown;
-    public Sprite leftRight;
-    public Sprite facingFrontMovingLeft;
-    public Sprite facingFrontMovingRight;
-    public Sprite facingBackMovingLeft;
-    public Sprite facingBackMovingRight;
     private static readonly int Moving = Animator.StringToHash("Moving");
 
-    private int faceLeftZ = 90;
-    private int faceRightZ = -90;
-    private int faceUpZ = 0;
-    private int faceDownZ = -180;
-    private int faceUpAndRight = -45;
-    private int faceUpAndLeft = 45;
-    private int faceDownAndLeft = 135;
-    private int faceDownAndRight = -135;
+    private static readonly Quaternion facingLeft = Quaternion.Euler(0, 0, 90);
+    private static readonly Quaternion facingRight = Quaternion.Euler(0, 0, -90);
+    private static readonly Quaternion facingUp = Quaternion.Euler(0, 0, 0);
+    private static readonly Quaternion facingDown = Quaternion.Euler(0, 0, -180);
+    private static readonly Quaternion facingUpAndLeft = Quaternion.Euler(0, 0, 45);
+    private static readonly Quaternion facingUpAndRight = Quaternion.Euler(0, 0, -45);
+    private static readonly Quaternion facingDownAndLeft = Quaternion.Euler(0, 0, 135);
+    private static readonly Quaternion facingDownAndRight = Quaternion.Euler(0, 0, -135);
     
     void Start()
     {
@@ -64,66 +57,48 @@ public class PlayerController : MonoBehaviour
         anim.SetBool(Moving, (moveInput != Vector2.zero));
     }
 
-    private void UpdatePlayerSprite()
+    // Returns a Quaternion that represents a direction being faced based on a given movement vector
+    private Quaternion GetFacingDirection(Vector2 movement)
     {
-        bool movingVertical = moveInput.y != 0;
-        bool movingHorizontal = moveInput.x != 0;
-        bool movingLeft = moveInput.x < -0.1;
-        bool movingDown = moveInput.y < -0.1;
-        bool moving = moveInput != Vector2.zero;
-
-        if (!moving)
-            return;
+        bool movingVertical = movement.y != 0;
+        bool movingHorizontal = movement.x != 0;
+        bool movingLeft = movement.x < -0.1;
+        bool movingDown = movement.y < -0.1;
 
         // Moving diagonally
         if (movingVertical && movingHorizontal)
         {
-            // Moving down and moving left
+            // Moving south west
             if (movingDown && movingLeft)
-            {
-                sr.transform.rotation = Quaternion.Euler(0, 0, faceDownAndLeft);
-            }
-            // Moving down and moving right
-            else if (movingDown && !movingLeft)
-            {
-                sr.transform.rotation = Quaternion.Euler(0, 0, faceDownAndRight);
-            }
-            // Moving up and moving left
-            else if (!movingDown && movingLeft)
-            {
-                sr.transform.rotation = Quaternion.Euler(0, 0, faceUpAndLeft);
-            }
-            // Moving up and moving right
-            else
-            {
-                sr.transform.rotation = Quaternion.Euler(0, 0, faceUpAndRight);
-            }
+                return facingDownAndLeft;
+
+            // Moving south east
+            if (movingDown)
+                return facingDownAndRight;
+
+            // Moving north west
+            if (movingLeft)
+                return facingUpAndLeft;
+
+            // Moving north east
+            return facingUpAndRight;
         }
-        // Moving either vertically OR horizontally
-        else
-        {
-            if (movingVertical)
-            {
-                if (movingDown)
-                {
-                    sr.transform.rotation = Quaternion.Euler(0, 0, faceDownZ);
-                }
-                else
-                {
-                    sr.transform.rotation = Quaternion.Euler(0, 0, faceUpZ);
-                }
-            }
-            else if (movingHorizontal)
-            {
-                if (movingLeft)
-                {
-                    sr.transform.rotation = Quaternion.Euler(0, 0, faceLeftZ);
-                }
-                else
-                {
-                    sr.transform.rotation = Quaternion.Euler(0, 0, faceRightZ);
-                }
-            }
-        }
+
+        // Moving either up/down or left/right
+        if (movingVertical)
+            return (movingDown) ? facingDown : facingUp;
+
+        return (movingLeft) ? facingLeft : facingRight;
+    }
+
+    // Update the direction that the player sprite is facing
+    private void UpdatePlayerSprite()
+    {
+        var moving = moveInput != Vector2.zero;
+
+        if (!moving)
+            return;
+
+        sr.transform.rotation = GetFacingDirection(moveInput);
     }
 }

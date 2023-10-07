@@ -226,12 +226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23762f9c7c50a74697838126ed290aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   sr: {fileID: 5795270694250963781}
-  anim: {fileID: 0}
-  upDown: {fileID: 0}
-  leftRight: {fileID: 0}
-  facingFrontMovingLeft: {fileID: 21300000, guid: 15f177f0937ef774aa1a76a9cdf5cd2d, type: 3}
-  facingFrontMovingRight: {fileID: 21300000, guid: 062f1ccef8a4b2949a655f82ca346a14, type: 3}
-  facingBackMovingLeft: {fileID: 21300000, guid: a0614d831c825d643b02f4e675d03ce2, type: 3}
-  facingBackMovingRight: {fileID: 21300000, guid: 4b5508e736b025e4c85fae214f74211c, type: 3}
+  anim: {fileID: 7894875576791803904}

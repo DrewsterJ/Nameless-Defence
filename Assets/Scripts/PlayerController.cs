@@ -12,20 +12,23 @@ public class PlayerController : MonoBehaviour
     // Player movement speed
     public int speed;
     
-    private Rigidbody2D rb;
+    // Player components
     public SpriteRenderer sr;
+    private Rigidbody2D rb;
     public Animator anim;
-    
-    private static readonly int Moving = Animator.StringToHash("Moving");
 
-    private static readonly Quaternion facingLeft = Quaternion.Euler(0, 0, 90);
-    private static readonly Quaternion facingRight = Quaternion.Euler(0, 0, -90);
+    // Rotation quaternions for changing the direction the player's sprite is facing
     private static readonly Quaternion facingUp = Quaternion.Euler(0, 0, 0);
     private static readonly Quaternion facingDown = Quaternion.Euler(0, 0, -180);
+    private static readonly Quaternion facingLeft = Quaternion.Euler(0, 0, 90);
+    private static readonly Quaternion facingRight = Quaternion.Euler(0, 0, -90);
     private static readonly Quaternion facingUpAndLeft = Quaternion.Euler(0, 0, 45);
     private static readonly Quaternion facingUpAndRight = Quaternion.Euler(0, 0, -45);
     private static readonly Quaternion facingDownAndLeft = Quaternion.Euler(0, 0, 135);
     private static readonly Quaternion facingDownAndRight = Quaternion.Euler(0, 0, -135);
+
+    // Efficient hash for modifying animator parameters
+    private static readonly int Moving = Animator.StringToHash("Moving");
     
     void Start()
     {
@@ -34,14 +37,13 @@ public class PlayerController : MonoBehaviour
         // Verify variables contain expected data
         Debug.Assert(speed != 0, "Player speed is 0");
         Debug.Assert(rb != null);
-        Debug.Assert(moveInput != null);
+        Debug.Assert(sr != null);
+        Debug.Assert(anim != null);
     }
-    
-    void Update()
-    { }
 
     private void FixedUpdate()
     {
+        // Change player velocity based on player input
         rb.velocity = moveInput.normalized * speed;
     }
 
@@ -84,10 +86,11 @@ public class PlayerController : MonoBehaviour
             return facingUpAndRight;
         }
 
-        // Moving either up/down or left/right
+        // Moving up/down
         if (movingVertical)
             return (movingDown) ? facingDown : facingUp;
 
+        // Moving left/right
         return (movingLeft) ? facingLeft : facingRight;
     }
 
@@ -99,6 +102,7 @@ public class PlayerController : MonoBehaviour
         if (!moving)
             return;
 
+        // Rotate the player's sprite towards the direction they're moving
         sr.transform.rotation = GetFacingDirection(moveInput);
     }
 }

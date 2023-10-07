@@ -16,13 +16,6 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer sr;
     public Animator anim;
     
-    // Player model sprites
-    public Sprite upDown;
-    public Sprite leftRight;
-    public Sprite facingFrontMovingLeft;
-    public Sprite facingFrontMovingRight;
-    public Sprite facingBackMovingLeft;
-    public Sprite facingBackMovingRight;
     private static readonly int Moving = Animator.StringToHash("Moving");
 
     private int faceLeftZ = 90;

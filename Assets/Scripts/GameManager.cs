@@ -36,15 +36,20 @@ public class GameManager : MonoBehaviour
             Debug.Log("Player tried to interact with a non-existent tile");
             return;
         }
-        
-        var actionItem = player.activeHotbarItem;
-        if (actionItem == PlayerController.HotbarItem.Empty)
+
+        var hotbar = player.hotbar;
+        var selectedAction = hotbar.selectedAction;
+
+        if (selectedAction.actionType == Action.ActionType.Empty)
         {
             Debug.Log("Player interacted with a focused tile using the empty tool");
         }
-        else if (actionItem == PlayerController.HotbarItem.Build)
+        else if (selectedAction.actionType == Action.ActionType.Build)
         {
             Debug.Log("Player interacted with a focused tile using the build tool");
+            var action = selectedAction as BuildAction;
+            var selectedSprite = action!.selectedSprite;
+            focusedTile.SetSprite(selectedSprite);
         }
     }
 

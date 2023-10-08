@@ -6,17 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    // Defines all possible hotbar items
-    public enum HotbarItem
-    {
-        Empty,
-        Build,
-    }
-
-    public HotbarItem activeHotbarItem;
-
-    // Stores all player hotbar items
-    public List<HotbarItem> hotbarItems;
+    public Hotbar hotbar;
     
     // Player movement inputs (WASD or Arrows)
     private Vector2 moveInput;
@@ -54,7 +44,7 @@ public class PlayerController : MonoBehaviour
         Debug.Assert(rb != null);
         Debug.Assert(sr != null);
         Debug.Assert(anim != null);
-        Debug.Assert(hotbarItems != null);
+        Debug.Assert(hotbar != null);
     }
 
     private void FixedUpdate()

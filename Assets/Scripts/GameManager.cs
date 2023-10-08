@@ -21,19 +21,20 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
-
-    // Sets the tile the player is currently hovering their mouse over
+    
+    // Called by the GroundTile script to set the tile that the player is currently hovering over
     public void SetFocusedTile(GroundTile tile)
     {
         focusedTile = tile;
     }
 
+    // Called by the player to interact with a tile using any hotbar action item
+    // Possible rename to PerformActionOnFocusedTile(...){} b/c hotbar may contain weapons
     public void InteractWithFocusedTile(PlayerController player)
     {
         // There is no focused tile
         if (focusedTile == null)
         {
-            Debug.Log("Player tried to interact with a non-existent tile");
             return;
         }
 
@@ -42,11 +43,10 @@ public class GameManager : MonoBehaviour
 
         if (selectedAction.actionType == Action.ActionType.Empty)
         {
-            Debug.Log("Player interacted with a focused tile using the empty tool");
+            // Do nothing
         }
         else if (selectedAction.actionType == Action.ActionType.Build)
         {
-            Debug.Log("Player interacted with a focused tile using the build tool");
             var action = selectedAction as BuildAction;
             var selectedSprite = action!.selectedSprite;
             focusedTile.SetSprite(selectedSprite);

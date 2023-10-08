@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     
     // The tile the player is hovering their mouse over
-    private GrassTile focusedTile;
+    private GroundTile focusedTile;
 
     void Awake()
     {
@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Sets the tile the player is currently hovering their mouse over
-    public void SetFocusedTile(GrassTile tile)
+    public void SetFocusedTile(GroundTile tile)
     {
         focusedTile = tile;
     }

@@ -5,28 +5,18 @@ using UnityEngine;
 
 public class GrassTile : MonoBehaviour
 {
-    // Tile components
-    public SpriteRenderer sr;
-    private bool playerMouseIsOverTile;
-    
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Assert(sr != null);
-    }
-
-    public bool PlayerMouseIsOverTile()
-    {
-        return playerMouseIsOverTile;
     }
 
     private void OnMouseEnter()
     {
-        playerMouseIsOverTile = true;
+        GameManager.instance.SetFocusedTile(this);
     }
 
     private void OnMouseExit()
     {
-        playerMouseIsOverTile = false;
+        GameManager.instance.SetFocusedTile(null);
     }
 }

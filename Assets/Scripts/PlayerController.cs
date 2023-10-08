@@ -6,11 +6,26 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    // Defines all possible hotbar items
+    public enum HotbarItem
+    {
+        Empty,
+        Build,
+    }
+
+    public HotbarItem activeHotbarItem;
+
+    // Stores all player hotbar items
+    public List<HotbarItem> hotbarItems;
+    
     // Player movement inputs (WASD or Arrows)
     private Vector2 moveInput;
     
     // Player movement speed
     public int speed;
+    
+    // Determines which layers the player will interact with
+    public LayerMask interactLayerMask;
     
     // Player components
     public SpriteRenderer sr;
@@ -39,6 +54,7 @@ public class PlayerController : MonoBehaviour
         Debug.Assert(rb != null);
         Debug.Assert(sr != null);
         Debug.Assert(anim != null);
+        Debug.Assert(hotbarItems != null);
     }
 
     private void FixedUpdate()
@@ -52,6 +68,11 @@ public class PlayerController : MonoBehaviour
         moveInput = ctx.ReadValue<Vector2>();
         UpdatePlayerSprite();
         UpdatePlayerAnim();
+    }
+
+    public void OnLeftClick(InputAction.CallbackContext ctx)
+    {
+        GameManager.instance.InteractWithFocusedTile(this);
     }
 
     private void UpdatePlayerAnim()
@@ -104,5 +125,24 @@ public class PlayerController : MonoBehaviour
 
         // Rotate the player's sprite towards the direction they're moving
         sr.transform.rotation = GetFacingDirection(moveInput);
+    }
+
+    private void DrawRaycastAtLookDirection()
+    {
+        var facingDir = moveInput.normalized;
+        RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position + facingDir, Vector3.up, 0.1f, interactLayerMask);
+
+        if (hit.collider != null)
+        {
+            Debug.Log("Hit an object!");
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.back) * (hit.distance + 500),
+                Color.yellow);
+        }
+        else
+        {
+            Debug.Log("Did not hit an object");
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.back) * 1000,
+                Color.white);
+        }
     }
 }

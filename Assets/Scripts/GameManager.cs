@@ -49,7 +49,19 @@ public class GameManager : MonoBehaviour
         {
             var action = selectedAction as BuildAction;
             var selectedSprite = action!.selectedSprite;
-            focusedTile.SetSprite(selectedSprite);
+            //focusedTile.SetSprite(selectedSprite);
+            var adjacentTiles = focusedTile.adjacentTiles;
+            var focusedTileAdjacentToPlayer = adjacentTiles.Find(
+                tile => tile.isBeingWalkedOn);
+
+            if (focusedTileAdjacentToPlayer != null)
+            {
+                focusedTile.SetSprite(selectedSprite);
+            }
+            else
+            {
+                Debug.Log("Attempted to build on a tile not adjacent to the player");
+            }
         }
     }
 

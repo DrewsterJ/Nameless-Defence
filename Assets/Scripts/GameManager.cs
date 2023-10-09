@@ -57,9 +57,21 @@ public class GameManager : MonoBehaviour
         var buildingSprite = action.selectedSprite;
         var distance = Vector2.Distance(action.transform.position, tileToBuildOn.transform.position);
         const float actionRange = 2.0f;
-        
+
         if (distance < actionRange)
             tileToBuildOn.SetSprite(buildingSprite);
+        else if (distance > 6)
+        {
+            action.root.visible = !action.root.visible;
+            action.background.visible = !action.background.visible;
+            var objects = action.background.Children();
+            foreach (var obj in objects)
+            {
+                obj.visible = !obj.visible;
+            }
+            action.rowOne.visible = !action.rowOne.visible;
+        }
+            
     }
     
     // Start is called before the first frame update

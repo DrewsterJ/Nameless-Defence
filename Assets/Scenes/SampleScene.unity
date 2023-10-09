@@ -4403,7 +4403,7 @@ MonoBehaviour:
   hotbarActions:
   - {fileID: 1546913239}
   - {fileID: 1513940650}
-  selectedAction: {fileID: 1513940650}
+  selectedAction: {fileID: 1546913239}
 --- !u!1001 &729906323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6913,9 +6913,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionType: 1
+  uiDocument: {fileID: 1513940651}
   turretBuildings:
   - {fileID: 21300000, guid: 2b2890cbbad46474ba5705be678ac07d, type: 3}
-  selectedSprite: {fileID: 21300000, guid: 2b2890cbbad46474ba5705be678ac07d, type: 3}
+  selectedSprite: {fileID: 0}
 --- !u!114 &1513940651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6930,7 +6931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 9c92c425cf4e33544bba15b9f23aff05, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: dc5589c69eb651548826c6df68a15a71, type: 3}
   m_SortingOrder: 0
 --- !u!1001 &1530434748
 PrefabInstance:

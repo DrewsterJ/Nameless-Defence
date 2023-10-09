@@ -48,6 +48,13 @@ public class GroundTile : MonoBehaviour
 
     public void SetSprite(Sprite sprite)
     {
+        if (sprite == null)
+        {
+            Debug.Log("Tile was null!");
+            return;
+        }
+            
+        
         sr.sprite = sprite;
     }
     

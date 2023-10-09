@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    
+
     // The tile the player is hovering their mouse over
     private GroundTile focusedTile;
 
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
-    
+
     // Called by the GroundTile script to set the tile that the player is currently hovering over
     public void SetFocusedTile(GroundTile tile)
     {
@@ -29,15 +29,12 @@ public class GameManager : MonoBehaviour
     }
 
     // Called by the player to interact with a tile using any hotbar action item
-    // Possible rename to PerformActionOnFocusedTile(...){} b/c hotbar may contain weapons
     public void InteractWithFocusedTile(PlayerController player)
     {
         // There is no focused tile
-        if (focusedTile == null)
-        {
+        if (focusedTile == null) 
             return;
-        }
-
+        
         var hotbar = player.hotbar;
         var selectedAction = hotbar.selectedAction;
 
@@ -48,32 +45,28 @@ public class GameManager : MonoBehaviour
         else if (selectedAction.actionType == Action.ActionType.Build)
         {
             var action = selectedAction as BuildAction;
-            var selectedSprite = action!.selectedSprite;
-            //focusedTile.SetSprite(selectedSprite);
-            var adjacentTiles = focusedTile.adjacentTiles;
-            var focusedTileAdjacentToPlayer = adjacentTiles.Find(
-                tile => tile.isBeingWalkedOn);
-
-            if (focusedTileAdjacentToPlayer != null)
-            {
-                focusedTile.SetSprite(selectedSprite);
-            }
-            else
-            {
-                Debug.Log("Attempted to build on a tile not adjacent to the player");
-            }
+            PerformBuildActionOnTile(action, focusedTile);
         }
     }
 
+    private void PerformBuildActionOnTile(BuildAction action, GroundTile tileToBuildOn)
+    {
+        Debug.Assert(action != null);
+        Debug.Assert(tileToBuildOn != null);
+
+        var buildingSprite = action.selectedSprite;
+        var distance = Vector2.Distance(action.transform.position, tileToBuildOn.transform.position);
+        const float actionRange = 2.0f;
+        
+        if (distance < actionRange)
+            tileToBuildOn.SetSprite(buildingSprite);
+    }
+    
     // Start is called before the first frame update
     void Start()
-    {
-        
-    }
+    { }
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
+    { }
 }

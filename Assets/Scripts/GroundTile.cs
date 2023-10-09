@@ -13,8 +13,6 @@ public class GroundTile : MonoBehaviour
     public SpriteRenderer sr;
     public LayerMask tileLayerMask;
     public List<GroundTile> adjacentTiles = new List<GroundTile>();
-
-    public bool isBeingWalkedOn;
     
     // Start is called before the first frame update
     void Start()
@@ -24,39 +22,20 @@ public class GroundTile : MonoBehaviour
         adjacentTiles = IdentifyAdjacentTiles();
     }
 
+    // Shoots raycasts in all directions from this tile to find it's adjacent tiles
     private List<GroundTile> IdentifyAdjacentTiles()
     {
-        var position = transform.position;
-        var leftTile = Physics2D.Raycast((Vector2)position + Vector2.left,
-            Vector2.up, .10f, tileLayerMask);
-        
-        var rightTile = Physics2D.Raycast((Vector2)position + Vector2.right,
-            Vector2.up, .10f, tileLayerMask);
-        
-        var upTile = Physics2D.Raycast((Vector2)position + Vector2.up,
-            Vector2.up, .10f, tileLayerMask);
-        
-        var downTile = Physics2D.Raycast((Vector2)position + Vector2.down,
-            Vector2.up, .10f, tileLayerMask);
-
-        List<GroundTile> adjacentTiles = new List<GroundTile>();
-        if (leftTile.collider != null)
-            adjacentTiles.Add(leftTile.collider.gameObject.GetComponent<GroundTile>());
-        
-        if (rightTile.collider != null)
-            adjacentTiles.Add(rightTile.collider.gameObject.GetComponent<GroundTile>());
-        
-        if (upTile.collider != null)
-            adjacentTiles.Add(upTile.collider.gameObject.GetComponent<GroundTile>());
-        
-        if (downTile.collider != null)
-            adjacentTiles.Add(downTile.collider.gameObject.GetComponent<GroundTile>());
-
-        Debug.Assert(adjacentTiles.Count >= 2);
-        
+        Vector2 position = transform.position;
+        var directions = new[] { Vector2.left, Vector2.right, Vector2.up, Vector2.down};
+        foreach (var direction in directions)
+        {
+            var hit = Physics2D.Raycast(position + direction, Vector2.up, .10f, tileLayerMask);
+            if (hit.collider != null)
+                adjacentTiles.Add(hit.collider.gameObject.GetComponent<GroundTile>());
+        }
         return adjacentTiles;
     }
-
+    
     private void OnMouseEnter()
     {
         GameManager.instance.SetFocusedTile(this);
@@ -73,14 +52,8 @@ public class GroundTile : MonoBehaviour
     }
     
     private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-            isBeingWalkedOn = true;
-    }
+    { }
 
     private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-            isBeingWalkedOn = false;
-    }
+    { }
 }

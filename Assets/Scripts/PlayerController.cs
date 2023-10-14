@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer sr;
     private Rigidbody2D rb;
     public Animator anim;
+
+    public UIDocument uiDocument;
     
     // Player movement inputs (WASD or Arrows)
     private Vector2 moveInput;
@@ -41,6 +44,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        uiDocument.enabled = true;
         
         // Verify variables contain expected data
         Debug.Assert(speed != 0, "Player speed is 0");

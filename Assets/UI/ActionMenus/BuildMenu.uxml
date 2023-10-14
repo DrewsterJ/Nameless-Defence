@@ -1,0 +1,43 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/ActionMenus/ActionMenuStyle.uss?fileID=7433441132597879392&amp;guid=f52cfb3e723e14641af73f313f44c336&amp;type=3#ActionMenuStyle" />
+    <ui:VisualElement name="background" style="flex-grow: 1; align-items: center; justify-content: center; position: relative;">
+        <ui:GroupBox name="buildingSelectionScreen" style="width: 400px; height: 400px; background-color: rgb(207, 131, 87); padding-right: 3px; border-top-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; border-bottom-left-radius: 25px;">
+            <ui:Label tabindex="-1" text="Build Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" style="padding-bottom: 4px; align-self: center; -unity-font: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=63af560394064d946a83c42cc0202a86&amp;type=3#NotInter-Regular&apos;); font-size: 22px; max-height: none; max-width: none; margin-top: 2px;" />
+            <ui:VisualElement name="rowOne" class="unity-building-selection-row" style="flex-grow: 0; flex-shrink: 0; min-height: 64px; flex-direction: row; justify-content: center; align-items: center; overflow: visible; visibility: visible; display: flex;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowOneItemOne" class="unity-building-selection-button" style="background-image: url(&apos;project://database/Assets/Sprites/BasicTurretIcon.png?fileID=2800000&amp;guid=169435e4fdff5a04aa9523a3a604e7ab&amp;type=3#BasicTurretIcon&apos;);" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowOneItemTwo" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowOneItemThree" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowOneItemFour" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowOneItemFive" class="unity-building-selection-button" />
+            </ui:VisualElement>
+            <ui:VisualElement name="rowTwo" class="unity-building-selection-row" style="flex-grow: 0; flex-shrink: 0; min-height: 64px; flex-direction: row; justify-content: center; align-items: center;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowTwoItemOne" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowTwoItemTwo" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowTwoItemThree" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowTwoItemFour" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowTwoItemFive" class="unity-building-selection-button" />
+            </ui:VisualElement>
+            <ui:VisualElement name="rowThree" class="unity-building-selection-row" style="flex-grow: 0; flex-shrink: 0; min-height: 64px; flex-direction: row; justify-content: center; align-items: center;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowThreeItemOne" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowThreeItemTwo" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowThreeItemThree" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowThreeItemFour" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowThreeItemFive" class="unity-building-selection-button" />
+            </ui:VisualElement>
+            <ui:VisualElement name="rowFour" class="unity-building-selection-row" style="flex-grow: 0; flex-shrink: 0; min-height: 64px; flex-direction: row; justify-content: center; align-items: center;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFourItemOne" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFourItemTwo" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFourItemThree" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFourItemFour" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFourItemFive" class="unity-building-selection-button" />
+            </ui:VisualElement>
+            <ui:VisualElement name="rowFive" class="unity-building-selection-row" style="flex-grow: 0; flex-shrink: 0; min-height: 64px; flex-direction: row; justify-content: center; align-items: center;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFiveItemOne" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFiveItemTwo" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFiveItemThree" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFiveItemFour" class="unity-building-selection-button" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFiveItemFive" class="unity-building-selection-button" />
+            </ui:VisualElement>
+        </ui:GroupBox>
+    </ui:VisualElement>
+</ui:UXML>

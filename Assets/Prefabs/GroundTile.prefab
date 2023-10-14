@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4676741580224164841}
   - component: {fileID: 8809215404710545464}
   m_Layer: 6
-  m_Name: GrassTile
-  m_TagString: Untagged
+  m_Name: GroundTile
+  m_TagString: GroundTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,3 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075b29caff64add469e5c40b716d2abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sr: {fileID: 8370970860559278935}
+  tileLayerMask:
+    serializedVersion: 2
+    m_Bits: 64

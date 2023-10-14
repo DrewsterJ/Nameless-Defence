@@ -33,8 +33,11 @@ public class BuildAction : Action
 
     private void SetupUI()
     {
+        uiDocument.enabled = true;
         // TODO: We should probably name the item labels (rowOneItemOne, rowTwoItemTwo, etc.) to a more descriptive name of what it applies to
         root = uiDocument.rootVisualElement;
+        
+        // Note: setting gameobjects.enabled to false will reset the callback func bindings (button.clicked += => callbackFuncName();
 
         Button rowOneItemOne = root.Query<Button>("rowOneItemOne");
         background = root.Query<VisualElement>("background");
@@ -45,12 +48,6 @@ public class BuildAction : Action
         var objects = background.Children();
         rowOne = root.Query<VisualElement>("rowOne");
         rowOne.visible = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void SetSelectedSprite()

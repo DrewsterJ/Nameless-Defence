@@ -1,58 +1,133 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+// Building Types: Turrets, Walls, Resource Storage Depots, Resource Gathering Facilities
+
 public class BuildAction : Action
 {
-    // UI Menu
-    // List of sprites that the user can build organized into sections (turrets, walls, resources, etc.)
+    private enum Position
+    {
+        One,
+        Two,
+        Three,
+        Four,
+        Five
+    }
     
-    // Possible building types: Turrets, walls, resource storage depots, resource gathering facilities, etc.
-
+    // UI Components
     public UIDocument uiDocument;
-    public VisualElement root;
+    private VisualElement root;
+    
+    public Sprite selectedSprite;
     
     // Turret sprite images
     public List<Sprite> turretBuildings;
 
-    public Sprite selectedSprite;
-
-    public VisualElement background;
-    public VisualElement rowOne;
+    // Contains buttons for selecting buildings in the build menu
+    private Dictionary<Position, Dictionary<Position, Button>> selectableBuildingButtons;
     
-    // Start is called before the first frame update
     void Start()
     {
         Debug.Assert(uiDocument != null);
-        SetupUI();
-        Debug.Assert(root != null);
+        
         actionType = ActionType.Build;
+        SetupUI();
     }
 
+    // Sets up UI components and links them with their callback functions
     private void SetupUI()
     {
+        // Setup root visual element
         uiDocument.enabled = true;
-        // TODO: We should probably name the item labels (rowOneItemOne, rowTwoItemTwo, etc.) to a more descriptive name of what it applies to
         root = uiDocument.rootVisualElement;
         
-        // Note: setting gameobjects.enabled to false will reset the callback func bindings (button.clicked += => callbackFuncName();
+        // Setup other visual elements
+        selectableBuildingButtons = new Dictionary<Position, Dictionary<Position, Button>>()
+        {
+            { Position.One, BuildSelectableButtonRow("rowOne") },
+            { Position.Two, BuildSelectableButtonRow("rowTwo") },
+            { Position.Three, BuildSelectableButtonRow("rowThree") },
+            { Position.Four, BuildSelectableButtonRow("rowFour") },
+            { Position.Five, BuildSelectableButtonRow("rowFive") }
+        };
+        SetBuildMenuVisibility(false);
+        
+        // Set callback functions
+        selectableBuildingButtons[Position.One][Position.One].clicked += () => SetSelectedBuildingSprite(turretBuildings[0]);
+        foreach (var row in selectableBuildingButtons.Values)
+        {
+            foreach (var button in row)
+            {
+                if (button.Value.style.backgroundImage != null)
+                    continue;
+                
+                button.Value.clicked += () => SetSelectedBuildingSprite(null);
+            }
+        }
+            
+        selectableBuildingButtons[Position.One][Position.Two].clicked += () => SetSelectedBuildingSprite(null);
+        
+        // Verify setup was successful
+        Debug.Assert(root != null);
+    }
+    
+    // Builds a dictionary of selectable buttons that represent buildings on the build menu
+    private Dictionary<Position, Button> BuildSelectableButtonRow(string rowName)
+    {
+        var row = new Dictionary<Position, Button>()
+        {
+            { Position.One, GetRawUIComponent<Button>(rowName + "ItemOne") },
+            { Position.Two, GetRawUIComponent<Button>(rowName + "ItemTwo") },
+            { Position.Three, GetRawUIComponent<Button>(rowName + "ItemThree") },
+            { Position.Four, GetRawUIComponent<Button>(rowName + "ItemFour") },
+            { Position.Five, GetRawUIComponent<Button>(rowName + "ItemFive") }
+        };
 
-        Button rowOneItemOne = root.Query<Button>("rowOneItemOne");
-        background = root.Query<VisualElement>("background");
-        Debug.Assert(rowOneItemOne != null);
-        rowOneItemOne.clicked += SetSelectedSprite;
-        root.visible = false;
-        background.visible = false;
-        var objects = background.Children();
-        rowOne = root.Query<VisualElement>("rowOne");
-        rowOne.visible = false;
+        return row;
     }
 
-    public void SetSelectedSprite()
+    // Returns the raw UI component of the given type and name from the BuildAction UIDocument
+    private T GetRawUIComponent<T>(string componentName) where T : VisualElement
     {
-        Debug.Log("Got called!");
-        selectedSprite = turretBuildings[0];
+        return (root.Query<T>(componentName));
+    }
+    
+    // Returns whether the build menu is visible on the screen
+    public bool GetBuildMenuVisibility()
+    {
+        return root.visible;
+    }
+
+    // Sets the visibility of the build menu
+    public void SetBuildMenuVisibility(bool visibility)
+    {
+        if (visibility == root.visible)
+            return;
+
+        root.visible = visibility;
+        SetChildrenVisibility(root, visibility);
+    }
+
+    // Sets the sprite which the player will place down
+    private void SetSelectedBuildingSprite(Sprite buildingSprite)
+    {
+        selectedSprite = buildingSprite;
+    }
+
+    // Recursively sets all children of the given element to the given visibility
+    private void SetChildrenVisibility(VisualElement elem, bool visibility)
+    {
+        Debug.Assert(elem != null);
+        
+        foreach (var child in elem.Children())
+        {
+            child.visible = visibility;
+            if (child.childCount > 0)
+                SetChildrenVisibility(child, visibility);
+        }
     }
 }

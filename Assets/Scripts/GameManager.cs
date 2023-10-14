@@ -13,13 +13,9 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         if (instance != null && instance != this)
-        {
             Destroy(gameObject);
-        }
         else
-        {
             instance = this;
-        }
     }
 
     // Called by the GroundTile script to set the tile that the player is currently hovering over
@@ -61,17 +57,7 @@ public class GameManager : MonoBehaviour
         if (distance < actionRange)
             tileToBuildOn.SetSprite(buildingSprite);
         else if (distance > 6)
-        {
-            action.root.visible = !action.root.visible;
-            action.background.visible = !action.background.visible;
-            var objects = action.background.Children();
-            foreach (var obj in objects)
-            {
-                obj.visible = !obj.visible;
-            }
-            action.rowOne.visible = !action.rowOne.visible;
-        }
-            
+            action.SetBuildMenuVisibility(!action.GetBuildMenuVisibility());
     }
     
     // Start is called before the first frame update

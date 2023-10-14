@@ -6,7 +6,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public Hotbar hotbar;
+    // Player components
+    public SpriteRenderer sr;
+    private Rigidbody2D rb;
+    public Animator anim;
     
     // Player movement inputs (WASD or Arrows)
     private Vector2 moveInput;
@@ -17,11 +20,7 @@ public class PlayerController : MonoBehaviour
     // Determines which layers the player will interact with
     public LayerMask interactLayerMask;
     
-    // Player components
-    public SpriteRenderer sr;
-    private Rigidbody2D rb;
-    public Animator anim;
-
+    #region Rotations Quaternions Region
     // Rotation quaternions for changing the direction the player's sprite is facing
     private static readonly Quaternion facingUp = Quaternion.Euler(0, 0, 0);
     private static readonly Quaternion facingDown = Quaternion.Euler(0, 0, -180);
@@ -31,6 +30,10 @@ public class PlayerController : MonoBehaviour
     private static readonly Quaternion facingUpAndRight = Quaternion.Euler(0, 0, -45);
     private static readonly Quaternion facingDownAndLeft = Quaternion.Euler(0, 0, 135);
     private static readonly Quaternion facingDownAndRight = Quaternion.Euler(0, 0, -135);
+    #endregion
+    
+    // Player hotbar containing actions and tools they can use
+    public Hotbar hotbar;
 
     // Efficient hash for modifying animator parameters
     private static readonly int Moving = Animator.StringToHash("Moving");

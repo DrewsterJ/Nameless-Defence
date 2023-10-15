@@ -23,8 +23,6 @@ public class Hotbar : MonoBehaviour
         Debug.Assert(uiDocument != null);
 
         SetupUI();
-
-        //SetActiveHotbarSlot(0);
     }
     
     // Sets up UI components and links them with their callback functions

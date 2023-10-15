@@ -10912,18 +10912,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_ActionId
       value: 3e3aebfb-cc11-4be7-b500-77fb0248f068
       objectReference: {fileID: 0}
     - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: a9f274ff-7128-479a-adb3-b353fb2785dc
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_ActionName
       value: Player/Click[/Mouse/leftButton]
       objectReference: {fileID: 0}
     - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: Player/Hotbar[/Keyboard/1,/Keyboard/2,/Keyboard/3,/Keyboard/4,/Keyboard/5,/Keyboard/6,/Keyboard/7,/Keyboard/8,/Keyboard/9]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
@@ -10931,11 +10943,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1705662806}
     - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 729457306}
+    - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
@@ -10943,11 +10967,23 @@ PrefabInstance:
       value: OnLeftClick
       objectReference: {fileID: 0}
     - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNumberKeyPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlayerController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Hotbar, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921619645907779270, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5795270694250963781, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}

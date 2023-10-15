@@ -12,24 +12,31 @@
                         <ui:VisualElement name="centerOfHotbarRegion" style="flex-grow: 1; align-items: center; flex-direction: row; justify-content: center; align-self: auto; max-height: 64px; flex-shrink: 1;">
                             <ui:VisualElement name="hotbarSlotOne" class="hotbar-slot" style="flex-grow: 1; align-self: stretch;">
                                 <ui:Label tabindex="-1" text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
                             </ui:VisualElement>
                             <ui:VisualElement name="hotbarSlotTwo" class="hotbar-slot" style="flex-grow: 1; align-self: stretch;">
                                 <ui:Label tabindex="-1" text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
                             </ui:VisualElement>
                             <ui:VisualElement name="hotbarSlotThree" class="hotbar-slot" style="flex-grow: 1; align-self: stretch;">
                                 <ui:Label tabindex="-1" text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
                             </ui:VisualElement>
                             <ui:VisualElement name="hotbarSlotFour" class="hotbar-slot" style="flex-grow: 1; align-self: stretch;">
                                 <ui:Label tabindex="-1" text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
                             </ui:VisualElement>
                             <ui:VisualElement name="hotbarSlotFive" class="hotbar-slot" style="flex-grow: 1; align-self: stretch;">
                                 <ui:Label tabindex="-1" text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
                             </ui:VisualElement>
                             <ui:VisualElement name="hotbarSlotSix" class="hotbar-slot" style="flex-grow: 1; align-self: stretch;">
                                 <ui:Label tabindex="-1" text="6" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
                             </ui:VisualElement>
                             <ui:VisualElement name="hotbarSlotSeven" class="hotbar-slot" style="flex-grow: 1; align-self: stretch;">
                                 <ui:Label tabindex="-1" text="7" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                         <ui:VisualElement name="rightOfHotbarRegion" style="flex-grow: 1; margin-left: -80px; justify-content: flex-end; background-color: rgba(255, 0, 0, 0);" />

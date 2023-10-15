@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -34,6 +35,7 @@ public class BuildAction : Action
         Debug.Assert(uiDocument != null);
         
         actionType = ActionType.Build;
+        
         SetupUI();
     }
 
@@ -60,6 +62,9 @@ public class BuildAction : Action
         {
             foreach (var button in row)
             {
+                Debug.Assert(button.Value != null);
+                
+                // If an icon has been assigned to this item
                 if (button.Value.style.backgroundImage != null)
                     continue;
                 

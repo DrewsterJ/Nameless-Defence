@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
             return;
         
         var hotbar = player.hotbar;
-        var selectedAction = hotbar.selectedAction;
+        var selectedAction = hotbar.GetActiveHotbarAction();
 
         if (selectedAction.actionType == Action.ActionType.Empty)
         {

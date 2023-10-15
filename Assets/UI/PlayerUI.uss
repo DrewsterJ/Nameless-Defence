@@ -21,15 +21,28 @@
     max-height: 64px;
     padding-left: 0;
     padding-right: 0;
-    background-color: rgb(200, 191, 191);
+    background-color: rgb(180, 180, 180);
     margin-left: 3px;
     margin-right: 3px;
     align-items: auto;
 }
 
 .hotbar-slot-number-label {
-    -unity-text-align: upper-left;
+    -unity-text-align: upper-right;
     font-size: 13px;
     -unity-font-style: normal;
     align-self: flex-end;
+    position: relative;
+    left: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+}
+
+.hotbar-slot-border {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
 }

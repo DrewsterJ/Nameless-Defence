@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     // The tile the player is hovering their mouse over
     private GroundTile focusedTile;
 
+    private List<Turret> turrets;
+    // private List<Enemy> enemies;
+    
+
     void Awake()
     {
         if (instance != null && instance != this)

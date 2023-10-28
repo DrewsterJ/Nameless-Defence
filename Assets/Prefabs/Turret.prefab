@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1249272928072497102}
   - component: {fileID: -8250014746395210891}
+  - component: {fileID: 8105116502520208004}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -79,6 +80,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8105116502520208004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830858593765386935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b0a4800ebe77543b4b4c95a0b7c167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firingRate: 1
+  damage: 10
+  maxHealth: 100
+  health: 100
+  bulletPrefab: {fileID: 986307436527531739, guid: f133555c701dc724ba0e7a3067eae895, type: 3}
 --- !u!1 &1578440843105696933
 GameObject:
   m_ObjectHideFlags: 0

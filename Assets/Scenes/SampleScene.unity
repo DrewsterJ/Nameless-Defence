@@ -6915,6 +6915,7 @@ MonoBehaviour:
   actionType: 1
   uiDocument: {fileID: 1705662811}
   selectedSprite: {fileID: 0}
+  selectedBuilding: {fileID: 0}
   turretBuildings:
   - {fileID: 830858593765386935, guid: a6139a35797ed2f44bc457d68f63120d, type: 3}
 --- !u!1001 &1530434748

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -23,6 +24,25 @@ public class GameManager : MonoBehaviour
     public void SetFocusedTile(GroundTile tile)
     {
         focusedTile = tile;
+    }
+
+    public void PerformPlayerLeftClick(PlayerController player)
+    {
+        // If the user is attempting to build
+        if (player.hotbar.GetActiveHotbarAction().actionType == Action.ActionType.Build)
+        {
+            InteractWithFocusedTile(player);
+        }
+    }
+
+    public void PerformPlayerRightClick(PlayerController player)
+    {
+        // User is opening the build menu
+        if (player.hotbar.GetActiveHotbarAction().actionType == Action.ActionType.Build)
+        {
+            var action = player.hotbar.GetActiveHotbarAction() as BuildAction;
+            action!.SetBuildMenuVisibility(!action.GetBuildMenuVisibility());
+        }
     }
 
     // Called by the player to interact with a tile using any hotbar action item
@@ -57,8 +77,6 @@ public class GameManager : MonoBehaviour
 
         if (distance < actionRange)
             tileToBuildOn.SetSprite(buildingSprite);
-        else if (distance > 6)
-            action.SetBuildMenuVisibility(!action.GetBuildMenuVisibility());
     }
     
     // Start is called before the first frame update

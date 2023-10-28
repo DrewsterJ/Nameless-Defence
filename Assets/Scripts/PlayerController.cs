@@ -69,7 +69,12 @@ public class PlayerController : MonoBehaviour
 
     public void OnLeftClick(InputAction.CallbackContext ctx)
     {
-        GameManager.instance.InteractWithFocusedTile(this);
+        GameManager.instance.PerformPlayerLeftClick(this);
+    }
+
+    public void OnRightClick(InputAction.CallbackContext ctx)
+    {
+        GameManager.instance.PerformPlayerRightClick(this);
     }
 
     private void UpdatePlayerAnim()

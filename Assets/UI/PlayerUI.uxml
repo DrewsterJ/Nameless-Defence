@@ -1,0 +1,88 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/PlayerUI.uss?fileID=7433441132597879392&amp;guid=f52cfb3e723e14641af73f313f44c336&amp;type=3#PlayerUI" />
+    <ui:VisualElement name="screen" style="flex-grow: 1; position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%;">
+        <ui:VisualElement name="hotbar-background" style="flex-grow: 1; justify-content: center; align-items: auto; align-self: center; flex-direction: column; flex-shrink: 1; visibility: visible; display: flex; overflow: visible; position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%;">
+            <ui:VisualElement name="topHalf" style="align-self: stretch; align-items: auto; justify-content: flex-start; flex-grow: 1;" />
+            <ui:VisualElement name="bottomHalf" style="align-self: stretch; flex-grow: 1;">
+                <ui:VisualElement name="topHalfOfBottomHalf" style="flex-grow: 1; align-items: auto; align-self: stretch; justify-content: flex-start; flex-direction: column; position: relative; flex-shrink: 1; visibility: visible; display: flex;" />
+                <ui:VisualElement name="bottomHalfOfBottomHalf" style="flex-grow: 1; align-items: auto; align-self: stretch; justify-content: flex-start; flex-shrink: 1; visibility: visible; display: flex;">
+                    <ui:VisualElement name="topHalfOfBottomHalfOfBottomHalf" style="flex-grow: 1; align-self: auto; align-items: center; justify-content: flex-start; flex-shrink: 1;" />
+                    <ui:VisualElement name="hotbarRegion" style="flex-grow: 1; align-self: auto; justify-content: flex-start; align-items: stretch; flex-direction: row; flex-shrink: 1;">
+                        <ui:VisualElement name="leftOfHotbarRegion" style="flex-grow: 1; margin-right: -80px;" />
+                        <ui:VisualElement name="centerOfHotbarRegion" style="flex-grow: 1; align-items: center; flex-direction: row; justify-content: center; align-self: auto; max-height: 64px; flex-shrink: 1;">
+                            <ui:VisualElement name="hotbarSlotOne" class="hotbar-slot" style="flex-grow: 1; align-self: stretch; background-image: url(&apos;project://database/Assets/Sprites/Icons/up-sign.png?fileID=2800000&amp;guid=9b1eee5fba354144aa7678ac4a4b89a6&amp;type=3#up-sign&apos;);">
+                                <ui:Label tabindex="-1" text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="hotbarSlotTwo" class="hotbar-slot" style="flex-grow: 1; align-self: stretch; background-image: url(&apos;project://database/Assets/Sprites/Icons/icons8-hammer-64.png?fileID=2800000&amp;guid=a05a60e43008aff4cb5005da20d5ffdc&amp;type=3#icons8-hammer-64&apos;);">
+                                <ui:Label tabindex="-1" text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="hotbarSlotThree" class="hotbar-slot" style="flex-grow: 1; align-self: stretch;">
+                                <ui:Label tabindex="-1" text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="hotbarSlotFour" class="hotbar-slot" style="flex-grow: 1; align-self: stretch;">
+                                <ui:Label tabindex="-1" text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="hotbarSlotFive" class="hotbar-slot" style="flex-grow: 1; align-self: stretch;">
+                                <ui:Label tabindex="-1" text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="hotbarSlotSix" class="hotbar-slot" style="flex-grow: 1; align-self: stretch;">
+                                <ui:Label tabindex="-1" text="6" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="hotbarSlotSeven" class="hotbar-slot" style="flex-grow: 1; align-self: stretch;">
+                                <ui:Label tabindex="-1" text="7" parse-escape-sequences="true" display-tooltip-when-elided="true" class="hotbar-slot-number-label" />
+                                <ui:VisualElement name="hotbarSlotBorder" class="hotbar-slot-border" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="rightOfHotbarRegion" style="flex-grow: 1; margin-left: -80px; justify-content: flex-end; background-color: rgba(255, 0, 0, 0);" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="build-menu-background" style="flex-grow: 1; align-items: center; justify-content: center; position: relative; left: auto; top: auto; right: auto; bottom: auto; flex-shrink: 1; width: auto; height: auto; align-self: stretch; max-width: none; max-height: none; visibility: visible; display: flex; overflow: visible;">
+            <ui:GroupBox name="buildingSelectionScreen" style="width: 400px; height: 400px; background-color: rgb(207, 131, 87); padding-right: 0; border-top-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; border-bottom-left-radius: 25px; position: relative; flex-direction: column; justify-content: center; align-items: center; left: auto; align-self: center; margin-top: 0; margin-right: 0; margin-bottom: 10%; margin-left: 0; padding-top: 0; padding-bottom: 0; padding-left: 0;">
+                <ui:Label tabindex="-1" text="Build Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" style="padding-bottom: 4px; align-self: center; -unity-font: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=63af560394064d946a83c42cc0202a86&amp;type=3#NotInter-Regular&apos;); font-size: 22px; max-height: none; max-width: none; margin-top: 2px;" />
+                <ui:VisualElement name="rowOne" class="unity-building-selection-row" style="flex-grow: 0; flex-shrink: 0; min-height: 64px; flex-direction: row; justify-content: center; align-items: center; overflow: visible; visibility: visible; display: flex;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowOneItemOne" focusable="false" class="unity-building-selection-button" style="background-image: url(&apos;project://database/Assets/Sprites/Icons/BasicTurretIcon.png?fileID=2800000&amp;guid=169435e4fdff5a04aa9523a3a604e7ab&amp;type=3#BasicTurretIcon&apos;);" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowOneItemTwo" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowOneItemThree" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowOneItemFour" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowOneItemFive" focusable="false" class="unity-building-selection-button" />
+                </ui:VisualElement>
+                <ui:VisualElement name="rowTwo" class="unity-building-selection-row" style="flex-grow: 0; flex-shrink: 0; min-height: 64px; flex-direction: row; justify-content: center; align-items: center;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowTwoItemOne" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowTwoItemTwo" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowTwoItemThree" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowTwoItemFour" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowTwoItemFive" focusable="false" class="unity-building-selection-button" />
+                </ui:VisualElement>
+                <ui:VisualElement name="rowThree" class="unity-building-selection-row" style="flex-grow: 0; flex-shrink: 0; min-height: 64px; flex-direction: row; justify-content: center; align-items: center;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowThreeItemOne" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowThreeItemTwo" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowThreeItemThree" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowThreeItemFour" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowThreeItemFive" focusable="false" class="unity-building-selection-button" />
+                </ui:VisualElement>
+                <ui:VisualElement name="rowFour" class="unity-building-selection-row" style="flex-grow: 0; flex-shrink: 0; min-height: 64px; flex-direction: row; justify-content: center; align-items: center;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFourItemOne" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFourItemTwo" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFourItemThree" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFourItemFour" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFourItemFive" focusable="false" class="unity-building-selection-button" />
+                </ui:VisualElement>
+                <ui:VisualElement name="rowFive" class="unity-building-selection-row" style="flex-grow: 0; flex-shrink: 0; min-height: 64px; flex-direction: row; justify-content: center; align-items: center;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFiveItemOne" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFiveItemTwo" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFiveItemThree" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFiveItemFour" focusable="false" class="unity-building-selection-button" />
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="rowFiveItemFive" focusable="false" class="unity-building-selection-button" />
+                </ui:VisualElement>
+            </ui:GroupBox>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

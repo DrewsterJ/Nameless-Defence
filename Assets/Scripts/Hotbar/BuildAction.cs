@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -19,9 +20,8 @@ public class BuildAction : Action
     }
     
     // UI Components
+    private VisualElement buildMenuRootElement;
     public UIDocument uiDocument;
-    private VisualElement root;
-    
     public Sprite selectedSprite;
     
     // Turret sprite images
@@ -35,6 +35,7 @@ public class BuildAction : Action
         Debug.Assert(uiDocument != null);
         
         actionType = ActionType.Build;
+        
         SetupUI();
     }
 
@@ -42,8 +43,7 @@ public class BuildAction : Action
     private void SetupUI()
     {
         // Setup root visual element
-        uiDocument.enabled = true;
-        root = uiDocument.rootVisualElement;
+        buildMenuRootElement = uiDocument.rootVisualElement.Query<VisualElement>("build-menu-background");
         
         // Setup other visual elements
         selectableBuildingButtons = new Dictionary<Position, Dictionary<Position, Button>>()
@@ -62,17 +62,20 @@ public class BuildAction : Action
         {
             foreach (var button in row)
             {
+                Debug.Assert(button.Value != null);
+                
+                // If an icon has been assigned to this item
                 if (button.Value.style.backgroundImage != null)
                     continue;
                 
                 button.Value.clicked += () => SetSelectedBuildingSprite(null);
             }
         }
-            
+        
         selectableBuildingButtons[Position.One][Position.Two].clicked += () => SetSelectedBuildingSprite(null);
         
         // Verify setup was successful
-        Debug.Assert(root != null);
+        Debug.Assert(buildMenuRootElement != null);
     }
     
     // Builds a dictionary of selectable buttons that represent buildings on the build menu
@@ -93,23 +96,23 @@ public class BuildAction : Action
     // Returns the raw UI component of the given type and name from the BuildAction UIDocument
     private T GetRawUIComponent<T>(string componentName) where T : VisualElement
     {
-        return (root.Query<T>(componentName));
+        return (buildMenuRootElement.Query<T>(componentName));
     }
     
     // Returns whether the build menu is visible on the screen
     public bool GetBuildMenuVisibility()
     {
-        return root.visible;
+        return buildMenuRootElement.visible;
     }
 
     // Sets the visibility of the build menu
     public void SetBuildMenuVisibility(bool visibility)
     {
-        if (visibility == root.visible)
+        if (visibility == buildMenuRootElement.visible)
             return;
 
-        root.visible = visibility;
-        SetChildrenVisibility(root, visibility);
+        buildMenuRootElement.visible = visibility;
+        SetChildrenVisibility(buildMenuRootElement, visibility);
     }
 
     // Sets the sprite which the player will place down

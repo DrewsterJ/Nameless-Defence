@@ -48,3 +48,9 @@ TagManager:
   - name: Player
     uniqueID: 886236179
     locked: 0
+  - name: Building Layer Lower
+    uniqueID: 895660009
+    locked: 0
+  - name: Building Layer Upper
+    uniqueID: 3532716533
+    locked: 0

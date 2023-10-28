@@ -70,13 +70,17 @@ public class GameManager : MonoBehaviour
     {
         Debug.Assert(action != null);
         Debug.Assert(tileToBuildOn != null);
-
-        var buildingSprite = action.selectedSprite;
+        
         var distance = Vector2.Distance(action.transform.position, tileToBuildOn.transform.position);
         const float actionRange = 2.0f;
 
+        // Build the actively selected building if we're in action range
         if (distance < actionRange)
-            tileToBuildOn.SetSprite(buildingSprite);
+        {
+            var building = action.selectedBuilding;
+            Instantiate(building, tileToBuildOn.transform);
+        }
+        
     }
     
     // Start is called before the first frame update

@@ -23,9 +23,10 @@ public class BuildAction : Action
     private VisualElement buildMenuRootElement;
     public UIDocument uiDocument;
     public Sprite selectedSprite;
+    public GameObject selectedBuilding;
     
     // Turret sprite images
-    public List<Sprite> turretBuildings;
+    public List<GameObject> turretBuildings;
 
     // Contains buttons for selecting buildings in the build menu
     private Dictionary<Position, Dictionary<Position, Button>> selectableBuildingButtons;
@@ -33,9 +34,7 @@ public class BuildAction : Action
     void Start()
     {
         Debug.Assert(uiDocument != null);
-        
         actionType = ActionType.Build;
-        
         SetupUI();
     }
 
@@ -56,8 +55,8 @@ public class BuildAction : Action
         };
         SetBuildMenuVisibility(false);
         
-        // Set callback functions
-        selectableBuildingButtons[Position.One][Position.One].clicked += () => SetSelectedBuildingSprite(turretBuildings[0]);
+        // Set callback functions for UI elements
+        selectableBuildingButtons[Position.One][Position.One].clicked += () => SetSelectedBuilding(turretBuildings[0]);
         foreach (var row in selectableBuildingButtons.Values)
         {
             foreach (var button in row)
@@ -68,11 +67,11 @@ public class BuildAction : Action
                 if (button.Value.style.backgroundImage != null)
                     continue;
                 
-                button.Value.clicked += () => SetSelectedBuildingSprite(null);
+                button.Value.clicked += () => SetSelectedBuilding(null);
             }
         }
         
-        selectableBuildingButtons[Position.One][Position.Two].clicked += () => SetSelectedBuildingSprite(null);
+        selectableBuildingButtons[Position.One][Position.Two].clicked += () => SetSelectedBuilding(null);
         
         // Verify setup was successful
         Debug.Assert(buildMenuRootElement != null);
@@ -115,10 +114,10 @@ public class BuildAction : Action
         SetChildrenVisibility(buildMenuRootElement, visibility);
     }
 
-    // Sets the sprite which the player will place down
-    private void SetSelectedBuildingSprite(Sprite buildingSprite)
+    // Sets the building that the player will place down during a build action
+    private void SetSelectedBuilding(GameObject building)
     {
-        selectedSprite = buildingSprite;
+        selectedBuilding = building;
     }
 
     // Recursively sets all children of the given element to the given visibility

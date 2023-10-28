@@ -72,10 +72,6 @@ public class Hotbar : MonoBehaviour
     {
         Debug.Assert(slotNumber >= 0 && slotNumber <= 6);
         
-        // If the current hotbar slot was selected
-        if (activeHotbarSlotNumber == slotNumber) 
-            return;
-        
         var prevHotbarUISlot = GetActiveHotbarUISlot();
         activeHotbarSlotNumber = slotNumber;
         var newHotbarUISlot = GetActiveHotbarUISlot();

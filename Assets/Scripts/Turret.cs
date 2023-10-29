@@ -16,7 +16,7 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
     
     // What the turret is shooting at
-    private Enemy _activeEnemy;
+    private GameObject _activeTarget;
     
     // Info about turret behavior
     private bool _engagingTarget;
@@ -32,7 +32,7 @@ public class Turret : MonoBehaviour
         Debug.Assert(_damage > 0);
         Debug.Assert(_maxHealth > 0);
         Debug.Assert(!_firing);
-        Debug.Assert(_activeEnemy == null);
+        Debug.Assert(_activeTarget == null);
         Debug.Assert(!_engagingTarget);
         Debug.Assert(_firingRange > 0);
     }
@@ -44,10 +44,10 @@ public class Turret : MonoBehaviour
     }
     
     // Attempt to engage a given target (called by the GameManager)
-    public void TryEngageEnemy(Enemy enemy)
+    public void TryEngageTarget(GameObject target)
     {
-        if (IsWithinRange(enemy.gameObject))
-            EngageEnemy(enemy);
+        if (IsWithinRange(target))
+            EngageTarget(target);
     }
 
     public bool IsEngagingTarget()
@@ -68,13 +68,13 @@ public class Turret : MonoBehaviour
     // Handles engagements with an active target
     private void HandleActiveTargetEngagements()
     {
-        if (_activeEnemy == null)
+        if (_activeTarget == null)
             return;
 
-        if (IsWithinRange(_activeEnemy.gameObject))
-            AimAtTarget(_activeEnemy.gameObject);
+        if (IsWithinRange(_activeTarget))
+            AimAtTarget(_activeTarget);
         else
-            DisengageTarget(_activeEnemy);
+            DisengageTarget(_activeTarget);
     }
 
     private void StartFiring()
@@ -99,20 +99,20 @@ public class Turret : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360);
     }
 
-    private void EngageEnemy(Enemy enemy)
+    private void EngageTarget(GameObject target)
     {
-        _activeEnemy = enemy;
+        _activeTarget = target;
         _engagingTarget = true;
         StartFiring();
     }
     
-    private void DisengageTarget(Enemy enemy)
+    private void DisengageTarget(GameObject target)
     {
-        if (_activeEnemy != enemy) 
+        if (_activeTarget != target) 
             return;
 
         StopFiring();
-        _activeEnemy = null;
+        _activeTarget = null;
         _engagingTarget = false;
     }
     

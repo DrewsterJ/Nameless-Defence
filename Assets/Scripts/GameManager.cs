@@ -145,6 +145,11 @@ public class GameManager : MonoBehaviour
     {
         while (_gameActive)
         {
+            // Identify attackable targets on map (walls, turrets, player)
+            // Identify unengaged enemies
+            // For every unengaged enemy
+            // - Find an ideal target (based on distance, type of target, etc.)
+            // - Enemy engages that target
             yield return new WaitForSeconds(_enemyTargetAcquisitionInterval);
         }
     }

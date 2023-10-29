@@ -131,7 +131,9 @@ public class GameManager : MonoBehaviour
             {
                 foreach (var enemy in enemies)
                 {
-                    turret.TryEngageEnemy(enemy);
+                    turret.TryEngageTarget(enemy.gameObject);
+                    if (turret.IsEngagingTarget())
+                        break;
                 }
             }
             

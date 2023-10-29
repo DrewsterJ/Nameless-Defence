@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -12,9 +13,13 @@ public class GameManager : MonoBehaviour
     // The tile the player is hovering their mouse over
     private GroundTile focusedTile;
 
-    private List<Turret> turrets;
-    // private List<Enemy> enemies;
-    
+    public float _turretTargetAcquisitionInterval = 1;
+    public float _enemyTargetAcquisitionInterval = 1;
+
+    public List<Enemy> enemies;
+    public List<Turret> turrets;
+
+    private bool _gameActive;
 
     void Awake()
     {
@@ -22,6 +27,38 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         else
             instance = this;
+    }
+
+    public void AddTurret(Turret turret)
+    {
+        if (turret == null)
+            return;
+        
+        turrets.Add(turret);
+    }
+
+    public void AddEnemy(Enemy enemy)
+    {
+        if (enemy == null)
+            return;
+        
+        enemies.Add(enemy);
+    }
+
+    public void RemoveEnemy(Enemy enemy)
+    {
+        if (enemy == null)
+            return;
+
+        enemies.Remove(enemy);
+    }
+
+    public void RemoveTurret(Turret turret)
+    {
+        if (turret == null)
+            return;
+
+        turrets.Remove(turret);
     }
 
     // Called by the GroundTile script to set the tile that the player is currently hovering over
@@ -84,14 +121,43 @@ public class GameManager : MonoBehaviour
             var building = action.selectedBuilding;
             Instantiate(building, tileToBuildOn.transform);
         }
-        
+    }
+    
+    IEnumerator TurretTargetingCoroutine()
+    {
+        while (_gameActive)
+        {
+            foreach (var turret in turrets.Where(turret => !turret.IsEngagingTarget()))
+            {
+                foreach (var enemy in enemies)
+                {
+                    turret.TryEngageEnemy(enemy);
+                }
+            }
+            
+            yield return new WaitForSeconds(_turretTargetAcquisitionInterval);
+        }
+    }
+    
+    IEnumerator EnemyTargetingCoroutine()
+    {
+        while (_gameActive)
+        {
+            yield return new WaitForSeconds(_enemyTargetAcquisitionInterval);
+        }
     }
     
     // Start is called before the first frame update
     void Start()
-    { }
+    {
+        _gameActive = true;
 
+        StartCoroutine(EnemyTargetingCoroutine());
+        StartCoroutine(TurretTargetingCoroutine());
+    }
+    
     // Update is called once per frame
     void Update()
-    { }
+    {
+    }
 }

@@ -12,7 +12,8 @@ public class Enemy : MonoBehaviour
     public int _movementSpeed;
     public int _attackSpeed;
     public float _meleeAttackRange;
-    public LayerMask interactLayerMask;
+    
+    public bool _engagingTarget;
 
     public GameObject activeTarget;
 
@@ -33,6 +34,11 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         FollowActiveTarget();
+    }
+    
+    public bool IsEngagingTarget()
+    {
+        return !activeTarget.IsDestroyed() || !activeTarget.IsUnityNull();
     }
 
     private void FollowActiveTarget()
@@ -107,31 +113,24 @@ public class Enemy : MonoBehaviour
     
     private void KillEnemy()
     {
-        enabled = false;
-        Destroy(this);
+        Destroy(gameObject);
+    }
+
+    private void TakeDamage(int dmg)
+    {
+        _health -= dmg;
+
+        if (_health <= 0)
+            KillEnemy();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Bullet"))
         {
-            Debug.Log("Hit by a bullet!");
+            var dmg = other.GetComponent<Bullet>().damage;
+            TakeDamage(dmg);
             Destroy(other.gameObject);
         }
     }
-
-    /*private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Turret"))
-        {
-            activeTarget = other.gameObject;
-            MeleeAttackFront(other.gameObject);
-        }
-
-        if (other.gameObject.CompareTag("Player"))
-        {
-            activeTarget = other.gameObject;
-            MeleeAttackFront(other.gameObject);
-        }
-    }*/
 }

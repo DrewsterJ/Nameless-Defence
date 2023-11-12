@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
 
     public UIDocument uiDocument;
+
+    private float timeOfLastLeftClick;
     
     // Player movement inputs (WASD or Arrows)
     private Vector2 moveInput;
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         uiDocument.enabled = true;
+        timeOfLastLeftClick = Time.time;
         
         // Verify variables contain expected data
         Debug.Assert(speed != 0, "Player speed is 0");
@@ -73,7 +76,12 @@ public class PlayerController : MonoBehaviour
 
     public void OnLeftClick(InputAction.CallbackContext ctx)
     {
+        var elapsed = Time.time - timeOfLastLeftClick;
+        if (elapsed < .25)
+            return;
+        
         GameManager.instance.PerformPlayerLeftClick(this);
+        timeOfLastLeftClick = Time.time;
     }
 
     public void OnRightClick(InputAction.CallbackContext ctx)
@@ -88,17 +96,15 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
-        int newHealth = _health - dmg;
-        _health = (newHealth < 0) ? 0 : newHealth;
+        _health -= dmg;
         
-        if (_health == 0)
+        if (_health <= 0)
             KillPlayer();
     }
 
     private void KillPlayer()
     {
-        enabled = false;
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     // Returns a Quaternion that represents a direction being faced based on a given movement vector

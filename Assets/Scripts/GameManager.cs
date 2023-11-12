@@ -2,13 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    public GameObject tilemap;
+    private List<GroundTile> gameTiles;
 
     // The tile the player is hovering their mouse over
     private GroundTile focusedTile;
@@ -20,6 +26,29 @@ public class GameManager : MonoBehaviour
     public List<Turret> turrets;
 
     private bool _gameActive;
+
+    public PlayerController player;
+
+    public float _enemySpawnRate;
+
+    public float _minimumEnemySpawnDistanceFromPlayer;
+
+    public GameObject enemyPrefab;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        _gameActive = true;
+        gameTiles = new List<GroundTile>(tilemap.GetComponentsInChildren<GroundTile>());
+
+        StartCoroutine(EnemyTargetingCoroutine());
+        StartCoroutine(TurretTargetingCoroutine());
+        StartCoroutine(SpawnEnemyCoroutine());
+    }
+    
+    // Update is called once per frame
+    void Update()
+    { }
 
     void Awake()
     {
@@ -111,26 +140,50 @@ public class GameManager : MonoBehaviour
     {
         Debug.Assert(action != null);
         Debug.Assert(tileToBuildOn != null);
-        
+
         var distance = Vector2.Distance(action.transform.position, tileToBuildOn.transform.position);
         const float actionRange = 2.0f;
 
-        // Build the actively selected building if we're in action range
-        if (distance < actionRange)
-        {
-            var building = action.selectedBuilding;
-            Instantiate(building, tileToBuildOn.transform);
-        }
+        // Don't perform actions if the player is out of range
+        if (distance > actionRange)
+            return;
+        
+        var building = action.selectedBuilding;
+        var buildingGameObj = Instantiate(building, tileToBuildOn.transform);
+
+        if (buildingGameObj.CompareTag("Turret"))
+            AddTurret(buildingGameObj.GetComponent<Turret>());
+    }
+
+    void RemoveInvalidTurrets()
+    {
+        var invalidTurrets = turrets.FindAll(turret => turret.IsUnityNull() || turret.IsDestroyed());
+        foreach (var invalidTurret in invalidTurrets)
+            turrets.Remove(invalidTurret);
+    }
+
+    void RemoveInvalidEnemies()
+    {
+        var invalidEnemies = enemies.FindAll(enemy => enemy.IsUnityNull() || enemy.IsDestroyed());
+        foreach (var invalidEnemy in invalidEnemies)
+            enemies.Remove(invalidEnemy);
     }
     
     IEnumerator TurretTargetingCoroutine()
     {
         while (_gameActive)
         {
+            RemoveInvalidTurrets();
             foreach (var turret in turrets.Where(turret => !turret.IsEngagingTarget()))
             {
+                if (turret.IsDestroyed() || turret.IsUnityNull())
+                    continue;
+                
                 foreach (var enemy in enemies)
                 {
+                    if (enemy.IsDestroyed() || enemy.IsUnityNull())
+                        continue;
+
                     turret.TryEngageTarget(enemy.gameObject);
                     if (turret.IsEngagingTarget())
                         break;
@@ -141,30 +194,87 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    IEnumerator EnemyTargetingCoroutine()
+    private IEnumerator EnemyTargetingCoroutine()
     {
         while (_gameActive)
         {
-            // Identify attackable targets on map (walls, turrets, player)
-            // Identify unengaged enemies
-            // For every unengaged enemy
-            // - Find an ideal target (based on distance, type of target, etc.)
-            // - Enemy engages that target
+            RemoveInvalidEnemies();
+            foreach (var enemy in enemies.Where(enemy => !enemy.IsEngagingTarget()))
+            {
+                if (enemy.IsDestroyed() || enemy.IsUnityNull())
+                    continue;
+
+                float closestTurretDistance = 0.0f;
+                Turret closestTurret = null;
+
+                if (turrets.Count > 0)
+                {
+                    if (!turrets[0].IsDestroyed() && !turrets[0].IsUnityNull())
+                    {
+                        closestTurretDistance = Vector2.Distance(enemy.gameObject.transform.position, turrets[0].gameObject.transform.position);
+                        closestTurret = turrets[0];
+                    }
+                }
+                
+                foreach (var turret in turrets)
+                {
+                    if (turret.IsDestroyed() || turret.IsUnityNull())
+                        continue;
+                    
+                    var distance = Vector2.Distance(enemy.gameObject.transform.position, turret.gameObject.transform.position);
+                    if (distance < closestTurretDistance)
+                    {
+                        closestTurretDistance = distance;
+                        closestTurret = turret;
+                    }
+                }
+
+                float distanceFromPlayer = Vector2.Distance(enemy.gameObject.transform.position, player.gameObject.transform.position);
+                
+                Debug.Log("Distance from player: " + distanceFromPlayer);
+                Debug.Log("Distance from turret: " + closestTurretDistance);
+
+                if (closestTurretDistance != 0.0f && distanceFromPlayer != 0.0f)
+                    enemy.activeTarget = (closestTurretDistance < distanceFromPlayer) ? closestTurret!.gameObject : player.gameObject;
+                else if (closestTurretDistance != 0.0f)
+                    enemy.activeTarget = closestTurret.gameObject;
+                else
+                    enemy.activeTarget = player.gameObject;
+            }
+            
             yield return new WaitForSeconds(_enemyTargetAcquisitionInterval);
         }
     }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        _gameActive = true;
 
-        StartCoroutine(EnemyTargetingCoroutine());
-        StartCoroutine(TurretTargetingCoroutine());
-    }
-    
-    // Update is called once per frame
-    void Update()
+    IEnumerator SpawnEnemyCoroutine()
     {
+        while (_gameActive)
+        {
+            SpawnEnemy();
+            yield return new WaitForSeconds(_enemySpawnRate);
+        }
+    }
+
+    private void SpawnEnemy()
+    {
+        var tiles = GetValidEnemySpawnTiles();
+        var index = Random.Range(0, tiles.Count);
+        var tile = tiles[index];
+
+        var newEnemy = Instantiate(enemyPrefab, tile.transform.position, enemyPrefab.transform.rotation);
+        AddEnemy(newEnemy.GetComponent<Enemy>());
+    }
+
+    // Returns a list of tiles that are within a certain distance from the player
+    private List<GroundTile> GetValidEnemySpawnTiles()
+    {
+        var validTiles = gameTiles.FindAll(
+            delegate(GroundTile tile)
+            {
+                var tileDistanceFromPlayer = Vector2.Distance(tile.transform.position, player.transform.position);
+                return (tileDistanceFromPlayer >= _minimumEnemySpawnDistanceFromPlayer);
+            }
+        );
+        return validTiles;
     }
 }

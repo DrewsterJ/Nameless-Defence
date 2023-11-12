@@ -36,6 +36,14 @@ public class GameManager : MonoBehaviour
         
         turrets.Add(turret);
     }
+    
+    public void RemoveTurret(Turret turret)
+    {
+        if (turret == null)
+            return;
+
+        turrets.Remove(turret);
+    }
 
     public void AddEnemy(Enemy enemy)
     {
@@ -51,14 +59,6 @@ public class GameManager : MonoBehaviour
             return;
 
         enemies.Remove(enemy);
-    }
-
-    public void RemoveTurret(Turret turret)
-    {
-        if (turret == null)
-            return;
-
-        turrets.Remove(turret);
     }
 
     // Called by the GroundTile script to set the tile that the player is currently hovering over

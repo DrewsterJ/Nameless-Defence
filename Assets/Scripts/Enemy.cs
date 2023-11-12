@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour
     public int _movementSpeed;
     public int _attackSpeed;
     public float _meleeAttackRange;
-    public LayerMask interactLayerMask;
 
     public GameObject activeTarget;
 

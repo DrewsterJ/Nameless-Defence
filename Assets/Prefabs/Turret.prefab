@@ -92,10 +92,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b0a4800ebe77543b4b4c95a0b7c167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingRate: 1
-  damage: 10
-  maxHealth: 100
-  health: 100
+  _firingRate: 1
+  _damage: 10
+  _maxHealth: 100
+  _health: 100
+  _firingRange: 10
   bulletPrefab: {fileID: 986307436527531739, guid: f133555c701dc724ba0e7a3067eae895, type: 3}
 --- !u!1 &1578440843105696933
 GameObject:

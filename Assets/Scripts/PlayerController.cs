@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     // Player movement speed
     public int speed;
     
+    // Player health
+    public int _health;
+    
     // Determines which layers the player will interact with
     public LayerMask interactLayerMask;
     
@@ -48,6 +51,7 @@ public class PlayerController : MonoBehaviour
         
         // Verify variables contain expected data
         Debug.Assert(speed != 0, "Player speed is 0");
+        Debug.Assert(_health != 0, "Player health is 0");
         Debug.Assert(rb != null);
         Debug.Assert(sr != null);
         Debug.Assert(anim != null);
@@ -80,6 +84,21 @@ public class PlayerController : MonoBehaviour
     private void UpdatePlayerAnim()
     {
         anim.SetBool(Moving, (moveInput != Vector2.zero));
+    }
+
+    public void TakeDamage(int dmg)
+    {
+        int newHealth = _health - dmg;
+        _health = (newHealth < 0) ? 0 : newHealth;
+        
+        if (_health == 0)
+            KillPlayer();
+    }
+
+    private void KillPlayer()
+    {
+        enabled = false;
+        Destroy(this);
     }
 
     // Returns a Quaternion that represents a direction being faced based on a given movement vector

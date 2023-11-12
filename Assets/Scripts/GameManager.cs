@@ -4,11 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    public GameObject tilemap;
+    private List<GroundTile> gameTiles;
 
     // The tile the player is hovering their mouse over
     private GroundTile focusedTile;
@@ -21,12 +26,25 @@ public class GameManager : MonoBehaviour
 
     private bool _gameActive;
 
+    public PlayerController player;
+
+    public float _enemySpawnRate;
+
+    public float _minimumEnemySpawnDistanceFromPlayer;
+
+    public GameObject enemyPrefab;
+
     void Awake()
     {
         if (instance != null && instance != this)
             Destroy(gameObject);
         else
+        {
+            _gameActive = true;
             instance = this;
+            gameTiles = new List<GroundTile>(tilemap.GetComponentsInChildren<GroundTile>());
+            StartCoroutine(SpawnEnemyCoroutine());
+        }
     }
 
     public void AddTurret(Turret turret)
@@ -111,16 +129,19 @@ public class GameManager : MonoBehaviour
     {
         Debug.Assert(action != null);
         Debug.Assert(tileToBuildOn != null);
-        
+
         var distance = Vector2.Distance(action.transform.position, tileToBuildOn.transform.position);
         const float actionRange = 2.0f;
 
-        // Build the actively selected building if we're in action range
-        if (distance < actionRange)
-        {
-            var building = action.selectedBuilding;
-            Instantiate(building, tileToBuildOn.transform);
-        }
+        // Don't perform actions if the player is out of range
+        if (distance > actionRange)
+            return;
+        
+        var building = action.selectedBuilding;
+        Instantiate(building, tileToBuildOn.transform);
+
+        if (building.CompareTag("Turret"))
+            AddTurret(building.GetComponent<Turret>());
     }
     
     IEnumerator TurretTargetingCoroutine()
@@ -141,7 +162,7 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    IEnumerator EnemyTargetingCoroutine()
+    private IEnumerator EnemyTargetingCoroutine()
     {
         while (_gameActive)
         {
@@ -152,6 +173,39 @@ public class GameManager : MonoBehaviour
             // - Enemy engages that target
             yield return new WaitForSeconds(_enemyTargetAcquisitionInterval);
         }
+    }
+
+    IEnumerator SpawnEnemyCoroutine()
+    {
+        while (_gameActive)
+        {
+            Debug.Log("Spawning enemies!");
+            yield return new WaitForSeconds(_enemySpawnRate);
+            SpawnEnemy();
+        }
+    }
+
+    private void SpawnEnemy()
+    {
+        var tiles = GetValidEnemySpawnTiles();
+        var index = Random.Range(0, tiles.Count);
+        var tile = tiles[index];
+
+        var newEnemy = Instantiate(enemyPrefab, tile.transform.position, enemyPrefab.transform.rotation);
+        AddEnemy(newEnemy.GetComponent<Enemy>());
+    }
+
+    // Returns a list of tiles that are within a certain distance from the player
+    private List<GroundTile> GetValidEnemySpawnTiles()
+    {
+        var validTiles = gameTiles.FindAll(
+            delegate(GroundTile tile)
+            {
+                var tileDistanceFromPlayer = Vector2.Distance(tile.transform.position, player.transform.position);
+                return (tileDistanceFromPlayer >= _minimumEnemySpawnDistanceFromPlayer);
+            }
+        );
+        return validTiles;
     }
     
     // Start is called before the first frame update

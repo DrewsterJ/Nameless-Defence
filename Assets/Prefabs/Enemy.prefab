@@ -208,5 +208,9 @@ MonoBehaviour:
   _damage: 1
   _movementSpeed: 1
   _attackSpeed: 1
+  _meleeAttackRange: 0.5
+  interactLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   activeTarget: {fileID: 0}
   rb: {fileID: 7956075993091403298}

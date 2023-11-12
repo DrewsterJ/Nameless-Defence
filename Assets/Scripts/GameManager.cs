@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -33,18 +34,28 @@ public class GameManager : MonoBehaviour
     public float _minimumEnemySpawnDistanceFromPlayer;
 
     public GameObject enemyPrefab;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        _gameActive = true;
+        gameTiles = new List<GroundTile>(tilemap.GetComponentsInChildren<GroundTile>());
+
+        StartCoroutine(EnemyTargetingCoroutine());
+        StartCoroutine(TurretTargetingCoroutine());
+        StartCoroutine(SpawnEnemyCoroutine());
+    }
+    
+    // Update is called once per frame
+    void Update()
+    { }
 
     void Awake()
     {
         if (instance != null && instance != this)
             Destroy(gameObject);
         else
-        {
-            _gameActive = true;
             instance = this;
-            gameTiles = new List<GroundTile>(tilemap.GetComponentsInChildren<GroundTile>());
-            StartCoroutine(SpawnEnemyCoroutine());
-        }
     }
 
     public void AddTurret(Turret turret)
@@ -138,20 +149,41 @@ public class GameManager : MonoBehaviour
             return;
         
         var building = action.selectedBuilding;
-        Instantiate(building, tileToBuildOn.transform);
+        var buildingGameObj = Instantiate(building, tileToBuildOn.transform);
 
-        if (building.CompareTag("Turret"))
-            AddTurret(building.GetComponent<Turret>());
+        if (buildingGameObj.CompareTag("Turret"))
+            AddTurret(buildingGameObj.GetComponent<Turret>());
+    }
+
+    void RemoveInvalidTurrets()
+    {
+        var invalidTurrets = turrets.FindAll(turret => turret.IsUnityNull() || turret.IsDestroyed());
+        foreach (var invalidTurret in invalidTurrets)
+            turrets.Remove(invalidTurret);
+    }
+
+    void RemoveInvalidEnemies()
+    {
+        var invalidEnemies = enemies.FindAll(enemy => enemy.IsUnityNull() || enemy.IsDestroyed());
+        foreach (var invalidEnemy in invalidEnemies)
+            enemies.Remove(invalidEnemy);
     }
     
     IEnumerator TurretTargetingCoroutine()
     {
         while (_gameActive)
         {
+            RemoveInvalidTurrets();
             foreach (var turret in turrets.Where(turret => !turret.IsEngagingTarget()))
             {
+                if (turret.IsDestroyed() || turret.IsUnityNull())
+                    continue;
+                
                 foreach (var enemy in enemies)
                 {
+                    if (enemy.IsDestroyed() || enemy.IsUnityNull())
+                        continue;
+
                     turret.TryEngageTarget(enemy.gameObject);
                     if (turret.IsEngagingTarget())
                         break;
@@ -166,11 +198,50 @@ public class GameManager : MonoBehaviour
     {
         while (_gameActive)
         {
-            // Identify attackable targets on map (walls, turrets, player)
-            // Identify unengaged enemies
-            // For every unengaged enemy
-            // - Find an ideal target (based on distance, type of target, etc.)
-            // - Enemy engages that target
+            RemoveInvalidEnemies();
+            foreach (var enemy in enemies.Where(enemy => !enemy.IsEngagingTarget()))
+            {
+                if (enemy.IsDestroyed() || enemy.IsUnityNull())
+                    continue;
+
+                float closestTurretDistance = 0.0f;
+                Turret closestTurret = null;
+
+                if (turrets.Count > 0)
+                {
+                    if (!turrets[0].IsDestroyed() && !turrets[0].IsUnityNull())
+                    {
+                        closestTurretDistance = Vector2.Distance(enemy.gameObject.transform.position, turrets[0].gameObject.transform.position);
+                        closestTurret = turrets[0];
+                    }
+                }
+                
+                foreach (var turret in turrets)
+                {
+                    if (turret.IsDestroyed() || turret.IsUnityNull())
+                        continue;
+                    
+                    var distance = Vector2.Distance(enemy.gameObject.transform.position, turret.gameObject.transform.position);
+                    if (distance < closestTurretDistance)
+                    {
+                        closestTurretDistance = distance;
+                        closestTurret = turret;
+                    }
+                }
+
+                float distanceFromPlayer = Vector2.Distance(enemy.gameObject.transform.position, player.gameObject.transform.position);
+                
+                Debug.Log("Distance from player: " + distanceFromPlayer);
+                Debug.Log("Distance from turret: " + closestTurretDistance);
+
+                if (closestTurretDistance != 0.0f && distanceFromPlayer != 0.0f)
+                    enemy.activeTarget = (closestTurretDistance < distanceFromPlayer) ? closestTurret!.gameObject : player.gameObject;
+                else if (closestTurretDistance != 0.0f)
+                    enemy.activeTarget = closestTurret.gameObject;
+                else
+                    enemy.activeTarget = player.gameObject;
+            }
+            
             yield return new WaitForSeconds(_enemyTargetAcquisitionInterval);
         }
     }
@@ -179,9 +250,8 @@ public class GameManager : MonoBehaviour
     {
         while (_gameActive)
         {
-            Debug.Log("Spawning enemies!");
-            yield return new WaitForSeconds(_enemySpawnRate);
             SpawnEnemy();
+            yield return new WaitForSeconds(_enemySpawnRate);
         }
     }
 
@@ -206,19 +276,5 @@ public class GameManager : MonoBehaviour
             }
         );
         return validTiles;
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        _gameActive = true;
-
-        StartCoroutine(EnemyTargetingCoroutine());
-        StartCoroutine(TurretTargetingCoroutine());
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
     }
 }

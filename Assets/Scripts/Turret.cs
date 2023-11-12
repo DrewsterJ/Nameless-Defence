@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -52,24 +53,29 @@ public class Turret : MonoBehaviour
 
     public bool IsEngagingTarget()
     {
-        return _engagingTarget;
+        return !_activeTarget.IsUnityNull() && !_activeTarget.IsDestroyed();
     }
     
     // Applies the given amount of damage to the turret
     public void TakeDamage(int dmg)
     {
-        int newHealth = _health - dmg;
-        _health = (newHealth < 0) ? 0 : newHealth;
+        _health -= dmg;
         
-        if (_health == 0)
+        if (_health <= 0)
             KillTurret();
     }
     
     // Handles engagements with an active target
     private void HandleActiveTargetEngagements()
     {
-        if (_activeTarget == null)
+        if (_activeTarget.IsUnityNull())
             return;
+
+        if (_activeTarget.IsDestroyed())
+        {
+            _activeTarget = null;
+            return;
+        }
 
         if (IsWithinRange(_activeTarget))
             AimAtTarget(_activeTarget);
@@ -125,7 +131,7 @@ public class Turret : MonoBehaviour
     // Instantiates bullets at the given interval
     private IEnumerator FireAtInterval(int interval)
     {
-        while (_firing)
+        while (IsEngagingTarget())
         {
             yield return new WaitForSeconds(interval);
             FireBullet();
@@ -143,7 +149,6 @@ public class Turret : MonoBehaviour
     private void KillTurret()
     {
         _firing = false;
-        enabled = false;
-        Destroy(this);
+        Destroy(gameObject);
     }
 }

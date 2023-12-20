@@ -105,8 +105,8 @@ public class Enemy : MonoBehaviour
                 Debug.Log("Hit player");
                 Debug.Log("Distance from player: " + Vector2.Distance(transform.position, hit.collider.transform.position));
                 var obj = hit.collider.gameObject;
-                var player = obj.GetComponent<PlayerController>();
-                player.TakeDamage(_damage);
+                //var player = obj.GetComponent<PlayerController>();
+                //player.TakeDamage(_damage);
             }
         }
     }

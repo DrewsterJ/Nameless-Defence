@@ -11193,7 +11193,7 @@ MonoBehaviour:
   _enemyTargetAcquisitionInterval: 0
   enemies: []
   turrets: []
-  player: {fileID: 888351475}
+  player: {fileID: 0}
   _enemySpawnRate: 2
   _minimumEnemySpawnDistanceFromPlayer: 5
   enemyPrefab: {fileID: 8499755488035685709, guid: 2a8faddb060666441b90c30ef4997414, type: 3}
@@ -20111,17 +20111,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1384140393553453002, guid: b9e603c081f2597488b705856f06fff0, type: 3}
   m_PrefabInstance: {fileID: 884468153}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &888351475 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8432729243077729691, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
-  m_PrefabInstance: {fileID: 6017813096381150835}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b23762f9c7c50a74697838126ed290aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &891543339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45935,73 +45924,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1384140393553453002, guid: b9e603c081f2597488b705856f06fff0, type: 3}
   m_PrefabInstance: {fileID: 2144210789}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6017813096381150835
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1081787276976780854, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081787276976780854, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081787276976780854, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081787276976780854, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081787276976780854, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081787276976780854, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081787276976780854, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081787276976780854, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081787276976780854, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081787276976780854, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8425786966716892274, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8432729243077729691, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
-      propertyPath: _health
-      value: 100
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 55752ed623b1dca408aaf84dd5a3ae78, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 6017813096381150835}
   - {fileID: 486663777}
   - {fileID: 1085956471}

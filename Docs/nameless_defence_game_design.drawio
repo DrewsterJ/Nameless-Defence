@@ -1,0 +1,687 @@
+<mxfile host="app.diagrams.net" modified="2023-12-22T20:48:15.377Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="sU43gV0ebFlBBIg1qtrv" version="22.1.11" type="device">
+  <diagram name="Page-1" id="hHWwYHxhYqfEFF6-Se_o">
+    <mxGraphModel dx="2216" dy="762" grid="1" gridSize="11" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
+          <mxGeometry x="-760" y="400" width="1650" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-2" value="&lt;font style=&quot;font-size: 40px;&quot;&gt;Milestone 1&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;strokeWidth=9;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="320" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
+          <mxGeometry x="1078" y="400" width="1287" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-4" value="&lt;span style=&quot;font-size: 40px;&quot;&gt;Milestone 2&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;strokeWidth=9;" vertex="1" parent="1">
+          <mxGeometry x="1528" y="320" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
+          <mxGeometry x="2486" y="370" width="890" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-6" value="&lt;font style=&quot;font-size: 40px;&quot;&gt;Milestone 3&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;strokeWidth=9;" vertex="1" parent="1">
+          <mxGeometry x="2816" y="286" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-7" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
+          <mxGeometry x="-760" y="1282.5" width="1310" height="355" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-8" value="&lt;font style=&quot;font-size: 40px;&quot;&gt;Milestone 4&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;strokeWidth=9;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="1210" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1210" width="1050" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-10" value="&lt;font style=&quot;font-size: 40px;&quot;&gt;Milestone 5&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;strokeWidth=9;" vertex="1" parent="1">
+          <mxGeometry x="1078.5" y="1133" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-12" target="3IBwYuQbSy_pt1J7ZlTw-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-12" target="3IBwYuQbSy_pt1J7ZlTw-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-12" value="turrets can be built in predefined positions on the player&#39;s line of defense (where the wall will be)" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-555" y="530" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-13" target="3IBwYuQbSy_pt1J7ZlTw-59">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-13" target="3IBwYuQbSy_pt1J7ZlTw-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-13" value="enemies spawn at top of map and move downward to bottom of map" style="whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="1">
+          <mxGeometry x="-30" y="525" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-14" target="3IBwYuQbSy_pt1J7ZlTw-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-14" target="3IBwYuQbSy_pt1J7ZlTw-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-14" target="3IBwYuQbSy_pt1J7ZlTw-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-14" value="game has turrets" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-560" y="420" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-17" value="5 turret placement positions" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-370" y="640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-20" target="3IBwYuQbSy_pt1J7ZlTw-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-20" value="turrets have a gold price" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-370" y="420" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-22" value="gold price is not enforced" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-370" y="530" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-24" target="3IBwYuQbSy_pt1J7ZlTw-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-24" target="3IBwYuQbSy_pt1J7ZlTw-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-24" value="clicking predefined locations will cause a contextual menu to appear" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-555" y="650" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-25" value="turret placement UI will contain a single ranged turret" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-555" y="800" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-30" value="clicking available turret icons in contextual menu will build the specified turret" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-370" y="750" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-32" target="3IBwYuQbSy_pt1J7ZlTw-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-32" target="3IBwYuQbSy_pt1J7ZlTw-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-32" target="3IBwYuQbSy_pt1J7ZlTw-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-32" target="3IBwYuQbSy_pt1J7ZlTw-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-32" target="3IBwYuQbSy_pt1J7ZlTw-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-32" value="game has enemies" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-30" y="415" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-34" value="enemies damage objects in front of them" style="whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="1">
+          <mxGeometry x="150" y="525" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-36" value="one single enemy variant exists" style="whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="1">
+          <mxGeometry x="155" y="415" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-40" value="turrets shoot at enemies within their FOV and cause damage" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-730" y="420" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-42" value="enemies have health and can die if health &amp;lt; 0" style="whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="1">
+          <mxGeometry x="-200" y="415" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-44" value="game has a versioning scheme" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="360" y="415" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-45" target="3IBwYuQbSy_pt1J7ZlTw-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-45" target="3IBwYuQbSy_pt1J7ZlTw-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-45" value="player/player&#39;s base has a health bar" style="whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="560" y="415" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-49" value="enemies do damage to player&#39;s health bar if they reach past the bottom of the map" style="whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="1">
+          <mxGeometry x="150" y="640" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-51" value="player&#39;s base health bar reduces when enemies go past bottom of map" style="whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="560" y="525" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-53" target="3IBwYuQbSy_pt1J7ZlTw-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-53" value="game over screen appears when player&#39;s base health equals 0" style="whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="730" y="525" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-54" value="player can restart the game at the game over screen" style="whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="730" y="640" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-59" value="enemy path of travel is fixed, being a straight line from spawn position to bottom of map" style="whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="1">
+          <mxGeometry x="-30" y="640" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-61" target="3IBwYuQbSy_pt1J7ZlTw-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-61" value="enemies spawn in positions that would not lead them to ever hit a turret" style="whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="1">
+          <mxGeometry x="-200" y="525" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-63" value="side note: all future enemies will not hit turrets, they will only ever hit walls" style="whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="1">
+          <mxGeometry x="-200" y="640" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-65" target="3IBwYuQbSy_pt1J7ZlTw-70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-65" target="3IBwYuQbSy_pt1J7ZlTw-75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-65" target="3IBwYuQbSy_pt1J7ZlTw-93">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-65" target="3IBwYuQbSy_pt1J7ZlTw-95">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-65" value="game has a basic wall" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="1258" y="420" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-67" value="added melee turret" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1753" y="420" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-68" target="3IBwYuQbSy_pt1J7ZlTw-91">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-68" value="as game progresses, waves increase. as waves increase, game gets more difficult" style="whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2058" y="530" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-70" target="3IBwYuQbSy_pt1J7ZlTw-76">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-70" value="wall has health that is reduced as enemies attack it" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="1258" y="530" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-72" value="turret gold cost (for purchasing turret) is enforced" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1588" y="530" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-75" target="3IBwYuQbSy_pt1J7ZlTw-79">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-75" value="wall is purchasable as a single unit in a menu similar to the turret placement UI" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="1108" y="420" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-76" target="3IBwYuQbSy_pt1J7ZlTw-97">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-76" value="portions of wall are destroyed when that portion&#39;s health == 0" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="1258" y="640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-79" value="wall will require gold to be purchased" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="1108" y="530" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-81" value="gold amount is shown on UI" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1758" y="530" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-83" target="3IBwYuQbSy_pt1J7ZlTw-72">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-83" target="3IBwYuQbSy_pt1J7ZlTw-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-83" value="turret enhancements" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1588" y="420" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-99" target="3IBwYuQbSy_pt1J7ZlTw-81">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1928" y="500" />
+              <mxPoint x="1928" y="510" />
+              <mxPoint x="1818" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-86" value="player can now earn coins from killing enemies" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1898" y="530" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-89" target="3IBwYuQbSy_pt1J7ZlTw-68">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-221" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-89" target="3IBwYuQbSy_pt1J7ZlTw-220">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-89" value="implement wave system" style="whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2058" y="420" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-91" value="health increases, spawn rate increases, attack damage &amp;amp; speed increases" style="whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2058" y="640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-93" value="wall covers entire length of map" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="1428" y="420" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-95" value="turrets are built/placed on the wall" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="1428" y="530" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-97" value="portions of wall that are destroyable are reflected by enemy path of travel" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="1428" y="640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-100" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-99" target="3IBwYuQbSy_pt1J7ZlTw-86">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-99" value="implement gold earning" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1898" y="420" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-101" target="3IBwYuQbSy_pt1J7ZlTw-117">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-120" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-101" target="3IBwYuQbSy_pt1J7ZlTw-119">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-165" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-101" target="3IBwYuQbSy_pt1J7ZlTw-164">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2636" y="500" />
+              <mxPoint x="2796" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-101" value="upgradable ranged turret" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2576" y="390" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-127" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-102" target="3IBwYuQbSy_pt1J7ZlTw-126">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-102" value="additional enemy variation exists" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="3076" y="390" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-107" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-103" target="3IBwYuQbSy_pt1J7ZlTw-106">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-103" value="player can repair damaged wall" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2906" y="390" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-104" value="add melee turret" style="whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="3236" y="390" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-106" value="repair wall gold cost is enforced" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2906" y="520" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-125" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-108" target="3IBwYuQbSy_pt1J7ZlTw-113">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-108" value="option 1: ranged turret with fire: causing enemy to catch fire and do DOT damage" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2506" y="650" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-124" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-109" target="3IBwYuQbSy_pt1J7ZlTw-111">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-109" value="option 2: ranged turret with explosives: causing enemy to take higher immediate damage." style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2656" y="650" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-111" value="slower attack speed, more damage" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2656" y="780" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-113" value="faster attack speed, lower damage, permits damage over time" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2506" y="780" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-117" value="turret upgrades cost gold" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2736" y="390" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-122" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-119" target="3IBwYuQbSy_pt1J7ZlTw-109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-123" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-119" target="3IBwYuQbSy_pt1J7ZlTw-108">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-119" value="two upgradable types" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2576" y="520" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-197" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-126" target="3IBwYuQbSy_pt1J7ZlTw-196">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-126" value="enemy variant(s) come with different attributes" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="3076" y="520" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-130" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-128" target="3IBwYuQbSy_pt1J7ZlTw-129">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-137" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-128" target="3IBwYuQbSy_pt1J7ZlTw-133">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-138" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-128" target="3IBwYuQbSy_pt1J7ZlTw-131">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-590" y="1360" />
+              <mxPoint x="-590" y="1465" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-139" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-128" target="3IBwYuQbSy_pt1J7ZlTw-135">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-128" value="upgradable wall by 1 level" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-580" y="1320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-129" value="gold cost for upgrading wall is enforced" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-435" y="1320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-131" value="wall upgrade is to wooden wall" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-730" y="1425" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-133" value="wall upgrades heal wall" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-730" y="1320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-135" value="wall upgrade is one purchase for all wall portions" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-580" y="1425" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-145" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-140" target="3IBwYuQbSy_pt1J7ZlTw-141">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-55" y="1410" />
+              <mxPoint x="-220" y="1410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-147" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-140" target="3IBwYuQbSy_pt1J7ZlTw-142">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-149" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-140" target="3IBwYuQbSy_pt1J7ZlTw-143">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-150" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="3IBwYuQbSy_pt1J7ZlTw-144">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="5" y="1360" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-152" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-140" target="3IBwYuQbSy_pt1J7ZlTw-151">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-55" y="1410" />
+              <mxPoint x="110" y="1410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-140" value="implement entity health bars" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-115" y="1320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-141" value="enemies have health bars" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-280" y="1430" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-142" value="walls have health bars" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-280" y="1320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-143" value="health bars decrease when damage is taken" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-115" y="1430" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-144" value="health bars increase when/if healed" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-154" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-151" target="3IBwYuQbSy_pt1J7ZlTw-153">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-151" value="health bars visually appear above respective entities" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1430" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-153" value="health bars visually change when healed/damaged" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1530" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-162" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-156" target="3IBwYuQbSy_pt1J7ZlTw-157">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-156" value="upgradable melee turret" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="310" y="1320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-160" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-157" target="3IBwYuQbSy_pt1J7ZlTw-158">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="1510" />
+              <mxPoint x="290" y="1510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-161" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-157" target="3IBwYuQbSy_pt1J7ZlTw-159">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="1510" />
+              <mxPoint x="460" y="1510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-157" value="two upgradable types" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="310" y="1420" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-158" value="option 1: melee turret with knockback that launches enemies back" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="230" y="1530" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-159" value="option 2: dual melee attack turret (such as two circular saws) that attacks faster" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1530" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-164" value="upgrading turret causes graphical change to turret or turret projectiles" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2736" y="520" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-170" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-166" target="3IBwYuQbSy_pt1J7ZlTw-167">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-166" value="additional wall upgrades" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="699" y="1243" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-171" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-167" target="3IBwYuQbSy_pt1J7ZlTw-168">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-167" value="level 2: stone wall" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="699" y="1342" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-172" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-168" target="3IBwYuQbSy_pt1J7ZlTw-169">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-168" value="level 3: iron wall" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="699" y="1445.5" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-169" value="level 4: gold wall" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="699" y="1551" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-178" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-173" target="3IBwYuQbSy_pt1J7ZlTw-174">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-179" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-173" target="3IBwYuQbSy_pt1J7ZlTw-175">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-173" value="additional ranged turret upgrades" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="919" y="1243" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-180" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-174" target="3IBwYuQbSy_pt1J7ZlTw-176">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-174" value="level 2 - option 1: (regardless of initial option selected): faster attack speed" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="850" y="1353" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-181" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-175" target="3IBwYuQbSy_pt1J7ZlTw-177">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-175" value="level 2 - option 2: (regardless of initial option selected): higher attack damage" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="993" y="1353" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-176" value="level 3 - option 1: (regardless of initial option selected): higher attack damage" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="850" y="1463" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-177" value="level 3 - option 2: (regardless of initial option selected): faster attack speed" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="993" y="1463" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-187" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-182" target="3IBwYuQbSy_pt1J7ZlTw-183">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-188" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-182" target="3IBwYuQbSy_pt1J7ZlTw-184">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-182" value="additional melee turret upgrades" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1205" y="1243" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-189" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-183" target="3IBwYuQbSy_pt1J7ZlTw-185">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-183" value="level 2 - option 1: (regardless of initial option selected): faster attack speed" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1133.5" y="1353" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-190" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-184" target="3IBwYuQbSy_pt1J7ZlTw-186">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-184" value="level 2 - option 2: (regardless of initial option selected): higher attack damage" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1276.5" y="1353" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-185" value="level 3 - option 1: (regardless of initial option selected): higher attack damage" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1133.5" y="1463" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-186" value="level 3 - option 2: (regardless of initial option selected): faster attack speed" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1276.5" y="1463" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-192" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-191" target="3IBwYuQbSy_pt1J7ZlTw-173">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-193" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-191" target="3IBwYuQbSy_pt1J7ZlTw-182">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-191" value="implement additional upgrades" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1062" y="1243" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-206" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-194" target="3IBwYuQbSy_pt1J7ZlTw-199">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1562" y="1331" />
+              <mxPoint x="1491" y="1331" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-207" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-194" target="3IBwYuQbSy_pt1J7ZlTw-200">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1562" y="1331" />
+              <mxPoint x="1633" y="1331" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-194" value="implement additional enemy variants" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1502" y="1243" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-196" value="initial enemy variant has a ranged attack" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="3076" y="631" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-199" value="additional enemy 1 should have faster attack" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1430.5" y="1353" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-200" value="additional enemy 2 should have a DOTs poison ranged attack" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1573.5" y="1353" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-203" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1815" y="1287" width="1166" height="363" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-204" value="&lt;font style=&quot;font-size: 40px;&quot;&gt;Milestone 6&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;strokeWidth=9;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="2282.5" y="1204" width="231" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-214" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-205" target="3IBwYuQbSy_pt1J7ZlTw-211">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-215" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-205" target="3IBwYuQbSy_pt1J7ZlTw-213">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-216" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-205" target="3IBwYuQbSy_pt1J7ZlTw-212">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2073" y="1507" />
+              <mxPoint x="2229" y="1507" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-217" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-205" target="3IBwYuQbSy_pt1J7ZlTw-210">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2073" y="1507" />
+              <mxPoint x="1919" y="1507" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-218" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-205" target="3IBwYuQbSy_pt1J7ZlTw-209">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-219" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-205" target="3IBwYuQbSy_pt1J7ZlTw-208">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-230" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-205" target="3IBwYuQbSy_pt1J7ZlTw-229">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2073" y="1408" />
+              <mxPoint x="1919" y="1408" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-232" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-205" target="3IBwYuQbSy_pt1J7ZlTw-231">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2073" y="1408" />
+              <mxPoint x="2229" y="1408" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-205" value="Implement audio" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2013" y="1417" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-208" value="Walls should emit a sound when damaged" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2013" y="1309" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-209" value="Turrets should emit a sound when shooting" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="1859" y="1417" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-210" value="Building a turret should make a sound" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="1859" y="1527" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-211" value="Upgrading a turret or wall should make a sound" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2169" y="1417" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-212" value="A sound should be played when the player&#39;s base&#39;s health is decreased" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2169" y="1527" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-213" value="A sound should be played when enemies die" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2013" y="1527" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-220" value="active wave should be displayed on UI" style="whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2211" y="420" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-226" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-222" target="3IBwYuQbSy_pt1J7ZlTw-225">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-227" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-222" target="3IBwYuQbSy_pt1J7ZlTw-223">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-222" value="Implement start menu screen" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2387" y="1309" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-228" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-223" target="3IBwYuQbSy_pt1J7ZlTw-224">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-223" value="Appears upon starting game" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2387" y="1417" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-224" value="Allows users to start or exit the game" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2387" y="1527" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-225" value="Update gameover menu to allow to restart game or return to main menu" style="whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2565" y="1309" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-229" value="Projectiles hitting targets should make a sound" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="1859" y="1309" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-231" value="Clicking a turret or wall upgrade menu should make a sound" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="2169" y="1309" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-236" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-233" target="3IBwYuQbSy_pt1J7ZlTw-234">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-237" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-233" target="3IBwYuQbSy_pt1J7ZlTw-235">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-239" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3IBwYuQbSy_pt1J7ZlTw-233" target="3IBwYuQbSy_pt1J7ZlTw-238">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-233" value="Implement random enemies that will offer powerups" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2775" y="1309" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-234" value="Enemies that have powerups will be colored or &quot;shining&quot;" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2695" y="1422" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-235" value="Powerups include heal all buildings or increasing attack speed" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2849" y="1422" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3IBwYuQbSy_pt1J7ZlTw-238" value="Enemies containing powerups should have more health (harder to kill)" style="whiteSpace=wrap;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2775" y="1522.5" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

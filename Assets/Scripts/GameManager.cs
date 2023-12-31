@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         else
             instance = this;
     }
-
+    
     public void AddTurret(Turret turret)
     {
         if (turret == null)

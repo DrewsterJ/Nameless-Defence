@@ -5571,7 +5571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_TagString
-      value: SpawnPoint
+      value: GroundTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5699,7 +5699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_TagString
-      value: SpawnPoint
+      value: GroundTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6137,7 +6137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_TagString
-      value: SpawnPoint
+      value: GroundTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7133,7 +7133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_TagString
-      value: SpawnPoint
+      value: GroundTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13029,6 +13029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundTile
       objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: SpawnPoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14971,6 +14975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundTile
       objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: SpawnPoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15590,6 +15598,10 @@ PrefabInstance:
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_Name
       value: GroundTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: SpawnPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19311,6 +19323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundTile
       objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: SpawnPoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21173,7 +21189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_TagString
-      value: SpawnPoint
+      value: GroundTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24880,7 +24896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_TagString
-      value: SpawnPoint
+      value: GroundTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26803,6 +26819,10 @@ PrefabInstance:
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_Name
       value: GroundTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: SpawnPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33441,6 +33461,10 @@ PrefabInstance:
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_Name
       value: GroundTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: SpawnPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

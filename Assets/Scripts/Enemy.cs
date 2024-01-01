@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         //FollowActiveTarget();
-        MoveForward();
+        //MoveForward();
     }
     
     /*public bool IsEngagingTarget()

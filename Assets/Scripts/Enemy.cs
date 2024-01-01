@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
     public bool _engagingTarget;
 
     public GameObject activeTarget;
-
     public Rigidbody2D rb;
     
     // Offset for accurately aiming at a target
@@ -26,33 +25,13 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         Debug.Assert(!rb.IsUnityNull());
-
+        
         StartCoroutine(MeleeAttackFrontAtInterval(_attackSpeed));
     }
 
     // Update is called once per frame
     void Update()
     {
-        FollowActiveTarget();
-    }
-    
-    public bool IsEngagingTarget()
-    {
-        return !activeTarget.IsDestroyed() || !activeTarget.IsUnityNull();
-    }
-
-    private void FollowActiveTarget()
-    {
-        if (activeTarget.IsUnityNull())
-            return;
-
-        if (activeTarget.IsDestroyed())
-        {
-            activeTarget = null;
-            return;
-        }
-
-        AimAtTarget(activeTarget);
         MoveForward();
     }
 
@@ -60,18 +39,7 @@ public class Enemy : MonoBehaviour
     {
         // Source: https://discussions.unity.com/t/how-can-i-convert-a-quaternion-to-a-direction-vector/80376
         var direction = transform.rotation * Vector2.up;
-        rb.velocity = direction * _movementSpeed;
-    }
-    
-    private void AimAtTarget(GameObject target)
-    {
-        if (target.IsUnityNull())
-            return;
-        
-        // Source (from RDSquare): https://discussions.unity.com/t/how-do-i-rotate-a-2d-object-to-face-another-object/187072/2
-        float angle = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x -transform.position.x ) * Mathf.Rad2Deg;
-        Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle + _aimAngleOffset));
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360);
+        rb.velocity = -direction * _movementSpeed;
     }
     
     private IEnumerator MeleeAttackFrontAtInterval(int interval)
@@ -89,33 +57,27 @@ public class Enemy : MonoBehaviour
         var facingDirection = transform.rotation * Vector2.up;
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, facingDirection, _meleeAttackRange);
         
-        
         List<GameObject> validHits = new List<GameObject>();
         foreach (var hit in hits)
         {
-            
-            if (hit.collider.gameObject.CompareTag("Turret"))
+            // TODO: Uncomment code once walls are implemented
+            /* if (hit.collider.gameObject.CompareTag("Wall"))
             {
-                var obj = hit.collider.gameObject;
-                var turret = obj.GetComponent<Turret>();
-                turret.TakeDamage(_damage);
+                  var obj = hit.collider.gameObject;
+                  var wall = obj.GetComponent<Wall>();
+                  wall.TakeDamage(_damage);
             }
-            else if (hit.collider.gameObject.CompareTag("Player"))
-            {
-                Debug.Log("Hit player");
-                Debug.Log("Distance from player: " + Vector2.Distance(transform.position, hit.collider.transform.position));
-                var obj = hit.collider.gameObject;
-                //var player = obj.GetComponent<PlayerController>();
-                //player.TakeDamage(_damage);
-            }
+            */
         }
     }
     
+    // Deletes the enemy
     private void KillEnemy()
     {
         Destroy(gameObject);
     }
 
+    // Method is called by others who deal damage to this enemy
     private void TakeDamage(int dmg)
     {
         _health -= dmg;

@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject tilemap;
     private List<GroundTile> gameTiles;
-
+    
     // The tile the player is hovering their mouse over
     private GroundTile focusedTile;
 
@@ -25,17 +25,24 @@ public class GameManager : MonoBehaviour
     public List<Enemy> enemies;
     public List<Turret> turrets;
     
+    // Enemy spawn points
+    public List<GroundTile> spawnPoints;
+    
     public float _enemySpawnRate;
 
     public GameObject enemyPrefab;
+
+    private bool _gameActive;
     
     // Start is called before the first frame update
     void Start()
     {
         gameTiles = new List<GroundTile>(tilemap.GetComponentsInChildren<GroundTile>());
-        
+        spawnPoints = gameTiles.FindAll(tile => tile.CompareTag("SpawnPoint"));
+        _gameActive = true;
+
         //StartCoroutine(TurretTargetingCoroutine());
-        //StartCoroutine(SpawnEnemyCoroutine());
+        StartCoroutine(SpawnEnemyCoroutine());
     }
     
     // Update is called once per frame
@@ -124,21 +131,23 @@ public class GameManager : MonoBehaviour
         }
     }*/
 
-    /*IEnumerator SpawnEnemyCoroutine()
+    // Spawns enemies at `_enemySpawnRate`
+    IEnumerator SpawnEnemyCoroutine()
     {
         while (_gameActive)
         {
             SpawnEnemy();
             yield return new WaitForSeconds(_enemySpawnRate);
         }
-    }*/
-
-    /*private void SpawnEnemy()
+    }
+    
+    // Spawns an enemy at a random spawn point
+    private void SpawnEnemy()
     {
-        var index = Random.Range(0, tiles.Count);
-        var tile = tiles[index];
+        var randIndex = Random.Range(0, spawnPoints.Count);
+        var spawnPoint = spawnPoints[randIndex];
 
-        var newEnemy = Instantiate(enemyPrefab, tile.transform.position, enemyPrefab.transform.rotation);
-        AddEnemy(newEnemy.GetComponent<Enemy>());
-    }*/
+        var enemy = Instantiate(enemyPrefab, spawnPoint.transform.position, enemyPrefab.transform.rotation);
+        AddEnemy(enemy.GetComponent<Enemy>());
+    }
 }

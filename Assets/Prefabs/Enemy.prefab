@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8380914010760458566}
   - component: {fileID: 4712042433255994043}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 3860353953636524453}
   - component: {fileID: 7956075993091403298}
   - component: {fileID: 6474510129194230508}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -131,10 +131,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -186,7 +186,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -209,8 +209,6 @@ MonoBehaviour:
   _movementSpeed: 1
   _attackSpeed: 1
   _meleeAttackRange: 0.5
-  interactLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _engagingTarget: 0
   activeTarget: {fileID: 0}
   rb: {fileID: 7956075993091403298}

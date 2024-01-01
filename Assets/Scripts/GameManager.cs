@@ -83,8 +83,8 @@ public class GameManager : MonoBehaviour
 
     public void RemoveEnemy(Enemy enemy)
     {
-        //if (enemy == null)
-        //    return;
+        if (enemy == null)
+            return;
 
         enemies.Remove(enemy);
     }

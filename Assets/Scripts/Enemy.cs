@@ -60,15 +60,14 @@ public class Enemy : MonoBehaviour
         List<GameObject> validHits = new List<GameObject>();
         foreach (var hit in hits)
         {
-            if (hit.collider.gameObject.CompareTag("Wall"))
+            // TODO: Uncomment code once walls are implemented
+            /* if (hit.collider.gameObject.CompareTag("Wall"))
             {
-                // TODO: Uncomment code once walls are implemented
-                /*
                   var obj = hit.collider.gameObject;
                   var wall = obj.GetComponent<Wall>();
                   wall.TakeDamage(_damage);
-                */
             }
+            */
         }
     }
     

@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     public List<Enemy> enemies;
     public List<Turret> turrets;
     
+    // Enemy spawn points
+    public List<GroundTile> spawnPoints;
+    
     public float _enemySpawnRate;
 
     public GameObject enemyPrefab;
@@ -33,6 +36,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameTiles = new List<GroundTile>(tilemap.GetComponentsInChildren<GroundTile>());
+        spawnPoints = gameTiles.FindAll(tile => tile.CompareTag("SpawnPoint"));
         
         //StartCoroutine(TurretTargetingCoroutine());
         //StartCoroutine(SpawnEnemyCoroutine());

@@ -53,7 +53,6 @@ public class Enemy : MonoBehaviour
 
     private void MeleeAttackFront()
     {
-        Debug.Log("Attacking front!");
         var facingDirection = transform.rotation * Vector2.up;
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, facingDirection, _meleeAttackRange);
         

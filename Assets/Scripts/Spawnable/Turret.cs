@@ -17,7 +17,7 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
     
     // What the turret is shooting at
-    private GameObject _activeTarget;
+    public GameObject _activeTarget;
     
     // Turret behavior
     private bool _engagingTarget;
@@ -45,6 +45,9 @@ public class Turret : MonoBehaviour
     // Method to try engaging a given target (called by the GameManager)
     public void TryEngageTarget(GameObject target)
     {
+        if (IsEngagingTarget())
+            return;
+        
         if (IsWithinRange(target))
             EngageTarget(target);
     }
@@ -136,7 +139,13 @@ public class Turret : MonoBehaviour
     {
         while (IsEngagingTarget())
         {
+            var activeTarget = _activeTarget;
             yield return new WaitForSeconds(interval);
+            
+            // Stop this coroutine if we changed targets while `WaitForSeconds(...)` was still waiting
+            if (activeTarget != _activeTarget)
+                break;
+            
             FireBullet();
         }
     }

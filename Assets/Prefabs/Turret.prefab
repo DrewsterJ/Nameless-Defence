@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1249272928072497102}
   - component: {fileID: -8250014746395210891}
   - component: {fileID: 8105116502520208004}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret
   m_TagString: Turret
   m_Icon: {fileID: 0}
@@ -97,8 +97,9 @@ MonoBehaviour:
   _damage: 10
   _maxHealth: 100
   _health: 100
-  _firingRange: 10
+  _firingRange: 4
   bulletPrefab: {fileID: 986307436527531739, guid: f133555c701dc724ba0e7a3067eae895, type: 3}
+  _activeTarget: {fileID: 0}
 --- !u!1 &904314383948978313
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +111,7 @@ GameObject:
   - component: {fileID: 5424653313028687215}
   - component: {fileID: 1366783911989461566}
   - component: {fileID: 9002926804899443510}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7307488308616042410}
   - component: {fileID: 5427426083652036575}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TurretGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +270,7 @@ GameObject:
   - component: {fileID: 5158953366124562026}
   - component: {fileID: 282493485420335766}
   - component: {fileID: 2540258808392343292}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,6 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049ed5adae2f1bc41ae6685477c6dd80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbarSlider: {fileID: 0}
 --- !u!1 &4783174207204034512
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107064127270203667}
   - component: {fileID: 7023027415664971328}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TurretBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3331139509403374926}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +494,7 @@ GameObject:
   - component: {fileID: 3764908321405155064}
   - component: {fileID: 2577046793416332890}
   - component: {fileID: 7706821049834481849}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +595,7 @@ GameObject:
   - component: {fileID: 6223752434622755325}
   - component: {fileID: 9204620666075159181}
   - component: {fileID: 7709949505555766274}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

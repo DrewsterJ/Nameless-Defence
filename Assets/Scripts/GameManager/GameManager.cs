@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         spawnPoints = gameTiles.FindAll(tile => tile.CompareTag("SpawnPoint"));
         _gameActive = true;
 
-        //StartCoroutine(TurretTargetingCoroutine());
+        StartCoroutine(TurretTargetingCoroutine());
         StartCoroutine(SpawnEnemyCoroutine());
     }
     
@@ -114,11 +114,10 @@ public class GameManager : MonoBehaviour
     public void InteractWithTile()
     { }
     
-    /*IEnumerator TurretTargetingCoroutine()
+    IEnumerator TurretTargetingCoroutine()
     {
         while (_gameActive)
         {
-            RemoveInvalidTurrets();
             foreach (var turret in turrets.Where(turret => !turret.IsEngagingTarget()))
             {
                 if (turret.IsDestroyed() || turret.IsUnityNull())
@@ -134,10 +133,24 @@ public class GameManager : MonoBehaviour
                         break;
                 }
             }
+            RemoveInvalidTurrets();
             
             yield return new WaitForSeconds(_turretTargetAcquisitionInterval);
         }
-    }*/
+    }
+
+    public void RemoveInvalidTurrets()
+    {
+        var invalidTurrets = turrets.FindAll(turret =>
+        {
+            return (turret.IsDestroyed() || turret.IsUnityNull());
+        });
+
+        foreach (var invalidTurret in invalidTurrets)
+        {
+            turrets.Remove(invalidTurret);
+        }
+    }
 
     // Spawns enemies at `_enemySpawnRate`
     IEnumerator SpawnEnemyCoroutine()

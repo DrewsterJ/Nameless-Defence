@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
 
     private bool _gameActive;
 
+    public FloatingHealthbar _baseHealthBar;
+
     public int _baseHealth;
     
     // Start is called before the first frame update
@@ -43,6 +45,9 @@ public class GameManager : MonoBehaviour
         gameTiles = new List<GroundTile>(tilemap.GetComponentsInChildren<GroundTile>());
         spawnPoints = gameTiles.FindAll(tile => tile.CompareTag("SpawnPoint"));
         _gameActive = true;
+        
+        _baseHealthBar.SetMaxHealth(_baseHealth);
+        _baseHealthBar.SetHealthAmount(_baseHealth);
 
         StartCoroutine(TurretTargetingCoroutine());
         StartCoroutine(SpawnEnemyCoroutine());
@@ -180,6 +185,7 @@ public class GameManager : MonoBehaviour
             damage = 0;
 
         _baseHealth -= damage;
+        _baseHealthBar.SetHealthAmount(_baseHealth);
         Debug.Log("Base Health is " + _baseHealth);
 
         if (_baseHealth <= 0)
@@ -192,6 +198,7 @@ public class GameManager : MonoBehaviour
             health = 0;
 
         _baseHealth += health;
+        _baseHealthBar.SetHealthAmount(_baseHealth);
     }
 
     private void GameOver()

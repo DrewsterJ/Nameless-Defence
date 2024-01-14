@@ -11361,6 +11361,7 @@ MonoBehaviour:
   _enemySpawnRate: 2
   enemyPrefab: {fileID: 8499755488035685709, guid: 2a8faddb060666441b90c30ef4997414, type: 3}
   turretPrefab: {fileID: 830858593765386935, guid: a6139a35797ed2f44bc457d68f63120d, type: 3}
+  _baseHealthBar: {fileID: 44450158}
   _baseHealth: 100
 --- !u!4 &486663777
 Transform:

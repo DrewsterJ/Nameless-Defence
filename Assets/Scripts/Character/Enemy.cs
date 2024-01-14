@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
 
     public GameObject activeTarget;
     public Rigidbody2D rb;
+
+    public FloatingHealthbar healthBar;
     
     // Offset for accurately aiming at a target
     private const float _aimAngleOffset = -90f;
@@ -25,6 +27,9 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         Debug.Assert(!rb.IsUnityNull());
+
+        healthBar.SetMaxHealth(_health);
+        healthBar.SetHealthAmount(_health);
         
         StartCoroutine(MeleeAttackFrontAtInterval(_attackSpeed));
     }
@@ -80,6 +85,7 @@ public class Enemy : MonoBehaviour
     private void TakeDamage(int dmg)
     {
         _health -= dmg;
+        healthBar.SetHealthAmount(_health);
 
         if (_health <= 0)
             KillEnemy();

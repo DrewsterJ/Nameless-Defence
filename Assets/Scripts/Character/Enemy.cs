@@ -46,6 +46,8 @@ public class Enemy : MonoBehaviour
     {
         // Source: https://discussions.unity.com/t/how-can-i-convert-a-quaternion-to-a-direction-vector/80376
         var direction = transform.rotation * Vector2.up;
+
+        // Stop moving if the game is over
         rb.velocity = -direction * _movementSpeed;
     }
     

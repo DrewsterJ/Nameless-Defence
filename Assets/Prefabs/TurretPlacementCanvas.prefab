@@ -120,9 +120,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildMenuButton: {fileID: 4319025487430325286}
   buildMenuIcon: {fileID: 6575926646254325103}
-  cancelButton: {fileID: 7091576762768430425}
   turretOption1: {fileID: 5496797452715526781}
+  turretOption1Icon: {fileID: 6524637103706929309}
   turretOption2: {fileID: 2810274600927079709}
+  turretOption2Icon: {fileID: 6138334902799479260}
 --- !u!114 &8491827923982226100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,19 +143,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetTurretSelectionOptionOff
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 7091576762768430425}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetTurretSelectionOptionOff
+          m_MethodName: SetHidden
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 5496797452715526781}
@@ -166,7 +155,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetTurretSelectionOptionOff
+          m_MethodName: SetHidden
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 2810274600927079709}
@@ -178,11 +167,23 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetBaseButtonAndIconOff
-          m_Mode: 1
+          m_MethodName: SetHidden
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 6524637103706929309}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4595809182896217878}
+          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
+          m_MethodName: SetHidden
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6138334902799479260}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -199,6 +200,7 @@ GameObject:
   - component: {fileID: 3541161686686753114}
   - component: {fileID: 5364748248575751691}
   - component: {fileID: 6138334902799479260}
+  - component: {fileID: 3811104254395528417}
   m_Layer: 6
   m_Name: Turret Icon
   m_TagString: Untagged
@@ -213,16 +215,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576989858475830306}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.006066945}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3765804855578170644}
+  m_Father: {fileID: 6405219842128823790}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.040100098, y: 1.9400024}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5364748248575751691
@@ -263,6 +265,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3811104254395528417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576989858475830306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4595809182896217878}
+          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
+          m_MethodName: SetHovered
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6138334902799479260}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4595809182896217878}
+          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
+          m_MethodName: SetDefault
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6138334902799479260}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1877769596439649992
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,7 +398,7 @@ GameObject:
   - component: {fileID: 5496797452715526781}
   - component: {fileID: 5616277215720552293}
   m_Layer: 6
-  m_Name: Turret Option 1
+  m_Name: Ranged Turret Selector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -368,13 +415,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0.006066945}
   m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4368385564376844557}
+  m_Children: []
   m_Father: {fileID: 6405219842128823790}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.040100098, y: 1.9550171}
+  m_AnchoredPosition: {x: -0.040100098, y: 0.96}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1016442773277916284
@@ -398,7 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 0.23529412}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.23529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -434,10 +480,10 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetTurretSelectionOptionHoverOn
+          m_MethodName: SetHovered
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 5496797452715526781}
+            m_ObjectArgument: {fileID: 6524637103706929309}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -450,91 +496,16 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetTurretSelectionOptionHoverOff
+          m_MethodName: SetDefault
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 5496797452715526781}
+            m_ObjectArgument: {fileID: 6524637103706929309}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1 &7048958324918118567
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2160533574743035017}
-  - component: {fileID: 2416360815471719453}
-  - component: {fileID: 3777374744340141329}
-  m_Layer: 6
-  m_Name: Cancel Icon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2160533574743035017
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7048958324918118567}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4146933184266075828}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 80, y: 80}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2416360815471719453
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7048958324918118567}
-  m_CullTransparentMesh: 1
---- !u!114 &3777374744340141329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7048958324918118567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 836fc53bb4147d241bd71895a1a90da7, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7803004156955959720
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +519,7 @@ GameObject:
   - component: {fileID: 2810274600927079709}
   - component: {fileID: 7567937541817825241}
   m_Layer: 6
-  m_Name: Turret Option 2
+  m_Name: Melee Turret Selector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,13 +536,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0.006066945}
   m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3541161686686753114}
+  m_Children: []
   m_Father: {fileID: 6405219842128823790}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.040100098, y: 2.9490662}
+  m_AnchoredPosition: {x: -0.040100098, y: 1.94}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4967806251237676192
@@ -595,7 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 0.23529412}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.23529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -631,10 +601,10 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetTurretSelectionOptionHoverOn
+          m_MethodName: SetHovered
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2810274600927079709}
+            m_ObjectArgument: {fileID: 6138334902799479260}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -647,10 +617,10 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetTurretSelectionOptionHoverOff
+          m_MethodName: SetDefault
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2810274600927079709}
+            m_ObjectArgument: {fileID: 6138334902799479260}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -686,8 +656,9 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4146933184266075828}
+  - {fileID: 4368385564376844557}
   - {fileID: 4752948587910439381}
+  - {fileID: 3541161686686753114}
   - {fileID: 3765804855578170644}
   m_Father: {fileID: 6390773377663937648}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -750,7 +721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 0.41960785}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.41960785}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -786,11 +757,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: MouseHoverOn
-          m_Mode: 1
+          m_MethodName: SetHovered
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 6575926646254325103}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -802,7 +773,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetTurretSelectionOptionOn
+          m_MethodName: SetDefault
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 5496797452715526781}
@@ -814,7 +785,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetTurretSelectionOptionOn
+          m_MethodName: SetDefault
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 2810274600927079709}
@@ -826,10 +797,98 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetTurretSelectionOptionOn
+          m_MethodName: SetDefault
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 7091576762768430425}
+            m_ObjectArgument: {fileID: 6524637103706929309}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4595809182896217878}
+          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
+          m_MethodName: SetDefault
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6138334902799479260}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4595809182896217878}
+          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
+          m_MethodName: SetEnabled
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6524637103706929309}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4595809182896217878}
+          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
+          m_MethodName: SetEnabled
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5496797452715526781}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4595809182896217878}
+          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
+          m_MethodName: SetEnabled
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6138334902799479260}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4595809182896217878}
+          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
+          m_MethodName: SetEnabled
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2810274600927079709}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4595809182896217878}
+          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
+          m_MethodName: SetDefault
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 4319025487430325286}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4595809182896217878}
+          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
+          m_MethodName: SetDefault
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6575926646254325103}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -847,6 +906,7 @@ GameObject:
   - component: {fileID: 4368385564376844557}
   - component: {fileID: 4079064659178546572}
   - component: {fileID: 6524637103706929309}
+  - component: {fileID: 4299770622990880891}
   m_Layer: 6
   m_Name: Turret Icon
   m_TagString: Untagged
@@ -861,16 +921,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8474760909737819110}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.006066945}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4752948587910439381}
+  m_Father: {fileID: 6405219842128823790}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.040100098, y: 0.95999146}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4079064659178546572
@@ -911,90 +971,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &8906981737577545007
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4146933184266075828}
-  - component: {fileID: 6912791286753259483}
-  - component: {fileID: 7091576762768430425}
-  - component: {fileID: 1667850906806046873}
-  m_Layer: 6
-  m_Name: Cancel Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &4146933184266075828
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8906981737577545007}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.006066945}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2160533574743035017}
-  m_Father: {fileID: 6405219842128823790}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.040100098, y: 0.9550476}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6912791286753259483
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8906981737577545007}
-  m_CullTransparentMesh: 1
---- !u!114 &7091576762768430425
+--- !u!114 &4299770622990880891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8906981737577545007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 0.23529412}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &1667850906806046873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8906981737577545007}
+  m_GameObject: {fileID: 8474760909737819110}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
@@ -1007,10 +990,10 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetTurretSelectionOptionHoverOn
+          m_MethodName: SetHovered
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 7091576762768430425}
+            m_ObjectArgument: {fileID: 6524637103706929309}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -1023,10 +1006,10 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetTurretSelectionOptionHoverOff
+          m_MethodName: SetDefault
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 7091576762768430425}
+            m_ObjectArgument: {fileID: 6524637103706929309}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0

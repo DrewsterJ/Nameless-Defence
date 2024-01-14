@@ -11,65 +11,42 @@ public class TurretPlacementUI : MonoBehaviour
 {
     public Image buildMenuButton;
     public Image buildMenuIcon;
-
-    public Image cancelButton;
     public Image turretOption1;
+    public Image turretOption1Icon;
     public Image turretOption2;
-    
-    private Color turretBuildButtonBackgroundInactiveColor = new Color(173, 173, 173, 0.0f);
-    private Color turretBuildButtonBackgroundActiveColor = new Color(173, 173, 173, 0.3f);
-    
-    private Color turretBuildButtonIconInactiveColor = new Color(255, 255, 255, 0.3f);
-    private Color turretBuildButtonIconActiveColor = new Color(255, 255, 255, 0.6f);
-    
-    private Color turretSelectionButtonInactiveColor = new Color(173, 173, 173, 0.2f);
-    private Color turretSelectionButtonActiveColor = new Color(173, 173, 173, 0.3f);
-    
+    public Image turretOption2Icon;
+
     void Start()
     {
-        SetBaseButtonAndIconOff();
-        
-        cancelButton.enabled = false;
-        turretOption1.enabled = false;
-        turretOption2.enabled = false;
+        SetHidden(turretOption1);
+        SetHidden(turretOption2);
+        SetHidden(turretOption1Icon);
+        SetHidden(turretOption2Icon);
+        SetDefault(buildMenuButton);
+        SetDefault(buildMenuIcon);
     }
 
-    public void SetTurretSelectionOptionOn(Image image)
+    // Sets the given image to be invisible
+    public void SetHidden(Image image)
+    {
+        image.color = new Color(image.color.r, image.color.g, image.color.b, 0.0f);
+        image.enabled = false;
+    }
+
+    // Sets the given image to be a default visibility
+    public void SetDefault(Image image)
+    {
+        image.color = new Color(image.color.r, image.color.g, image.color.b, 0.3f);
+    }
+
+    public void SetEnabled(Image image)
     {
         image.enabled = true;
-        image.color = turretSelectionButtonInactiveColor;
     }
 
-    public void SetTurretSelectionOptionOff(Image image)
+    // Sets the given image to reflect being hovered on
+    public void SetHovered(Image image)
     {
-        image.enabled = false;
-        image.color = turretSelectionButtonInactiveColor;
-    }
-
-    public void SetTurretSelectionOptionHoverOn(Image image)
-    {
-        image.color = turretSelectionButtonActiveColor;
-    }
-    
-    public void SetTurretSelectionOptionHoverOff(Image image)
-    {
-        image.color = turretSelectionButtonInactiveColor;
-    }
-
-    public void MouseHoverOn()
-    {
-        SetBaseButtonAndIconOn();
-    }
-
-    public void SetBaseButtonAndIconOn()
-    {
-        buildMenuButton.color = turretBuildButtonBackgroundActiveColor;
-        buildMenuIcon.color = turretBuildButtonIconActiveColor;
-    }
-
-    public void SetBaseButtonAndIconOff()
-    {
-        buildMenuButton.color = turretBuildButtonBackgroundInactiveColor;
-        buildMenuIcon.color = turretBuildButtonIconInactiveColor;
+        image.color = new Color(image.color.r, image.color.g, image.color.b, 1.0f);
     }
 }

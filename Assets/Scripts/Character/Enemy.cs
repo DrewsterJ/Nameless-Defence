@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public int _movementSpeed;
     public int _attackSpeed;
     public float _meleeAttackRange;
+    public int _enemyLifetime; // in seconds
     
     public bool _engagingTarget;
 
@@ -32,6 +33,7 @@ public class Enemy : MonoBehaviour
         healthBar.SetHealthAmount(_health);
         
         StartCoroutine(MeleeAttackFrontAtInterval(_attackSpeed));
+        StartCoroutine(DieAfterSeconds());
     }
 
     // Update is called once per frame
@@ -98,6 +100,16 @@ public class Enemy : MonoBehaviour
             var dmg = other.GetComponent<Bullet>().damage;
             TakeDamage(dmg);
             Destroy(other.gameObject);
+        }
+    }
+    
+    // Despawns the enemy after `_enemyLifetime` seconds has passed
+    IEnumerator DieAfterSeconds()
+    {
+        if (!gameObject.IsUnityNull() && !gameObject.IsDestroyed())
+        {
+            yield return new WaitForSeconds(_enemyLifetime);
+            Destroy(gameObject);
         }
     }
 }

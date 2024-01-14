@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     public GameObject turretPrefab;
 
     private bool _gameActive;
+
+    public int _baseHealth;
     
     // Start is called before the first frame update
     void Start()
@@ -170,5 +172,30 @@ public class GameManager : MonoBehaviour
 
         var enemy = Instantiate(enemyPrefab, spawnPoint.transform.position, enemyPrefab.transform.rotation);
         AddEnemy(enemy.GetComponent<Enemy>());
+    }
+
+    public void DamageBase(int damage)
+    {
+        if (damage < 0)
+            damage = 0;
+
+        _baseHealth -= damage;
+        Debug.Log("Base Health is " + _baseHealth);
+
+        if (_baseHealth <= 0)
+            GameOver();
+    }
+
+    public void HealBase(int health)
+    {
+        if (health < 0)
+            health = 0;
+
+        _baseHealth += health;
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("Game Over!");
     }
 }

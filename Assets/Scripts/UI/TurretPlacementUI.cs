@@ -25,6 +25,18 @@ public class TurretPlacementUI : MonoBehaviour
     public int turretOption1GoldCost;
     public int turretOption2GoldCost;
 
+    public GroundTile turretPlacementPosition;
+    
+    // Turret 1
+    private Color prevTurretOneGoldIconColor;
+    private Color prevTurretOneGoldTextColor;
+    private Color prevTurretOneIconColor;
+    
+    // Turret 2
+    private Color prevTurretTwoGoldIconColor;
+    private Color prevTurretTwoGoldTextColor;
+    private Color prevTurretTwoIconColor;
+
     void Start()
     {
         SetHidden(turretOption1);
@@ -42,6 +54,10 @@ public class TurretPlacementUI : MonoBehaviour
         
         SetDefault(buildMenuButton);
         SetDefault(buildMenuIcon);
+
+        turretPlacementPosition = GetComponentInParent<GroundTile>();
+        
+        Debug.Assert(turretPlacementPosition != null);
     }
 
     // Sets the gold cost for turret option 1 (ranged turret) and updates UI text accordingly
@@ -108,5 +124,79 @@ public class TurretPlacementUI : MonoBehaviour
     public void SetHovered(TextMeshProUGUI text)
     {
         text.color = new Color(text.color.r, text.color.g, text.color.b, 1.0f);
+    }
+    
+    // Sets the given TMP text to reflect being clicked
+    public void SetMouseDown(TextMeshProUGUI text)
+    {
+        text.color = new Color(text.color.r, text.color.g, text.color.b, 0.8f);
+    }
+    
+    // Sets the given image reflect being clicked
+    public void SetMouseDown(Image image)
+    {
+        image.color = new Color(image.color.r, image.color.g, image.color.b, 0.8f);
+    }
+
+    public void SetMouseDownOnTurretOne()
+    { 
+        prevTurretOneGoldIconColor = turretOption1GoldIcon.color; 
+        prevTurretOneGoldTextColor = turretOption1GoldCostText.color;
+        prevTurretOneIconColor = turretOption1Icon.color;
+        
+        SetMouseDown(turretOption1GoldIcon);
+        SetMouseDown(turretOption1GoldCostText);
+        SetMouseDown(turretOption1Icon);
+    }
+
+    public void SetMouseUpOnTurretOne()
+    {
+        turretOption1GoldIcon.color = prevTurretOneGoldIconColor; 
+        turretOption1GoldCostText.color = prevTurretOneGoldTextColor;
+        turretOption1Icon.color = prevTurretOneIconColor;
+    }
+    
+    public void SetMouseDownOnTurretTwo()
+    {
+        prevTurretTwoGoldIconColor = turretOption2GoldIcon.color; 
+        prevTurretTwoGoldTextColor = turretOption2GoldCostText.color;
+        prevTurretTwoIconColor = turretOption2Icon.color;
+        
+        SetMouseDown(turretOption2GoldIcon);
+        SetMouseDown(turretOption2GoldCostText);
+        SetMouseDown(turretOption2Icon);
+    }
+
+    public void SetMouseUpOnTurretTwo()
+    {
+        turretOption2GoldIcon.color = prevTurretTwoGoldIconColor; 
+        turretOption2GoldCostText.color = prevTurretTwoGoldTextColor;
+        turretOption2Icon.color = prevTurretTwoIconColor;
+    }
+
+    public void HideAllUI()
+    {
+        SetHidden(turretOption1);
+        SetHidden(turretOption2);
+        SetHidden(turretOption1Icon);
+        SetHidden(turretOption2Icon);
+        SetHidden(turretOption1GoldIcon);
+        SetHidden(turretOption2GoldIcon);
+        SetHidden(turretOption1GoldCostText);
+        SetHidden(turretOption2GoldCostText);
+        SetHidden(buildMenuButton);
+        SetHidden(buildMenuIcon);
+    }
+
+    public void BuildRangedTurret()
+    {
+        GameManager.instance.SpawnTurretAtTile(turretPlacementPosition);
+        HideAllUI();
+
+    }
+
+    public void BuildMeleeTurret()
+    {
+        // Do nothing for now
     }
 }

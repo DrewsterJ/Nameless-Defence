@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public float _enemySpawnRate;
 
     public GameObject enemyPrefab;
+    public GameObject turretPrefab;
 
     private bool _gameActive;
     
@@ -101,10 +102,17 @@ public class GameManager : MonoBehaviour
     public void PerformRightClick()
     { }
 
+    public void SpawnTurretAtTile(GroundTile tile)
+    {
+        Debug.Assert(tile != null);
+        
+        var turret = Instantiate(turretPrefab, tile.transform.position, turretPrefab.transform.rotation);
+        AddTurret(turret.GetComponent<Turret>());
+    }
+
     // Called by the player to interact with a tile using any hotbar action item
     public void InteractWithTile()
     { }
-    
     
     /*IEnumerator TurretTargetingCoroutine()
     {

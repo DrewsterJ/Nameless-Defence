@@ -9,9 +9,11 @@ public class Enemy : MonoBehaviour
     public int _maxHealth;
     public int _health;
     public int _damage;
+    public int _baseDamage;
     public int _movementSpeed;
     public int _attackSpeed;
     public float _meleeAttackRange;
+    public int _enemyLifetime; // in seconds
     
     public bool _engagingTarget;
 
@@ -44,6 +46,8 @@ public class Enemy : MonoBehaviour
     {
         // Source: https://discussions.unity.com/t/how-can-i-convert-a-quaternion-to-a-direction-vector/80376
         var direction = transform.rotation * Vector2.up;
+
+        // Stop moving if the game is over
         rb.velocity = -direction * _movementSpeed;
     }
     
@@ -98,6 +102,12 @@ public class Enemy : MonoBehaviour
             var dmg = other.GetComponent<Bullet>().damage;
             TakeDamage(dmg);
             Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("BaseBoundaryTile"))
+        {
+            // Enemy hit the base
+            GameManager.instance.DamageBase(_baseDamage);
+            Destroy(gameObject);
         }
     }
 }

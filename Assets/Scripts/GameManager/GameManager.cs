@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
+using Image = UnityEngine.UI.Image;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,17 +36,27 @@ public class GameManager : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject turretPrefab;
 
-    private bool _gameActive;
+    public bool _gameActive;
+
+    public FloatingHealthbar _baseHealthBar;
+
+    private int _baseHealth;
+    public int _maxBaseHealth;
+
+    public Image gameOverPanel;
+    public TextMeshProUGUI gameOverText;
+    public Image gameOverRestartGameButton;
+    public TextMeshProUGUI restartGameText;
+    public Image gameOverExitGameButton;
+    public TextMeshProUGUI quitGameText;
     
     // Start is called before the first frame update
     void Start()
     {
         gameTiles = new List<GroundTile>(tilemap.GetComponentsInChildren<GroundTile>());
         spawnPoints = gameTiles.FindAll(tile => tile.CompareTag("SpawnPoint"));
-        _gameActive = true;
 
-        StartCoroutine(TurretTargetingCoroutine());
-        StartCoroutine(SpawnEnemyCoroutine());
+        StartGame();
     }
     
     // Update is called once per frame
@@ -113,7 +126,7 @@ public class GameManager : MonoBehaviour
     // Called by the player to interact with a tile using any hotbar action item
     public void InteractWithTile()
     { }
-    
+
     IEnumerator TurretTargetingCoroutine()
     {
         while (_gameActive)
@@ -122,7 +135,7 @@ public class GameManager : MonoBehaviour
             {
                 if (turret.IsDestroyed() || turret.IsUnityNull())
                     continue;
-                
+
                 foreach (var enemy in enemies)
                 {
                     if (enemy.IsDestroyed() || enemy.IsUnityNull())
@@ -134,7 +147,6 @@ public class GameManager : MonoBehaviour
                 }
             }
             RemoveInvalidTurrets();
-            
             yield return new WaitForSeconds(_turretTargetAcquisitionInterval);
         }
     }
@@ -157,8 +169,8 @@ public class GameManager : MonoBehaviour
     {
         while (_gameActive)
         {
-            SpawnEnemy();
             yield return new WaitForSeconds(_enemySpawnRate);
+            SpawnEnemy();
         }
     }
     
@@ -170,5 +182,160 @@ public class GameManager : MonoBehaviour
 
         var enemy = Instantiate(enemyPrefab, spawnPoint.transform.position, enemyPrefab.transform.rotation);
         AddEnemy(enemy.GetComponent<Enemy>());
+        //DamageBase(25);
+    }
+
+    public void DamageBase(int damage)
+    {
+        if (damage < 0)
+            damage = 0;
+
+        _baseHealth -= damage;
+        _baseHealthBar.SetHealthAmount(_baseHealth);
+
+        if (_baseHealth <= 0)
+            GameOver();
+    }
+
+    public void HealBase(int health)
+    {
+        if (health < 0)
+            health = 0;
+
+        _baseHealth += health;
+        _baseHealthBar.SetHealthAmount(_baseHealth);
+    }
+
+    private void GameOver()
+    {
+        ShowGameOverUI();
+        StopCoroutine(SpawnEnemyCoroutine());
+        StopCoroutine(TurretTargetingCoroutine());
+
+        foreach (var turret in turrets)
+        {
+            turret.StopFiring();
+        }
+
+        foreach (var enemy in enemies)
+        {
+            enemy._movementSpeed = 0;
+        }
+        
+        foreach (var tile in gameTiles)
+        {
+            if (tile.GetComponentInChildren<TurretPlacementUI>() != null)
+                tile.GetComponentInChildren<TurretPlacementUI>().SetDefaultVisiblity();
+        }
+        
+        _gameActive = false;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void StartGame()
+    {
+        _gameActive = true;
+        HideGameOverUI();
+        _baseHealth = _maxBaseHealth;
+
+        foreach (var turret in turrets)
+        {
+            if (!turret.IsUnityNull() && !turret.IsDestroyed())
+            {
+                turret.gameObject.SetActive(false);
+                Destroy(turret.gameObject);
+            }
+        }
+        turrets.Clear();
+        
+        foreach (var enemy in enemies)
+        {
+            if (!enemy.IsUnityNull() && !enemy.IsDestroyed())
+            {
+                enemy.gameObject.SetActive(false);
+                Destroy(enemy.gameObject);
+            }
+        }
+        enemies.Clear();
+        
+        foreach (var tile in gameTiles)
+        {
+            if (tile.GetComponentInChildren<TurretPlacementUI>() != null)
+            {
+                tile.GetComponentInChildren<TurretPlacementUI>().SetDefaultVisiblity();
+            }
+        }
+        
+        _baseHealthBar.SetMaxHealth(_maxBaseHealth);
+        _baseHealthBar.SetHealthAmount(_maxBaseHealth);
+
+        StartCoroutine(TurretTargetingCoroutine());
+        StartCoroutine(SpawnEnemyCoroutine());
+    }
+
+    public void SetRestartButtonHoverOn()
+    {
+        gameOverRestartGameButton.color = new Color(gameOverRestartGameButton.color.r, gameOverRestartGameButton.color.g, gameOverRestartGameButton.color.b, 0.8f);
+        restartGameText.color = new Color(restartGameText.color.r, restartGameText.color.g, restartGameText.color.b, 0.8f);
+    }
+    
+    public void SetRestartButtonHoverOff()
+    {
+        gameOverRestartGameButton.color = new Color(gameOverRestartGameButton.color.r, gameOverRestartGameButton.color.g, gameOverRestartGameButton.color.b, 1.0f);
+        restartGameText.color = new Color(restartGameText.color.r, restartGameText.color.g, restartGameText.color.b, 1.0f);
+    }
+    
+    public void SetQuitButtonHoverOn()
+    {
+        gameOverExitGameButton.color = new Color(gameOverRestartGameButton.color.r, gameOverRestartGameButton.color.g, gameOverRestartGameButton.color.b, 0.8f);
+        quitGameText.color = new Color(restartGameText.color.r, restartGameText.color.g, restartGameText.color.b, 0.8f);
+    }
+    
+    public void SetQuitButtonHoverOff()
+    {
+        gameOverExitGameButton.color = new Color(gameOverRestartGameButton.color.r, gameOverRestartGameButton.color.g, gameOverRestartGameButton.color.b, 1.0f);
+        quitGameText.color = new Color(restartGameText.color.r, restartGameText.color.g, restartGameText.color.b, 1.0f);
+    }
+
+    public void ShowGameOverUI()
+    {
+        gameOverPanel.color = new Color(gameOverPanel.color.r, gameOverPanel.color.g, gameOverPanel.color.b, 1.0f);
+        gameOverPanel.enabled = true;
+        
+        gameOverText.color = new Color(gameOverText.color.r, gameOverText.color.g, gameOverText.color.b, 1.0f);
+        gameOverText.enabled = true;
+        
+        gameOverRestartGameButton.color = new Color(gameOverRestartGameButton.color.r, gameOverRestartGameButton.color.g, gameOverRestartGameButton.color.b, 1.0f);
+        gameOverRestartGameButton.enabled = true;
+        restartGameText.color = new Color(restartGameText.color.r, restartGameText.color.g, restartGameText.color.b, 1.0f);
+        restartGameText.enabled = true;
+        
+        gameOverExitGameButton.color = new Color(gameOverExitGameButton.color.r, gameOverExitGameButton.color.g, gameOverExitGameButton.color.b, 1.0f);
+        gameOverExitGameButton.enabled = true;
+        quitGameText.color = new Color(quitGameText.color.r, quitGameText.color.g, quitGameText.color.b, 1.0f);
+        quitGameText.enabled = true;
+    }
+
+    public void HideGameOverUI()
+    {
+        gameOverPanel.color = new Color(gameOverPanel.color.r, gameOverPanel.color.g, gameOverPanel.color.b, 0.0f);
+        gameOverPanel.enabled = false;
+        
+        gameOverText.color = new Color(gameOverText.color.r, gameOverText.color.g, gameOverText.color.b, 0.0f);
+        gameOverText.enabled = false;
+        
+        gameOverRestartGameButton.color = new Color(gameOverRestartGameButton.color.r, gameOverRestartGameButton.color.g, gameOverRestartGameButton.color.b, 0.0f);
+        gameOverRestartGameButton.enabled = false;
+        restartGameText.color = new Color(restartGameText.color.r, restartGameText.color.g, restartGameText.color.b, 0.0f);
+        restartGameText.enabled = false;
+        
+        gameOverExitGameButton.color = new Color(gameOverExitGameButton.color.r, gameOverExitGameButton.color.g, gameOverExitGameButton.color.b, 0.0f);
+        gameOverExitGameButton.enabled = false;
+        quitGameText.color = new Color(quitGameText.color.r, quitGameText.color.g, quitGameText.color.b, 0.0f);
+        quitGameText.enabled = false;
     }
 }

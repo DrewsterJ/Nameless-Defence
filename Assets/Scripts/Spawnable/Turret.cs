@@ -39,6 +39,9 @@ public class Turret : MonoBehaviour
     
     void Update()
     {
+        if (!GameManager.instance._gameActive)
+            return;
+        
         HandleActiveTargetEngagements();
     }
     
@@ -92,8 +95,9 @@ public class Turret : MonoBehaviour
     }
     
     // Method to stop firing
-    private void StopFiring()
+    public void StopFiring()
     {
+        StopCoroutine(FireAtInterval(_firingRate));
         _firing = false;
     }
     
@@ -135,7 +139,7 @@ public class Turret : MonoBehaviour
     }
 
     // Instantiates bullets at a given interval
-    private IEnumerator FireAtInterval(int interval)
+    public IEnumerator FireAtInterval(int interval)
     {
         while (IsEngagingTarget())
         {
@@ -144,7 +148,7 @@ public class Turret : MonoBehaviour
             
             // Stop this coroutine if we changed targets while `WaitForSeconds(...)` was still waiting
             if (activeTarget != _activeTarget)
-                break;
+                StopCoroutine(FireAtInterval(_firingRate));
             
             FireBullet();
         }
@@ -153,6 +157,9 @@ public class Turret : MonoBehaviour
     // NOTE: Enemies should be calling onTriggerEnter
     private void FireBullet()
     {
+        if (!GameManager.instance._gameActive)
+            return;
+        
         var t = transform;
         Instantiate(bulletPrefab, t.position + t.forward, t.rotation);
     }

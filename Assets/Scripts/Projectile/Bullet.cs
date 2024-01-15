@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour
     void Update()
     { }
 
+    // Despawns the bullet after `_bulletlifetime` seconds has passed
     IEnumerator DieAfterSeconds()
     {
         if (!gameObject.IsUnityNull() && !gameObject.IsDestroyed())

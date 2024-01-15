@@ -10,6 +10,7 @@ TagManager:
   - Turret
   - SpawnPoint
   - TurretPlacementPosition
+  - BaseBoundaryTile
   layers:
   - Default
   - TransparentFX
@@ -58,4 +59,7 @@ TagManager:
     locked: 0
   - name: Building Layer Upper
     uniqueID: 3532716533
+    locked: 0
+  - name: UI
+    uniqueID: 2564498547
     locked: 0

@@ -598,9 +598,11 @@ MonoBehaviour:
   _maxHealth: 20
   _health: 20
   _damage: 1
+  _baseDamage: 10
   _movementSpeed: 1
   _attackSpeed: 1
   _meleeAttackRange: 0.5
+  _enemyLifetime: 20
   _engagingTarget: 0
   activeTarget: {fileID: 0}
   rb: {fileID: 7956075993091403298}

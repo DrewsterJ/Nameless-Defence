@@ -192,7 +192,6 @@ public class GameManager : MonoBehaviour
 
         _baseHealth -= damage;
         _baseHealthBar.SetHealthAmount(_baseHealth);
-        Debug.Log("Base Health is " + _baseHealth);
 
         if (_baseHealth <= 0)
             GameOver();
@@ -209,7 +208,6 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("Game Over!");
         ShowGameOverUI();
         StopCoroutine(SpawnEnemyCoroutine());
         StopCoroutine(TurretTargetingCoroutine());

@@ -598,6 +598,7 @@ MonoBehaviour:
   _maxHealth: 20
   _health: 20
   _damage: 1
+  _baseDamage: 10
   _movementSpeed: 1
   _attackSpeed: 1
   _meleeAttackRange: 0.5

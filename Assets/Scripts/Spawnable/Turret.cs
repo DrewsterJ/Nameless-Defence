@@ -12,6 +12,8 @@ public class Turret : MonoBehaviour
     public int _maxHealth;
     public int _health;
     public float _firingRange; // range the turret can shoot
+
+    private Coroutine firingCoroutine;
     
     // Turret projectile
     public GameObject bulletPrefab;
@@ -73,11 +75,16 @@ public class Turret : MonoBehaviour
     private void HandleActiveTargetEngagements()
     {
         if (_activeTarget.IsUnityNull())
+        {
+            StopFiring();
             return;
+        }
+            
 
         if (_activeTarget.IsDestroyed())
         {
-            _activeTarget = null;
+            //_activeTarget = null;
+            StopFiring();
             return;
         }
 
@@ -91,13 +98,17 @@ public class Turret : MonoBehaviour
     private void StartFiring()
     {
         _firing = true;
-        StartCoroutine(FireAtInterval(_firingRate));
+        firingCoroutine = StartCoroutine(FireAtInterval(_firingRate));
     }
     
     // Method to stop firing
     public void StopFiring()
     {
-        StopCoroutine(FireAtInterval(_firingRate));
+        if (firingCoroutine != null)
+        {
+            StopCoroutine(firingCoroutine);
+        }
+        
         _firing = false;
     }
     
@@ -124,8 +135,8 @@ public class Turret : MonoBehaviour
     // Method to stop following and shooting at a given target
     private void DisengageTarget(GameObject target)
     {
-        if (_activeTarget != target) 
-            return;
+        //if (_activeTarget != target) 
+            //return;
 
         StopFiring();
         _activeTarget = null;
@@ -148,7 +159,13 @@ public class Turret : MonoBehaviour
             
             // Stop this coroutine if we changed targets while `WaitForSeconds(...)` was still waiting
             if (activeTarget != _activeTarget)
-                StopCoroutine(FireAtInterval(_firingRate));
+                yield return null;
+
+            if (activeTarget == null)
+                yield return null;
+
+            if (!IsEngagingTarget())
+                yield return null;
             
             FireBullet();
         }

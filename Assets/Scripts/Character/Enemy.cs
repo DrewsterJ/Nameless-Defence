@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,37 +5,56 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int _maxHealth;
-    public int _health;
-    public int _damage;
-    public int _baseDamage;
-    public int _movementSpeed;
-    public int _attackSpeed;
-    public float _meleeAttackRange;
-    public int _enemyLifetime; // in seconds
+    // Public fields
+    public Rigidbody2D rigidBody;
     
-    public bool _engagingTarget;
+    // Private fields
+    private Coroutine attackCoroutine;
+    
+    // Other labeled fields
+    [Space(10)]
+    [Header("Health")]
+    public int minHealth;
+    public int maxHealth; 
+    [SerializeField] private int _health;
+    
+    [Space(10)]
+    [Header("Attack")]
+    public int attackDamage; // Damage against other game objects
+    public int baseDamage; // Damage against base health bar when reaching bottom of map
+    public int attackSpeed; // Seconds between attacks
+    public float attackRange;
+    
+    [Space(10)]
+    [Header("Movement")]
+    public int movementSpeed;
 
-    public GameObject activeTarget;
-    public Rigidbody2D rb;
-
-    public FloatingHealthbar healthBar;
+    [Space(10)]
+    [Header("UI")] 
+    public FloatingHealthBar healthBar;
     
-    // Offset for accurately aiming at a target
-    private const float _aimAngleOffset = -90f;
-    
-    // Start is called before the first frame update
     void Start()
     {
-        Debug.Assert(!rb.IsUnityNull());
-
-        healthBar.SetMaxHealth(_health);
-        healthBar.SetHealthAmount(_health);
+        Debug.Assert(minHealth >= 0);
+        Debug.Assert(maxHealth > 0);
+        Debug.Assert(minHealth < maxHealth);
+        Debug.Assert(attackDamage >= 0);
+        Debug.Assert(baseDamage >= 0);
+        Debug.Assert(attackSpeed >= 0);
+        Debug.Assert(attackRange >= 0.0f);
+        Debug.Assert(movementSpeed > 0);
+        Debug.Assert(rigidBody != null && !rigidBody.IsUnityNull());
+        Debug.Assert(healthBar != null && !healthBar.IsUnityNull());
+        Debug.Assert(attackCoroutine == null || attackCoroutine.IsUnityNull());
         
-        StartCoroutine(MeleeAttackFrontAtInterval(_attackSpeed));
-    }
+        healthBar.SetMinHealth(minHealth);
+        healthBar.SetMaxHealth(maxHealth);
+        SetHealth(maxHealth);
 
-    // Update is called once per frame
+        // Set the enemy to attack all the time
+        attackCoroutine = StartCoroutine(MeleeAttackFrontAtInterval(attackSpeed));
+    }
+    
     void Update()
     {
         MoveForward();
@@ -46,24 +64,22 @@ public class Enemy : MonoBehaviour
     {
         // Source: https://discussions.unity.com/t/how-can-i-convert-a-quaternion-to-a-direction-vector/80376
         var direction = transform.rotation * Vector2.up;
-
-        // Stop moving if the game is over
-        rb.velocity = -direction * _movementSpeed;
+        rigidBody.velocity = -direction * movementSpeed;
     }
     
     private IEnumerator MeleeAttackFrontAtInterval(int interval)
     {
-        while (true)
+        while (_health > minHealth)
         {
             yield return new WaitForSeconds(interval);
             MeleeAttackFront();
         }
     }
-
+    
     private void MeleeAttackFront()
     {
         var facingDirection = transform.rotation * Vector2.up;
-        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, facingDirection, _meleeAttackRange);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, facingDirection, attackRange);
         
         List<GameObject> validHits = new List<GameObject>();
         foreach (var hit in hits)
@@ -79,34 +95,45 @@ public class Enemy : MonoBehaviour
         }
     }
     
-    // Deletes the enemy
-    private void KillEnemy()
+    // Despawns the enemy gameobject
+    private void Die()
     {
         Destroy(gameObject);
     }
 
-    // Method is called by others who deal damage to this enemy
-    private void TakeDamage(int dmg)
+    // Sets the enemy's health to the given value and updates floating health bar with new health
+    private void SetHealth(int value)
     {
-        _health -= dmg;
-        healthBar.SetHealthAmount(_health);
+        if (value < minHealth)
+            value = minHealth;
 
-        if (_health <= 0)
-            KillEnemy();
+        _health = value;
+        healthBar.SetHealth(value);
+    }
+
+    // Method is called when the enemy receives damage
+    private void TakeDamage(int damage)
+    {
+        var health = _health - damage;
+        
+        // Updates internal health and UI health bar
+        SetHealth(health);
+
+        if (health <= minHealth)
+            Die();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Bullet"))
         {
-            var dmg = other.GetComponent<Bullet>().damage;
-            TakeDamage(dmg);
-            Destroy(other.gameObject);
+            var bullet = other.GetComponent<Bullet>();
+            TakeDamage(bullet.damage);
+            bullet.HandleHit();
         }
         else if (other.CompareTag("BaseBoundaryTile"))
         {
-            // Enemy hit the base
-            GameManager.instance.DamageBase(_baseDamage);
+            GameManager.instance.DamageBase(baseDamage);
             Destroy(gameObject);
         }
     }

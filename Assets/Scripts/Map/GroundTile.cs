@@ -1,25 +1,16 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using Color = UnityEngine.Color;
 
 public class GroundTile : MonoBehaviour
 {
-    public GridLayout grid;
-    public SpriteRenderer sr;
     public LayerMask tileLayerMask;
-    public List<GroundTile> adjacentTiles = new List<GroundTile>();
+    public List<GroundTile> adjacentTiles;
     
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Assert(sr != null);
         Debug.Assert(adjacentTiles != null);
-        adjacentTiles = IdentifyAdjacentTiles();
+        adjacentTiles = new List<GroundTile>(IdentifyAdjacentTiles());
     }
 
     // Shoots raycasts in all directions from this tile to find it's adjacent tiles
@@ -34,23 +25,5 @@ public class GroundTile : MonoBehaviour
                 adjacentTiles.Add(hit.collider.gameObject.GetComponent<GroundTile>());
         }
         return adjacentTiles;
-    }
-    
-    private void OnMouseEnter()
-    {
-        GameManager.instance.SetFocusedTile(this);
-    }
-
-    private void OnMouseExit()
-    {
-        GameManager.instance.SetFocusedTile(null);
-    }
-
-    public void SetSprite(Sprite sprite)
-    {
-        if (sprite == null)
-            return;
-        
-        sr.sprite = sprite;
     }
 }

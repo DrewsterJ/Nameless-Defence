@@ -1,15 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
-using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
 
 public class GameManager : MonoBehaviour
@@ -18,12 +14,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject tilemap;
     private List<GroundTile> gameTiles;
-    
-    // The tile the player is hovering their mouse over
-    private GroundTile focusedTile;
 
     public float _turretTargetAcquisitionInterval = 1;
-    public float _enemyTargetAcquisitionInterval = 1;
 
     public List<Enemy> enemies;
     public List<Turret> turrets;
@@ -38,10 +30,13 @@ public class GameManager : MonoBehaviour
 
     public bool _gameActive;
 
-    public FloatingHealthbar _baseHealthBar;
+    public FloatingHealthBar _baseHealthBar;
 
     private int _baseHealth;
     public int _maxBaseHealth;
+
+    public event UnityAction onGameOver;
+    public event UnityAction onGameRestart;
 
     public Image gameOverPanel;
     public TextMeshProUGUI gameOverText;
@@ -55,13 +50,10 @@ public class GameManager : MonoBehaviour
     {
         gameTiles = new List<GroundTile>(tilemap.GetComponentsInChildren<GroundTile>());
         spawnPoints = gameTiles.FindAll(tile => tile.CompareTag("SpawnPoint"));
+        Debug.Assert(_baseHealthBar != null && !_baseHealthBar.IsUnityNull());
 
         StartGame();
     }
-    
-    // Update is called once per frame
-    void Update()
-    { }
 
     void Awake()
     {
@@ -103,18 +95,6 @@ public class GameManager : MonoBehaviour
         enemies.Remove(enemy);
     }
 
-    // Called by the GroundTile script to set the tile that the player is currently hovering over
-    public void SetFocusedTile(GroundTile tile)
-    {
-        focusedTile = tile;
-    }
-
-    public void PerformLeftClick()
-    { }
-
-    public void PerformRightClick()
-    { }
-
     public void SpawnTurretAtTile(GroundTile tile)
     {
         Debug.Assert(tile != null);
@@ -122,10 +102,6 @@ public class GameManager : MonoBehaviour
         var turret = Instantiate(turretPrefab, tile.transform.position, turretPrefab.transform.rotation);
         AddTurret(turret.GetComponent<Turret>());
     }
-
-    // Called by the player to interact with a tile using any hotbar action item
-    public void InteractWithTile()
-    { }
 
     IEnumerator TurretTargetingCoroutine()
     {
@@ -191,7 +167,7 @@ public class GameManager : MonoBehaviour
             damage = 0;
 
         _baseHealth -= damage;
-        _baseHealthBar.SetHealthAmount(_baseHealth);
+        _baseHealthBar.SetHealth(_baseHealth);
 
         if (_baseHealth <= 0)
             GameOver();
@@ -203,7 +179,7 @@ public class GameManager : MonoBehaviour
             health = 0;
 
         _baseHealth += health;
-        _baseHealthBar.SetHealthAmount(_baseHealth);
+        _baseHealthBar.SetHealth(_baseHealth);
     }
 
     private void GameOver()
@@ -214,12 +190,12 @@ public class GameManager : MonoBehaviour
 
         foreach (var turret in turrets)
         {
-            turret.StopFiring();
+            turret.DisengageActiveTarget();
         }
 
         foreach (var enemy in enemies)
         {
-            enemy._movementSpeed = 0;
+            //enemy._movementSpeed = 0;
         }
         
         foreach (var tile in gameTiles)
@@ -271,7 +247,7 @@ public class GameManager : MonoBehaviour
         }
         
         _baseHealthBar.SetMaxHealth(_maxBaseHealth);
-        _baseHealthBar.SetHealthAmount(_maxBaseHealth);
+        _baseHealthBar.SetHealth(_maxBaseHealth);
 
         StartCoroutine(TurretTargetingCoroutine());
         StartCoroutine(SpawnEnemyCoroutine());

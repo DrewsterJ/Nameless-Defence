@@ -1,28 +1,29 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     public int damage;
-    public int _bulletLifetime; // in seconds
+    [SerializeField] private int _lifetime; // in seconds
 
     void Start()
     {
-        StartCoroutine(DieAfterSeconds());
+        Debug.Assert(_lifetime > 0);
+        Debug.Assert(damage >= 0);
+        
+        StartCoroutine(DespawnAfterSeconds(_lifetime));
     }
-    
-    void Update()
-    { }
 
-    // Despawns the bullet after `_bulletlifetime` seconds has passed
-    IEnumerator DieAfterSeconds()
+    // Despawns the bullet after `_lifetime` seconds has passed
+    IEnumerator DespawnAfterSeconds(int seconds)
     {
-        if (!gameObject.IsUnityNull() && !gameObject.IsDestroyed())
-        {
-            yield return new WaitForSeconds(_bulletLifetime);
-            Destroy(gameObject);
-        }
+        yield return new WaitForSeconds(seconds);
+        Destroy(gameObject);
+    }
+
+    // Called by other gameobjects when this bullet hits them
+    public void HandleHit()
+    {
+        Destroy(gameObject);
     }
 }

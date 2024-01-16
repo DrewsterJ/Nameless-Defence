@@ -13,7 +13,7 @@ public class GroundTile : MonoBehaviour
         adjacentTiles = new List<GroundTile>(IdentifyAdjacentTiles());
     }
 
-    // Shoots raycasts in all directions from this tile to find it's adjacent tiles
+    // Shoots raycasts in all directions from this tile to find its adjacent tiles
     private List<GroundTile> IdentifyAdjacentTiles()
     {
         Vector2 position = transform.position;

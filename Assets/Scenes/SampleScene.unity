@@ -3093,6 +3093,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1384140393553453002, guid: b9e603c081f2597488b705856f06fff0, type: 3}
   m_PrefabInstance: {fileID: 118244247}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &118250151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 118250152}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &118250152
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118250151}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.71588963, y: -0.0024169832, z: 1.9948783}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 486663777}
+  - {fileID: 679761406}
+  - {fileID: 437115860}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &120271492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10305,6 +10339,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1384140393553453002, guid: b9e603c081f2597488b705856f06fff0, type: 3}
   m_PrefabInstance: {fileID: 429328645}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &437115859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 437115860}
+  - component: {fileID: 437115861}
+  m_Layer: 0
+  m_Name: EnemyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &437115860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437115859}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 118250152}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &437115861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437115859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72a3cdfaee7f1bd43adba83d405732c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies: []
+  enemyPrefab: {fileID: 8499755488035685709, guid: 2a8faddb060666441b90c30ef4997414, type: 3}
+  spawnRate: 1
+  spawnPoints: []
 --- !u!1001 &443198029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11659,19 +11741,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2a7475f3478ab4ea100da40aed868e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 1993746342}
-  _turretTargetAcquisitionInterval: 0
-  _enemyTargetAcquisitionInterval: 0
-  enemies: []
-  turrets: []
-  spawnPoints:
-  - {fileID: 0}
-  _enemySpawnRate: 2
-  enemyPrefab: {fileID: 8499755488035685709, guid: 2a8faddb060666441b90c30ef4997414, type: 3}
-  turretPrefab: {fileID: 830858593765386935, guid: a6139a35797ed2f44bc457d68f63120d, type: 3}
+  tileMap: {fileID: 1993746342}
+  gameTiles: []
   _gameActive: 0
   _baseHealthBar: {fileID: 44450158}
   _maxBaseHealth: 100
+  gameOverCanvas: {fileID: 1049064122}
   gameOverPanel: {fileID: 1049064124}
   gameOverText: {fileID: 781436573}
   gameOverRestartGameButton: {fileID: 252409516}
@@ -11686,12 +11761,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486663775}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15016854, y: -0.15815493, z: 33.683342}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5657211, y: -0.15573795, z: 31.688463}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 118250152}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &490800528
 PrefabInstance:
@@ -16653,6 +16728,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1384140393553453002, guid: b9e603c081f2597488b705856f06fff0, type: 3}
   m_PrefabInstance: {fileID: 679591729}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &679761405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 679761406}
+  - component: {fileID: 679761407}
+  m_Layer: 0
+  m_Name: TurretManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &679761406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679761405}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 118250152}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &679761407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679761405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce877f424cb4e8244bb9c8e45c57a1fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turrets: []
+  turretPrefab: {fileID: 830858593765386935, guid: a6139a35797ed2f44bc457d68f63120d, type: 3}
+  enemySearchInterval: 0.15
 --- !u!1001 &681253644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48215,7 +48337,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 486663777}
   - {fileID: 1085956471}
   - {fileID: 985850822}
   - {fileID: 1012447854}
+  - {fileID: 118250152}

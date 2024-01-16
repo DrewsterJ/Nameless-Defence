@@ -124,7 +124,6 @@ public class Turret : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(interval);
-            Debug.Log("Shooting bullet now: " + Time.time);
             FireBullet();
         }
     }
@@ -134,7 +133,7 @@ public class Turret : MonoBehaviour
     {
         if (!GameManager.instance._gameActive)
             return;
-        Debug.Log("Shooting!");
+        
         var t = transform;
         Instantiate(bulletPrefab, t.position + t.forward, t.rotation);
     }

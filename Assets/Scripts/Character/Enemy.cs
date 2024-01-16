@@ -12,24 +12,24 @@ public class Enemy : MonoBehaviour
     private Coroutine attackCoroutine;
     
     // Other labeled fields
-    [Space(10)]
+    [Space]
     [Header("Health")]
     public int minHealth;
     public int maxHealth; 
     [SerializeField] private int _health;
     
-    [Space(10)]
+    [Space]
     [Header("Attack")]
     public int attackDamage; // Damage against other game objects
     public int baseDamage; // Damage against base health bar when reaching bottom of map
     public int attackSpeed; // Seconds between attacks
     public float attackRange;
     
-    [Space(10)]
+    [Space]
     [Header("Movement")]
     public int movementSpeed;
 
-    [Space(10)]
+    [Space]
     [Header("UI")] 
     public FloatingHealthBar healthBar;
     
@@ -76,6 +76,7 @@ public class Enemy : MonoBehaviour
         }
     }
     
+    // Performs damage to valid targets within the enemy's attack range
     private void MeleeAttackFront()
     {
         var facingDirection = transform.rotation * Vector2.up;

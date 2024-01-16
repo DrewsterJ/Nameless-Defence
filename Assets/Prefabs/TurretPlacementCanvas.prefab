@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -130,39 +130,15 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHovered
-          m_Mode: 2
+          m_MethodName: SetRangedTurretButtonHover
+          m_Mode: 6
           m_Arguments:
-            m_ObjectArgument: {fileID: 6524637103706929309}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHovered
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6550381375372359501}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHovered
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6345043749301682977}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
     callback:
@@ -170,35 +146,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
+          m_MethodName: SetRangedTurretButtonHover
+          m_Mode: 6
           m_Arguments:
-            m_ObjectArgument: {fileID: 6524637103706929309}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6550381375372359501}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6345043749301682977}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -225,92 +177,8 @@ MonoBehaviour:
           m_MethodName: SetHidden
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 5496797452715526781}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6524637103706929309}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6550381375372359501}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6345043749301682977}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6138334902799479260}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2810274600927079709}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 3438080573371472116}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6176339336801235724}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+            m_ObjectArgument: {fileID: 1484773679179893869}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -322,15 +190,15 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetMouseDownOnTurretOne
-          m_Mode: 1
+          m_MethodName: SetRangedTurretMousePosition
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
   - eventID: 3
     callback:
@@ -338,8 +206,8 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetMouseUpOnTurretOne
-          m_Mode: 1
+          m_MethodName: SetRangedTurretMousePosition
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -435,7 +303,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &287358421422253688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,19 +333,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a811335563229c43b957b0e0f6ee9bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildMenuButton: {fileID: 4319025487430325286}
+  turretBuildMenu: {fileID: 7818993968560053398}
+  buildMenuButtonBackground: {fileID: 4319025487430325286}
   buildMenuIcon: {fileID: 6575926646254325103}
-  turretOption1: {fileID: 5496797452715526781}
-  turretOption1Icon: {fileID: 6524637103706929309}
-  turretOption1GoldIcon: {fileID: 6550381375372359501}
-  turretOption1GoldCostText: {fileID: 6345043749301682977}
-  turretOption2: {fileID: 2810274600927079709}
-  turretOption2Icon: {fileID: 6138334902799479260}
-  turretOption2GoldIcon: {fileID: 3438080573371472116}
-  turretOption2GoldCostText: {fileID: 6176339336801235724}
-  turretOption1GoldCost: 0
-  turretOption2GoldCost: 0
-  turretPlacementPosition: {fileID: 0}
+  rangedTurretIcon: {fileID: 6524637103706929309}
+  rangedTurretGoldIcon: {fileID: 6550381375372359501}
+  rangedTurretGoldText: {fileID: 6345043749301682977}
+  rangedTurretGoldCost: 250
+  meleeTurretIcon: {fileID: 6138334902799479260}
+  meleeTurretGoldIcon: {fileID: 3438080573371472116}
+  meleeTurretGoldText: {fileID: 6176339336801235724}
+  meleeTurretGoldCost: 100
 --- !u!114 &8491827923982226100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,95 +363,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
+          m_MethodName: SetTurretBuildMenuVisibility
+          m_Mode: 6
           m_Arguments:
-            m_ObjectArgument: {fileID: 5496797452715526781}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2810274600927079709}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6524637103706929309}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6138334902799479260}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6550381375372359501}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 3438080573371472116}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6345043749301682977}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6176339336801235724}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -649,7 +431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -798,15 +580,15 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHovered
-          m_Mode: 2
+          m_MethodName: SetBaseButtonHover
+          m_Mode: 6
           m_Arguments:
-            m_ObjectArgument: {fileID: 6575926646254325103}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
   - eventID: 4
     callback:
@@ -814,195 +596,15 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
+          m_MethodName: SetTurretBuildMenuVisibility
+          m_Mode: 6
           m_Arguments:
-            m_ObjectArgument: {fileID: 5496797452715526781}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2810274600927079709}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6524637103706929309}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6138334902799479260}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetEnabled
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6524637103706929309}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetEnabled
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 5496797452715526781}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetEnabled
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6138334902799479260}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetEnabled
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2810274600927079709}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6550381375372359501}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 3438080573371472116}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetEnabled
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6550381375372359501}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetEnabled
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 3438080573371472116}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6345043749301682977}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6176339336801235724}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetEnabled
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6345043749301682977}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetEnabled
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6176339336801235724}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
     callback:
@@ -1010,23 +612,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
+          m_MethodName: SetBaseButtonHover
+          m_Mode: 6
           m_Arguments:
-            m_ObjectArgument: {fileID: 4319025487430325286}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6575926646254325103}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1090,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1258,8 +848,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283882495
-  m_fontColor: {r: 1, g: 0.85882354, b: 0.3372549, a: 1}
+    rgba: 1280760831
+  m_fontColor: {r: 1, g: 0.85882354, b: 0.3372549, a: 0.29803923}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1559,7 +1149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1631,39 +1221,15 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHovered
-          m_Mode: 2
+          m_MethodName: SetMeleeTurretButtonHover
+          m_Mode: 6
           m_Arguments:
-            m_ObjectArgument: {fileID: 6138334902799479260}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHovered
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 3438080573371472116}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHovered
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6176339336801235724}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
     callback:
@@ -1671,35 +1237,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
+          m_MethodName: SetMeleeTurretButtonHover
+          m_Mode: 6
           m_Arguments:
-            m_ObjectArgument: {fileID: 6138334902799479260}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 3438080573371472116}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetDefault
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6176339336801235724}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1711,15 +1253,15 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetMouseDownOnTurretTwo
-          m_Mode: 1
+          m_MethodName: SetMeleeTurretMousePosition
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
   - eventID: 3
     callback:
@@ -1727,8 +1269,8 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4595809182896217878}
           m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetMouseUpOnTurretTwo
-          m_Mode: 1
+          m_MethodName: SetMeleeTurretMousePosition
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1758,92 +1300,8 @@ MonoBehaviour:
           m_MethodName: SetHidden
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 5496797452715526781}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6524637103706929309}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6550381375372359501}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6345043749301682977}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6138334902799479260}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2810274600927079709}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 3438080573371472116}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6176339336801235724}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+            m_ObjectArgument: {fileID: 1484773679179893869}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1925,8 +1383,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283816959
-  m_fontColor: {r: 1, g: 0.8578888, b: 0.33490568, a: 1}
+    rgba: 1280695295
+  m_fontColor: {r: 1, g: 0.8578888, b: 0.33490568, a: 0.29803923}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

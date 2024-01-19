@@ -1189,7 +1189,7 @@ GameObject:
   - component: {fileID: 44450159}
   - component: {fileID: 44450158}
   m_Layer: 7
-  m_Name: Slider
+  m_Name: Base Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3125,6 +3125,7 @@ Transform:
   - {fileID: 486663777}
   - {fileID: 679761406}
   - {fileID: 437115860}
+  - {fileID: 942077882}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &120271492
@@ -5741,14 +5742,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 486663776}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: SetRestartButtonHoverOn
-          m_Mode: 1
+        - m_Target: {fileID: 942077883}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: SetRestartButtonHover
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5757,14 +5754,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 942077883}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: SetRestartButtonHover
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 486663776}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: SetRestartButtonHoverOff
-          m_Mode: 1
+        - m_Target: {fileID: 942077883}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: SetRestartButtonHover
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11743,16 +11756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileMap: {fileID: 1993746342}
   gameTiles: []
-  _gameActive: 0
-  _baseHealthBar: {fileID: 44450158}
   _maxBaseHealth: 100
-  gameOverCanvas: {fileID: 1049064122}
-  gameOverPanel: {fileID: 1049064124}
-  gameOverText: {fileID: 781436573}
-  gameOverRestartGameButton: {fileID: 252409516}
-  restartGameText: {fileID: 50193943}
-  gameOverExitGameButton: {fileID: 1301817540}
-  quitGameText: {fileID: 714889489}
 --- !u!4 &486663777
 Transform:
   m_ObjectHideFlags: 0
@@ -22271,6 +22275,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1384140393553453002, guid: b9e603c081f2597488b705856f06fff0, type: 3}
   m_PrefabInstance: {fileID: 939923458}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &942077881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 942077882}
+  - component: {fileID: 942077883}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &942077882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942077881}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 118250152}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &942077883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942077881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bfca34abea627448a4a7d662f313fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverCanvas: {fileID: 1049064122}
+  _baseHealthBar: {fileID: 44450158}
+  gameOverRestartButton: {fileID: 252409516}
+  gameOverExitButton: {fileID: 1301817540}
 --- !u!1001 &946704700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28435,14 +28487,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 486663776}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: SetQuitButtonHoverOn
-          m_Mode: 1
+        - m_Target: {fileID: 942077883}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: SetQuitButtonHover
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -28451,14 +28499,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 942077883}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: SetQuitButtonHover
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 486663776}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: SetQuitButtonHoverOff
-          m_Mode: 1
+        - m_Target: {fileID: 942077883}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: SetQuitButtonHover
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -30776,6 +30840,10 @@ PrefabInstance:
     - target: {fileID: 6390773377663937648, guid: 3b8a9cb3faadb57419d3f7c1f28555e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172616604381626502, guid: 3b8a9cb3faadb57419d3f7c1f28555e3, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35742,6 +35810,10 @@ PrefabInstance:
     - target: {fileID: 6390773377663937648, guid: 3b8a9cb3faadb57419d3f7c1f28555e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172616604381626502, guid: 3b8a9cb3faadb57419d3f7c1f28555e3, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43473,6 +43545,10 @@ PrefabInstance:
     - target: {fileID: 6390773377663937648, guid: 3b8a9cb3faadb57419d3f7c1f28555e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172616604381626502, guid: 3b8a9cb3faadb57419d3f7c1f28555e3, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -11,6 +11,7 @@ public class TurretManager : MonoBehaviour
     public List<Turret> turrets;
     public GameObject turretPrefab;
     public float enemySearchInterval; // how often turrets search for new enemies
+    private Coroutine _turretTargetingCoroutine;
     
     void Awake()
     {
@@ -19,6 +20,26 @@ public class TurretManager : MonoBehaviour
         else
             instance = this;
     }
+    
+    void OnEnable()
+    {
+        GameManager.instance.onGameOver += OnGameOver;
+        GameManager.instance.onGameStart += OnGameStart;
+    }
+
+    // Event is invoked by the GameManager when the game starts or restarts
+    void OnGameStart()
+    {
+        RemoveAllTurrets();
+        _turretTargetingCoroutine = StartCoroutine(TurretTargetingCoroutine());
+    }
+    
+    // Event is invoked by the GameManager when the player's base's health reaches 0
+    void OnGameOver()
+    {
+        StopCoroutine(_turretTargetingCoroutine);
+        DisengageAllTurrets();
+    }
 
     // Coroutine for assigning enemy targets to idle turrets
     public IEnumerator TurretTargetingCoroutine()
@@ -26,11 +47,13 @@ public class TurretManager : MonoBehaviour
         while (true)
         {
             foreach (var turret in turrets.Where(turret =>
-                         !turret.IsEngagingTarget() && !turret.IsDestroyed() &&
+                         !turret.IsEngagingTarget() && 
+                         !turret.IsDestroyed() &&
                          !turret.IsUnityNull()))
             {
                 foreach (var enemy in EnemyManager.instance.enemies.Where(enemy =>
-                             !enemy.IsDestroyed() && !enemy.IsUnityNull()))
+                             !enemy.IsDestroyed() && 
+                             !enemy.IsUnityNull()))
                 {
                     turret.TryEngageTarget(enemy.gameObject);
                     if (turret.IsEngagingTarget())
@@ -44,8 +67,15 @@ public class TurretManager : MonoBehaviour
         }
     }
 
+    // Sets all turrets to be idle
+    private void DisengageAllTurrets()
+    {
+        foreach (var turret in turrets.Where(turret => turret.IsEngagingTarget()))
+            turret.DisengageActiveTarget();
+    }
+
     // Removes turrets that no longer exist or were destroyed
-    public void RemoveInvalidTurrets()
+    private void RemoveInvalidTurrets()
     {
         turrets.RemoveAll(turret =>
         {
@@ -54,11 +84,24 @@ public class TurretManager : MonoBehaviour
     }
     
     // Spawns a turret in the world at the given ground tile
+    [RequiresGameActive]
     public void SpawnTurretAtTile(GroundTile tile)
     {
         Debug.Assert(tile != null && !tile.IsDestroyed() && !tile.IsUnityNull());
-        
         var turret = Instantiate(turretPrefab, tile.transform.position, turretPrefab.transform.rotation);
         turrets.Add(turret.GetComponent<Turret>());
+    }
+    
+    // Despawns all turrets from the game world
+    public void RemoveAllTurrets()
+    {
+        foreach (var turret in turrets.Where(turret =>
+                     !turret.IsUnityNull() &&
+                     !turret.IsDestroyed()))
+        {
+            turret.gameObject.SetActive(false);
+            Destroy(turret.gameObject);
+        }
+        turrets.Clear();
     }
 }

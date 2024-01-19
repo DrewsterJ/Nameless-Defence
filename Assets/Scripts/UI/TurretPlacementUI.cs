@@ -11,8 +11,8 @@ public class TurretPlacementUI : MonoBehaviour
     private GroundTile turretPlacementPosition; // contains tile where purchased turrets from this build menu will spawn at
     
     // Other labeled fields
-    [Space]
-    [Header("Build Menu Button")]
+    [Space] [Header("Build Menu Button")] 
+    public GameObject buildMenuButton;
     public Image buildMenuButtonBackground;
     public Image buildMenuIcon;
     
@@ -45,11 +45,12 @@ public class TurretPlacementUI : MonoBehaviour
     public void SetDefaultVisibility()
     {
         turretBuildMenu.SetActive(false);
+        buildMenuButton.SetActive(true);
         buildMenuIcon.color = AdjustColorOpacity(buildMenuIcon.color, 0.3f);
-        //buildMenuButtonBackground.color = AdjustColorOpacity(buildMenuIcon.color, 0.15f);
     }
 
     // Sets the ranged turret button's color to reflect the player hovering over the button
+    [RequiresGameActive]
     public void SetRangedTurretButtonHover(bool hover)
     {
         var opacity = (hover) ? 1.0f : 0.3f;
@@ -59,7 +60,8 @@ public class TurretPlacementUI : MonoBehaviour
         rangedTurretGoldText.color = AdjustColorOpacity(rangedTurretGoldText.color, opacity);
     }
     
-    // Sets the ranged turret button's color to reflect the player pressing mouse down or up
+    // Sets the ranged turret button's color to reflect the player pressing mouse down or 
+    [RequiresGameActive]
     public void SetRangedTurretMousePosition(bool mouseDown)
     {
         var opacity = (mouseDown) ? 0.8f : 0.3f;
@@ -70,6 +72,7 @@ public class TurretPlacementUI : MonoBehaviour
     }
     
     // Sets the melee turret button's color to reflect the player hovering over the button
+    [RequiresGameActive]
     public void SetMeleeTurretButtonHover(bool hover)
     {
         var opacity = (hover) ? 1.0f : 0.3f;
@@ -80,6 +83,7 @@ public class TurretPlacementUI : MonoBehaviour
     }
     
     // Sets the ranged turret button's color to reflect the player pressing mouse down or up
+    [RequiresGameActive]
     public void SetMeleeTurretMousePosition(bool mouseDown)
     {
         var opacity = (mouseDown) ? 0.8f : 0.3f;
@@ -90,6 +94,7 @@ public class TurretPlacementUI : MonoBehaviour
     }
 
     // Sets the build menu button's color to reflect the player hovering over the button
+    [RequiresGameActive]
     public void SetBaseButtonHover(bool hover)
     {
         var opacity = (hover) ? 1.0f : 0.3f;
@@ -113,13 +118,11 @@ public class TurretPlacementUI : MonoBehaviour
     // Sets the given image to be invisible
     public void SetHidden(GameObject ui)
     {
-        if (!GameManager.instance._gameActive)
-            return;
-
         ui.SetActive(false);
     }
 
     // Sets the visibility of the build menu containing purchasable turrets
+    [RequiresGameActive]
     public void SetTurretBuildMenuVisibility(bool visible)
     {
         turretBuildMenu.SetActive(visible);
@@ -131,21 +134,17 @@ public class TurretPlacementUI : MonoBehaviour
         return new Color(color.r, color.g, color.b, opacity);
     }
     
-    // Spawns a ranged turret in the game world using the TurretManager
+    // Spawns a ranged turret in the game world using the 
+    [RequiresGameActive]
     public void BuildRangedTurret()
     {
-        if (!GameManager.instance._gameActive)
-            return;
-        
         TurretManager.instance.SpawnTurretAtTile(turretPlacementPosition);
     }
 
     // Spawns a melee turret in the game world using the TurretManager
+    [RequiresGameActive]
     public void BuildMeleeTurret()
     {
-        if (!GameManager.instance._gameActive)
-            return;
-        
         // Do nothing for now
     }
 }

@@ -23,15 +23,14 @@ public class Turret : MonoBehaviour
         Debug.Assert(fireRange > 0);
     }
     
+    [RequiresGameActive]
     void Update()
     {
-        if (!GameManager.instance._gameActive)
-            return;
-        
         HandleActiveTargetEngagements();
     }
     
     // Method to try engaging a given target (called by the GameManager)
+    [RequiresGameActive]
     public void TryEngageTarget(GameObject target)
     {
         if (IsEngagingTarget() || !IsValidTarget(target))
@@ -57,6 +56,7 @@ public class Turret : MonoBehaviour
     }
     
     // Handles engagements with an active target
+    [RequiresGameActive]
     private void HandleActiveTargetEngagements()
     {
         if (!IsEngagingTarget())
@@ -85,10 +85,10 @@ public class Turret : MonoBehaviour
     }
     
     // Method to aim at a given target
+    [RequiresGameActive]
     private void AimAtTarget(GameObject target)
     {
-        if (!IsValidTarget(target))
-            return;
+        if (!IsValidTarget(target)) return;
         
         // Source (from RDSquare): https://discussions.unity.com/t/how-do-i-rotate-a-2d-object-to-face-another-object/187072/2
         float angle = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x -transform.position.x ) * Mathf.Rad2Deg;
@@ -97,6 +97,7 @@ public class Turret : MonoBehaviour
     }
 
     // Method to actively follow and shoot at a given target
+    [RequiresGameActive]
     private void EngageTarget(GameObject target)
     {
         Debug.Assert(IsValidTarget(target));
@@ -129,11 +130,9 @@ public class Turret : MonoBehaviour
     }
     
     // NOTE: Enemies should be calling onTriggerEnter
+    [RequiresGameActive]
     private void FireBullet()
     {
-        if (!GameManager.instance._gameActive)
-            return;
-        
         var t = transform;
         Instantiate(bulletPrefab, t.position + t.forward, t.rotation);
     }

@@ -60,6 +60,8 @@ public class Enemy : MonoBehaviour
         MoveForward();
     }
 
+    // Causes the enemy to walk forward
+    [RequiresGameActive]
     private void MoveForward()
     {
         // Source: https://discussions.unity.com/t/how-can-i-convert-a-quaternion-to-a-direction-vector/80376
@@ -77,6 +79,7 @@ public class Enemy : MonoBehaviour
     }
     
     // Performs damage to valid targets within the enemy's attack range
+    [RequiresGameActive]
     private void MeleeAttackFront()
     {
         var facingDirection = transform.rotation * Vector2.up;
@@ -113,6 +116,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Method is called when the enemy receives damage
+    [RequiresGameActive]
     private void TakeDamage(int damage)
     {
         var health = _health - damage;
@@ -124,6 +128,7 @@ public class Enemy : MonoBehaviour
             Die();
     }
 
+    [RequiresGameActive]
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Bullet"))

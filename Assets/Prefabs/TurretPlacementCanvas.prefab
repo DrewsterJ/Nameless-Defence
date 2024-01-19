@@ -177,7 +177,19 @@ MonoBehaviour:
           m_MethodName: SetHidden
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1484773679179893869}
+            m_ObjectArgument: {fileID: 7818993968560053398}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4595809182896217878}
+          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
+          m_MethodName: SetHidden
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2586223835135793884}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -334,6 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretBuildMenu: {fileID: 7818993968560053398}
+  buildMenuButton: {fileID: 2586223835135793884}
   buildMenuButtonBackground: {fileID: 4319025487430325286}
   buildMenuIcon: {fileID: 6575926646254325103}
   rangedTurretIcon: {fileID: 6524637103706929309}
@@ -1290,18 +1303,6 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1484773679179893869}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 

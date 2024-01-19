@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049ed5adae2f1bc41ae6685477c6dd80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthbarSlider: {fileID: 2360544896573333347}
+  healthBarSlider: {fileID: 2360544896573333347}
 --- !u!1 &2921227998760946347
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,15 +595,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb506ebfeb53b848ba1543cf2c17c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 20
-  _health: 20
-  _damage: 1
-  _baseDamage: 10
-  _movementSpeed: 1
-  _attackSpeed: 1
-  _meleeAttackRange: 0.5
-  _enemyLifetime: 20
-  _engagingTarget: 0
-  activeTarget: {fileID: 0}
-  rb: {fileID: 7956075993091403298}
+  rigidBody: {fileID: 7956075993091403298}
+  minHealth: 0
+  maxHealth: 100
+  _health: 99
+  attackDamage: 2
+  baseDamage: 10
+  attackSpeed: 1
+  attackRange: 0.5
+  movementSpeed: 1
   healthBar: {fileID: 8677644124347545824}

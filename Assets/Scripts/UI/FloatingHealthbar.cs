@@ -1,32 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FloatingHealthbar : MonoBehaviour
+public class FloatingHealthBar : MonoBehaviour
 {
-    [SerializeField]
-    private Slider healthbarSlider;
-    
+    public Slider healthBarSlider;
 
-    // Update is called once per frame
-    void Update()
+    public void SetHealth(int value)
     {
-    }
-
-    public void SetHealthAmount(int health)
-    {
-        if (health < 0)
-            healthbarSlider.value = 0;
-        else if (health > 100)
-            healthbarSlider.value = 100;
-        else
-            healthbarSlider.value = health;
+        healthBarSlider.value = value;
     }
 
     public void SetMaxHealth(int value)
     {
-        Debug.Assert(value > 0);
-        healthbarSlider.maxValue = value;
+        Debug.Assert(value >= 0);
+        healthBarSlider.maxValue = value;
+    }
+
+    public void SetMinHealth(int value)
+    {
+        Debug.Assert(value >= 0);
+        healthBarSlider.minValue = value;
     }
 }

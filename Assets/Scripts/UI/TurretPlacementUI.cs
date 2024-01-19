@@ -1,268 +1,150 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Rendering;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class TurretPlacementUI : MonoBehaviour
 {
-    public Image buildMenuButton;
+    // Public fields
+    public GameObject turretBuildMenu;
+    
+    // Private fields
+    private GroundTile turretPlacementPosition; // contains tile where purchased turrets from this build menu will spawn at
+    
+    // Other labeled fields
+    [Space] [Header("Build Menu Button")] 
+    public GameObject buildMenuButton;
+    public Image buildMenuButtonBackground;
     public Image buildMenuIcon;
-    public Image turretOption1;
-    public Image turretOption1Icon;
-    public Image turretOption1GoldIcon;
-    public TextMeshProUGUI turretOption1GoldCostText;
     
-    public Image turretOption2;
-    public Image turretOption2Icon;
-    public Image turretOption2GoldIcon;
-    public TextMeshProUGUI turretOption2GoldCostText;
-
-    public int turretOption1GoldCost;
-    public int turretOption2GoldCost;
-
-    public GroundTile turretPlacementPosition;
+    [Space]
+    [Header("Ranged Turret")]
+    public Image rangedTurretIcon;
+    public Image rangedTurretGoldIcon;
+    public TextMeshProUGUI rangedTurretGoldText;
+    public int rangedTurretGoldCost;
     
-    // Turret 1
-    private Color prevTurretOneGoldIconColor;
-    private Color prevTurretOneGoldTextColor;
-    private Color prevTurretOneIconColor;
-    
-    // Turret 2
-    private Color prevTurretTwoGoldIconColor;
-    private Color prevTurretTwoGoldTextColor;
-    private Color prevTurretTwoIconColor;
+    [Space]
+    [Header("Melee Turret")]
+    public Image meleeTurretIcon;
+    public Image meleeTurretGoldIcon;
+    public TextMeshProUGUI meleeTurretGoldText;
+    public int meleeTurretGoldCost;
 
     void Start()
     {
-        SetTurretOption1GoldCost(100);
-        SetTurretOption2GoldCost(250);
-        SetDefaultVisiblity();
+        SetRangedTurretCost(rangedTurretGoldCost);
+        SetMeleeTurretCost(meleeTurretGoldCost);
+        
+        SetDefaultVisibility();
 
         turretPlacementPosition = GetComponentInParent<GroundTile>();
-        
         Debug.Assert(turretPlacementPosition != null);
     }
 
-    // Sets UI element visibility to the default that is set at the beginning of the game
-    public void SetDefaultVisiblity()
+    // Sets the default visibility for all icons/buttons
+    public void SetDefaultVisibility()
     {
-        SetHidden(turretOption1);
-        SetHidden(turretOption2);
-        SetHidden(turretOption1Icon);
-        SetHidden(turretOption2Icon);
-        SetHidden(turretOption1GoldIcon);
-        SetHidden(turretOption2GoldIcon);
-        SetHidden(turretOption1GoldCostText);
-        SetHidden(turretOption2GoldCostText);
-        SetBaseButtonDefault(buildMenuButton);
-        SetBaseButtonDefault(buildMenuIcon);
+        turretBuildMenu.SetActive(false);
+        buildMenuButton.SetActive(true);
+        buildMenuIcon.color = AdjustColorOpacity(buildMenuIcon.color, 0.3f);
     }
 
-    // Sets the gold cost for turret option 1 (ranged turret) and updates UI text accordingly
-    void SetTurretOption1GoldCost(int amount)
+    // Sets the ranged turret button's color to reflect the player hovering over the button
+    [RequiresGameActive]
+    public void SetRangedTurretButtonHover(bool hover)
     {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        Debug.Assert(amount > 0);
-        turretOption1GoldCost = amount;
-        turretOption1GoldCostText.text = amount.ToString();
+        var opacity = (hover) ? 1.0f : 0.3f;
+
+        rangedTurretIcon.color = AdjustColorOpacity(rangedTurretIcon.color, opacity);
+        rangedTurretGoldIcon.color = AdjustColorOpacity(rangedTurretGoldIcon.color, opacity);
+        rangedTurretGoldText.color = AdjustColorOpacity(rangedTurretGoldText.color, opacity);
     }
     
-    // Sets the gold cost for turret option 2 (melee turret) and updates UI text accordingly
-    void SetTurretOption2GoldCost(int amount)
+    // Sets the ranged turret button's color to reflect the player pressing mouse down or 
+    [RequiresGameActive]
+    public void SetRangedTurretMousePosition(bool mouseDown)
     {
-        if (!GameManager.instance._gameActive)
-            return;
+        var opacity = (mouseDown) ? 0.8f : 0.3f;
+
+        rangedTurretIcon.color = AdjustColorOpacity(rangedTurretIcon.color, opacity);
+        rangedTurretGoldIcon.color = AdjustColorOpacity(rangedTurretGoldIcon.color, opacity);
+        rangedTurretGoldText.color = AdjustColorOpacity(rangedTurretGoldText.color, opacity);
+    }
+    
+    // Sets the melee turret button's color to reflect the player hovering over the button
+    [RequiresGameActive]
+    public void SetMeleeTurretButtonHover(bool hover)
+    {
+        var opacity = (hover) ? 1.0f : 0.3f;
         
-        Debug.Assert(amount > 0);
-        turretOption2GoldCost = amount;
-        turretOption2GoldCostText.text = amount.ToString();
+        meleeTurretIcon.color = AdjustColorOpacity(meleeTurretIcon.color, opacity);
+        meleeTurretGoldIcon.color = AdjustColorOpacity(meleeTurretGoldIcon.color, opacity);
+        meleeTurretGoldText.color = AdjustColorOpacity(meleeTurretGoldText.color, opacity);
+    }
+    
+    // Sets the ranged turret button's color to reflect the player pressing mouse down or up
+    [RequiresGameActive]
+    public void SetMeleeTurretMousePosition(bool mouseDown)
+    {
+        var opacity = (mouseDown) ? 0.8f : 0.3f;
+        
+        meleeTurretIcon.color = AdjustColorOpacity(meleeTurretIcon.color, opacity);
+        meleeTurretGoldIcon.color = AdjustColorOpacity(meleeTurretGoldIcon.color, opacity);
+        meleeTurretGoldText.color = AdjustColorOpacity(meleeTurretGoldText.color, opacity);
+    }
+
+    // Sets the build menu button's color to reflect the player hovering over the button
+    [RequiresGameActive]
+    public void SetBaseButtonHover(bool hover)
+    {
+        var opacity = (hover) ? 1.0f : 0.3f;
+        buildMenuIcon.color = AdjustColorOpacity(buildMenuIcon.color, opacity);
+    }
+
+    // Sets the internal gold cost of the ranged turret and updates the UI accordingly
+    public void SetRangedTurretCost(int value)
+    {
+        rangedTurretGoldCost = value;
+        rangedTurretGoldText.text = value.ToString();
+    }
+
+    // Sets the internal gold cost of the melee turret and updates the UI accordingly
+    public void SetMeleeTurretCost(int value)
+    {
+        meleeTurretGoldCost = value;
+        meleeTurretGoldText.text = value.ToString();
     }
     
     // Sets the given image to be invisible
-    public void SetHidden(Image image)
+    public void SetHidden(GameObject ui)
     {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        image.color = new Color(image.color.r, image.color.g, image.color.b, 0.0f);
-        image.enabled = false;
+        ui.SetActive(false);
     }
 
-    // Sets the given TMP text to be invisible
-    public void SetHidden(TextMeshProUGUI text)
+    // Sets the visibility of the build menu containing purchasable turrets
+    [RequiresGameActive]
+    public void SetTurretBuildMenuVisibility(bool visible)
     {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        text.color = new Color(text.color.r, text.color.g, text.color.b, 0.0f);
-        text.enabled = false;
-    }
-
-    public void SetBaseButtonDefault(Image image)
-    {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        image.color = new Color(image.color.r, image.color.g, image.color.b, 0.3f);
-        image.enabled = true;
-    }
-
-    // Sets the given image to be a default visibility
-    public void SetDefault(Image image)
-    {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        image.color = new Color(image.color.r, image.color.g, image.color.b, 0.3f);
+        turretBuildMenu.SetActive(visible);
     }
     
-    // Sets the given TMP text to be a default visibility
-    public void SetDefault(TextMeshProUGUI text)
+    // Returns the given color with the given opacity applied to it
+    private Color AdjustColorOpacity(Color color, float opacity)
     {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        text.color = new Color(text.color.r, text.color.g, text.color.b, 0.3f);
-        //text.enabled = true;
-    }
-
-    // Sets the given image to be enabled
-    public void SetEnabled(Image image)
-    {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        image.enabled = true;
+        return new Color(color.r, color.g, color.b, opacity);
     }
     
-    // Sets the given TMP text to be enabled
-    public void SetEnabled(TextMeshProUGUI text)
-    {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        text.enabled = true;
-    }
-
-    // Sets the given image to reflect being hovered on
-    public void SetHovered(Image image)
-    {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        image.color = new Color(image.color.r, image.color.g, image.color.b, 1.0f);
-    }
-    
-    // Sets the given TMP text to reflect being hovered on
-    public void SetHovered(TextMeshProUGUI text)
-    {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        text.color = new Color(text.color.r, text.color.g, text.color.b, 1.0f);
-    }
-    
-    // Sets the given TMP text to reflect being clicked
-    public void SetMouseDown(TextMeshProUGUI text)
-    {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        text.color = new Color(text.color.r, text.color.g, text.color.b, 0.8f);
-    }
-    
-    // Sets the given image reflect being clicked
-    public void SetMouseDown(Image image)
-    {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        image.color = new Color(image.color.r, image.color.g, image.color.b, 0.8f);
-    }
-
-    public void SetMouseDownOnTurretOne()
-    { 
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        prevTurretOneGoldIconColor = turretOption1GoldIcon.color; 
-        prevTurretOneGoldTextColor = turretOption1GoldCostText.color;
-        prevTurretOneIconColor = turretOption1Icon.color;
-        
-        SetMouseDown(turretOption1GoldIcon);
-        SetMouseDown(turretOption1GoldCostText);
-        SetMouseDown(turretOption1Icon);
-    }
-
-    public void SetMouseUpOnTurretOne()
-    {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        turretOption1GoldIcon.color = prevTurretOneGoldIconColor; 
-        turretOption1GoldCostText.color = prevTurretOneGoldTextColor;
-        turretOption1Icon.color = prevTurretOneIconColor;
-    }
-    
-    public void SetMouseDownOnTurretTwo()
-    {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        prevTurretTwoGoldIconColor = turretOption2GoldIcon.color; 
-        prevTurretTwoGoldTextColor = turretOption2GoldCostText.color;
-        prevTurretTwoIconColor = turretOption2Icon.color;
-        
-        SetMouseDown(turretOption2GoldIcon);
-        SetMouseDown(turretOption2GoldCostText);
-        SetMouseDown(turretOption2Icon);
-    }
-
-    public void SetMouseUpOnTurretTwo()
-    {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        turretOption2GoldIcon.color = prevTurretTwoGoldIconColor; 
-        turretOption2GoldCostText.color = prevTurretTwoGoldTextColor;
-        turretOption2Icon.color = prevTurretTwoIconColor;
-    }
-
-    public void HideAllUI()
-    {
-        SetHidden(turretOption1);
-        SetHidden(turretOption2);
-        SetHidden(turretOption1Icon);
-        SetHidden(turretOption2Icon);
-        SetHidden(turretOption1GoldIcon);
-        SetHidden(turretOption2GoldIcon);
-        SetHidden(turretOption1GoldCostText);
-        SetHidden(turretOption2GoldCostText);
-        SetHidden(buildMenuButton);
-        SetHidden(buildMenuIcon);
-    }
-
+    // Spawns a ranged turret in the game world using the 
+    [RequiresGameActive]
     public void BuildRangedTurret()
     {
-        if (!GameManager.instance._gameActive)
-            return;
-        
-        GameManager.instance.SpawnTurretAtTile(turretPlacementPosition);
-        HideAllUI();
+        TurretManager.instance.SpawnTurretAtTile(turretPlacementPosition);
     }
 
+    // Spawns a melee turret in the game world using the TurretManager
+    [RequiresGameActive]
     public void BuildMeleeTurret()
     {
-        if (!GameManager.instance._gameActive)
-            return;
-        
         // Do nothing for now
     }
 }

@@ -134,6 +134,7 @@ public class Turret : MonoBehaviour
     private void FireBullet()
     {
         var t = transform;
-        Instantiate(bulletPrefab, t.position + t.forward, t.rotation);
+        var bullet = Instantiate(bulletPrefab, t.position + t.forward, t.rotation);
+        bullet.GetComponent<Bullet>().damage = damage;
     }
 }

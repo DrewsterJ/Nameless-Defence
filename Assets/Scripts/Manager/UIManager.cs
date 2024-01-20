@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using Color = UnityEngine.Color;
@@ -11,6 +12,7 @@ public class UIManager : MonoBehaviour
     public FloatingHealthBar _baseHealthBar;
     public Image gameOverRestartButton;
     public Image gameOverExitButton;
+    public TextMeshProUGUI playerGoldText;
 
     void Start()
     {
@@ -49,6 +51,13 @@ public class UIManager : MonoBehaviour
     {
         GameManager.instance.onGameStart -= OnGameStart;
         GameManager.instance.onGameOver -= OnGameOver;
+    }
+    
+    // Sets the UI player gold text to the given amount
+    public void SetPlayerGold(int amount)
+    {
+        amount = (amount < 0) ? 0 : amount;
+        playerGoldText.text = amount.ToString();
     }
 
     // Sets the restart button's color to reflect the user's mouse hovering over it

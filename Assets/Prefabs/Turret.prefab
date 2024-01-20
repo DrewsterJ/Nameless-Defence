@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 1
   fireRange: 5
-  damage: 10
+  damage: 25
   bulletPrefab: {fileID: 986307436527531739, guid: f133555c701dc724ba0e7a3067eae895, type: 3}
 --- !u!1 &1578440843105696933
 GameObject:

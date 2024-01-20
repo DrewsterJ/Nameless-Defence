@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public Image gameOverRestartButton;
     public Image gameOverExitButton;
     public TextMeshProUGUI playerGoldText;
+    public TextMeshProUGUI gameWaveNumberText;
 
     void Start()
     {
@@ -37,7 +38,6 @@ public class UIManager : MonoBehaviour
 
     void OnGameOver()
     {
-        ResetTurretPlacementOverlays();
         SetGameOverUIVisibility(true);
     }
 
@@ -58,6 +58,13 @@ public class UIManager : MonoBehaviour
     {
         amount = (amount < 0) ? 0 : amount;
         playerGoldText.text = amount.ToString();
+    }
+    
+    // Sets the UI wave number text
+    public void SetGameWave(int wave)
+    {
+        if (!GameManager.instance.GameActive) return;
+        gameWaveNumberText.text = wave.ToString();
     }
 
     // Sets the restart button's color to reflect the user's mouse hovering over it

@@ -38,7 +38,6 @@ public class TurretManager : MonoBehaviour
     void OnGameOver()
     {
         StopCoroutine(_turretTargetingCoroutine);
-        DisengageAllTurrets();
     }
 
     // Coroutine for assigning enemy targets to idle turrets
@@ -84,9 +83,9 @@ public class TurretManager : MonoBehaviour
     }
     
     // Spawns a turret in the world at the given ground tile
-    [RequiresGameActive]
     public void SpawnTurretAtTile(GroundTile tile)
     {
+        if (!GameManager.instance.GameActive) return;
         Debug.Assert(tile != null && !tile.IsDestroyed() && !tile.IsUnityNull());
         var turret = Instantiate(turretPrefab, tile.transform.position, turretPrefab.transform.rotation);
         turrets.Add(turret.GetComponent<Turret>());

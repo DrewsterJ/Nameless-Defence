@@ -138,6 +138,12 @@ public class TurretPlacementUI : MonoBehaviour
     [RequiresGameActive]
     public void BuildRangedTurret()
     {
+        if (GameManager.instance.GetPlayerGold() < rangedTurretGoldCost)
+            return;
+        
+        GameManager.instance.ModifyPlayerGold(-rangedTurretGoldCost);
+        buildMenuButton.SetActive(false);
+        turretBuildMenu.SetActive(false);
         TurretManager.instance.SpawnTurretAtTile(turretPlacementPosition);
     }
 
@@ -145,6 +151,13 @@ public class TurretPlacementUI : MonoBehaviour
     [RequiresGameActive]
     public void BuildMeleeTurret()
     {
+        if (GameManager.instance.GetPlayerGold() < rangedTurretGoldCost)
+            return;
+        
+        GameManager.instance.ModifyPlayerGold(-meleeTurretGoldCost);
+        buildMenuButton.SetActive(false);
+        turretBuildMenu.SetActive(false);
+        // TurretManager.instance.SpawnTurretAtTile(MeleeTurret, turretPlacementPosition);
         // Do nothing for now
     }
 }

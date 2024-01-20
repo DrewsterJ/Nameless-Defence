@@ -172,30 +172,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 7818993968560053398}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4595809182896217878}
-          m_TargetAssemblyTypeName: TurretPlacementUI, Assembly-CSharp
-          m_MethodName: SetHidden
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2586223835135793884}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - eventID: 2
     callback:
       m_PersistentCalls:
@@ -315,7 +291,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &287358421422253688
 MonoBehaviour:
   m_ObjectHideFlags: 0

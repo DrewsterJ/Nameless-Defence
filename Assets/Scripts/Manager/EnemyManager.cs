@@ -57,8 +57,11 @@ public class EnemyManager : MonoBehaviour
     {
         var generalEnemySpawnAmount = GameManager.instance.wave + baseEnemySpawnAmount;
         var enemySpawnAmountOffset = Convert.ToInt32(generalEnemySpawnAmount * .25);
-
         numEnemiesToSpawn = generalEnemySpawnAmount + enemySpawnAmountOffset;
+
+        if (spawnRate >= .10)
+            spawnRate -= .025f;
+        
         _enemySpawnCoroutine = StartCoroutine(SpawnEnemyCoroutine());
     }
     

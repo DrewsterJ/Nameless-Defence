@@ -59,16 +59,24 @@ public class Enemy : MonoBehaviour
     
     void Update()
     {
+        if (!GameManager.instance.GameActive) return;
         MoveForward();
     }
 
     // Causes the enemy to walk forward
-    [RequiresGameActive]
     private void MoveForward()
     {
+        if (!GameManager.instance.GameActive) return;
+        
         // Source: https://discussions.unity.com/t/how-can-i-convert-a-quaternion-to-a-direction-vector/80376
         var direction = transform.rotation * Vector2.up;
         rigidBody.velocity = -direction * movementSpeed;
+    }
+    
+    // Stops the enemy from moving
+    public void StopMovement()
+    {
+        rigidBody.velocity = Vector2.zero;
     }
     
     private IEnumerator MeleeAttackFrontAtInterval(int interval)
@@ -81,9 +89,9 @@ public class Enemy : MonoBehaviour
     }
     
     // Performs damage to valid targets within the enemy's attack range
-    [RequiresGameActive]
     private void MeleeAttackFront()
     {
+        if (!GameManager.instance.GameActive) return;
         var facingDirection = transform.rotation * Vector2.up;
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, facingDirection, attackRange);
         
@@ -120,9 +128,9 @@ public class Enemy : MonoBehaviour
     }
 
     // Method is called when the enemy receives damage
-    [RequiresGameActive]
     private void TakeDamage(int damage)
     {
+        if (!GameManager.instance.GameActive) return;
         var health = _health - damage;
         
         // Updates internal health and UI health bar
@@ -131,10 +139,10 @@ public class Enemy : MonoBehaviour
         if (health <= minHealth)
             Die();
     }
-
-    [RequiresGameActive]
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!GameManager.instance.GameActive) return;
         if (other.CompareTag("Bullet"))
         {
             var bullet = other.GetComponent<Bullet>();

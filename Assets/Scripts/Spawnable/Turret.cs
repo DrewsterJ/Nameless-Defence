@@ -23,16 +23,15 @@ public class Turret : MonoBehaviour
         Debug.Assert(fireRange > 0);
     }
     
-    [RequiresGameActive]
     void Update()
     {
         HandleActiveTargetEngagements();
     }
     
     // Method to try engaging a given target (called by the GameManager)
-    [RequiresGameActive]
     public void TryEngageTarget(GameObject target)
     {
+        if (!GameManager.instance.GameActive) return;
         if (IsEngagingTarget() || !IsValidTarget(target))
             return;
 
@@ -46,7 +45,7 @@ public class Turret : MonoBehaviour
     // Returns whether this turret is engaging a target
     public bool IsEngagingTarget()
     {
-        return (_activeTarget != null && !_activeTarget.IsUnityNull() && !_activeTarget.IsDestroyed());
+        return IsValidTarget(_activeTarget);
     }
 
     // Returns whether the given target can be engaged
@@ -56,12 +55,17 @@ public class Turret : MonoBehaviour
     }
     
     // Handles engagements with an active target
-    [RequiresGameActive]
     private void HandleActiveTargetEngagements()
     {
+        if (!GameManager.instance.GameActive)
+        {
+            DisengageActiveTarget();
+            return;
+        }
+        
         if (!IsEngagingTarget())
             return;
-
+        
         if (IsWithinRange(_activeTarget))
             AimAtTarget(_activeTarget);
         else
@@ -85,9 +89,9 @@ public class Turret : MonoBehaviour
     }
     
     // Method to aim at a given target
-    [RequiresGameActive]
     private void AimAtTarget(GameObject target)
     {
+        if (!GameManager.instance.GameActive) return;
         if (!IsValidTarget(target)) return;
         
         // Source (from RDSquare): https://discussions.unity.com/t/how-do-i-rotate-a-2d-object-to-face-another-object/187072/2
@@ -97,9 +101,9 @@ public class Turret : MonoBehaviour
     }
 
     // Method to actively follow and shoot at a given target
-    [RequiresGameActive]
     private void EngageTarget(GameObject target)
     {
+        if (!GameManager.instance.GameActive) return;
         Debug.Assert(IsValidTarget(target));
         
         _activeTarget = target;
@@ -122,17 +126,18 @@ public class Turret : MonoBehaviour
     // Instantiates bullets at a given interval
     private IEnumerator FireAtInterval(int interval)
     {
-        while (true)
+        while (IsEngagingTarget())
         {
             yield return new WaitForSeconds(interval);
-            FireBullet();
+            if (IsEngagingTarget()) 
+                FireBullet();
         }
     }
     
     // NOTE: Enemies should be calling onTriggerEnter
-    [RequiresGameActive]
     private void FireBullet()
     {
+        if (!GameManager.instance.GameActive) return;
         var t = transform;
         var bullet = Instantiate(bulletPrefab, t.position + t.forward, t.rotation);
         bullet.GetComponent<Bullet>().damage = damage;

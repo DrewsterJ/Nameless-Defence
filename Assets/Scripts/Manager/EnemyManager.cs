@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class EnemyManager : MonoBehaviour
@@ -13,6 +15,9 @@ public class EnemyManager : MonoBehaviour
     public float spawnRate; // how often enemies spawn
     public List<GroundTile> spawnPoints; // where enemies can spawn
     private Coroutine _enemySpawnCoroutine;
+    public int numEnemiesToSpawn; // number of enemies that should be spawned in the current "wave"
+    private int baseEnemySpawnAmount = 10;
+    public event UnityAction OnWaveOver;
     
     void Start()
     {
@@ -32,42 +37,53 @@ public class EnemyManager : MonoBehaviour
     {
         GameManager.instance.onGameOver += OnGameOver;
         GameManager.instance.onGameStart += OnGameStart;
+        GameManager.instance.onNewWave += OnNewWave;
     }
     
     // Event is invoked by the GameManager when the game starts or restarts
     void OnGameStart()
     {
         RemoveAllEnemies();
-        _enemySpawnCoroutine = StartCoroutine(SpawnEnemyCoroutine());
     }
 
     // Event is invoked by the GameManager when the player's base's health reaches 0
     void OnGameOver()
     {
-        StopCoroutine(_enemySpawnCoroutine);
         foreach (var enemy in enemies)
-            enemy.movementSpeed = 0;
+            enemy.StopMovement();
+    }
+
+    void OnNewWave()
+    {
+        var generalEnemySpawnAmount = GameManager.instance.wave + baseEnemySpawnAmount;
+        var enemySpawnAmountOffset = Convert.ToInt32(generalEnemySpawnAmount * .25);
+
+        numEnemiesToSpawn = generalEnemySpawnAmount + enemySpawnAmountOffset;
+        _enemySpawnCoroutine = StartCoroutine(SpawnEnemyCoroutine());
     }
     
     // Controls enemy spawning
     public IEnumerator SpawnEnemyCoroutine()
     {
-        while (true)
+        while (numEnemiesToSpawn > 0)
         {
             yield return new WaitForSeconds(spawnRate);
             SpawnEnemy();
         }
+        
+        OnWaveOver.Invoke();
     }
     
     // Spawns an enemy at a random spawn point
-    [RequiresGameActive]
     private void SpawnEnemy()
     {
+        if (!GameManager.instance.GameActive) return;
         var randIndex = Random.Range(0, spawnPoints.Count);
         var spawnPoint = spawnPoints[randIndex];
 
         var enemy = Instantiate(enemyPrefab, spawnPoint.transform.position, enemyPrefab.transform.rotation);
         enemies.Add(enemy.GetComponent<Enemy>());
+        --numEnemiesToSpawn;
     }
     
     // Removes turrets that no longer exist or were destroyed

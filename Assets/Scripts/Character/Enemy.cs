@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     // Public fields
     public Rigidbody2D rigidBody;
+    public int goldReward; // amount of gold given to the player for killing this enemy
     
     // Private fields
     private Coroutine attackCoroutine;
@@ -43,6 +44,7 @@ public class Enemy : MonoBehaviour
         Debug.Assert(attackSpeed >= 0);
         Debug.Assert(attackRange >= 0.0f);
         Debug.Assert(movementSpeed > 0);
+        Debug.Assert(goldReward > 0);
         Debug.Assert(rigidBody != null && !rigidBody.IsUnityNull());
         Debug.Assert(healthBar != null && !healthBar.IsUnityNull());
         Debug.Assert(attackCoroutine == null || attackCoroutine.IsUnityNull());
@@ -102,6 +104,8 @@ public class Enemy : MonoBehaviour
     // Despawns the enemy gameobject
     private void Die()
     {
+        // Give the player gold for killing this enemy
+        GameManager.instance.ModifyPlayerGold(goldReward);
         Destroy(gameObject);
     }
 

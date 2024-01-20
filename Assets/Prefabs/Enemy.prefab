@@ -596,9 +596,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 7956075993091403298}
+  goldReward: 25
   minHealth: 0
   maxHealth: 100
-  _health: 99
+  _health: 100
   attackDamage: 2
   baseDamage: 10
   attackSpeed: 1

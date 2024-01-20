@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         
         // Set initial gold amount to 400
         _playerGold = 0;
-        ModifyPlayerGold(400);
+        ModifyPlayerGold(500);
     }
 }
 

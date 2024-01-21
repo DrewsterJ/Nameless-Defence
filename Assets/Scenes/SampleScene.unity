@@ -3260,6 +3260,7 @@ Transform:
   - {fileID: 679761406}
   - {fileID: 437115860}
   - {fileID: 942077882}
+  - {fileID: 1775187713}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &120271492
@@ -7418,9 +7419,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4676741580224164841, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676741580224164841, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_ContactCaptureLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_Name
       value: GroundTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: WallSpawnPosition
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11017,9 +11030,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4676741580224164841, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_ContactCaptureLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_Name
       value: GroundTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: WallSpawnPosition
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11891,6 +11912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileMap: {fileID: 1993746342}
   gameTiles: []
+  _gameActive: 0
   _maxBaseHealth: 100
   wave: 0
 --- !u!4 &486663777
@@ -14743,6 +14765,10 @@ PrefabInstance:
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_Name
       value: GroundTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: WallSpawnPosition
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27709,6 +27735,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundTile
       objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: WallSpawnPosition
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28256,6 +28286,10 @@ PrefabInstance:
     - target: {fileID: 1384140393553453002, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676741580224164841, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_ContactCaptureLayers.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_Name
@@ -31694,6 +31728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundTile
       objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: WallSpawnPosition
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32291,6 +32329,10 @@ PrefabInstance:
     - target: {fileID: 6390773377663937648, guid: 3b8a9cb3faadb57419d3f7c1f28555e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172616604381626502, guid: 3b8a9cb3faadb57419d3f7c1f28555e3, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34992,6 +35034,10 @@ PrefabInstance:
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_Name
       value: GroundTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: WallSpawnPosition
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37746,25 +37792,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4676741580224164841, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_ContactCaptureLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_Name
       value: GroundTile
       objectReference: {fileID: 0}
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_TagString
-      value: GroundTile
-      objectReference: {fileID: 0}
-    - target: {fileID: 8370970860559278935, guid: b9e603c081f2597488b705856f06fff0, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8370970860559278935, guid: b9e603c081f2597488b705856f06fff0, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8370970860559278935, guid: b9e603c081f2597488b705856f06fff0, type: 3}
-      propertyPath: m_Color.r
-      value: 1
+      value: WallSpawnPosition
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38911,6 +38949,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1384140393553453002, guid: b9e603c081f2597488b705856f06fff0, type: 3}
   m_PrefabInstance: {fileID: 1771490886}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1775187712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1775187713}
+  - component: {fileID: 1775187714}
+  m_Layer: 0
+  m_Name: WallManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1775187713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775187712}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 118250152}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1775187714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775187712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5dcef2f7446dc245ab697b906be6eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walls: []
+  wallPrefab: {fileID: 5398537520205358338, guid: a91fdef24cdce364f99439292683406e, type: 3}
+  wallSpawnPositions: []
 --- !u!1001 &1778167091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41318,6 +41403,10 @@ PrefabInstance:
     - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
       propertyPath: m_Name
       value: GroundTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: WallSpawnPosition
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45629,6 +45718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundTile
       objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: WallSpawnPosition
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -47679,6 +47772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundTile
       objectReference: {fileID: 0}
+    - target: {fileID: 4832730500620852108, guid: b9e603c081f2597488b705856f06fff0, type: 3}
+      propertyPath: m_TagString
+      value: WallSpawnPosition
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -48958,6 +49055,10 @@ PrefabInstance:
     - target: {fileID: 6390773377663937648, guid: 3b8a9cb3faadb57419d3f7c1f28555e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172616604381626502, guid: 3b8a9cb3faadb57419d3f7c1f28555e3, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -52,7 +52,7 @@ public class EnemyManager : MonoBehaviour
         foreach (var enemy in enemies)
             enemy.StopMovement();
     }
-
+    
     void OnNewWave()
     {
         var generalEnemySpawnAmount = GameManager.instance.wave + baseEnemySpawnAmount;

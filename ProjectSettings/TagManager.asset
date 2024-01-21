@@ -56,6 +56,9 @@ TagManager:
   - name: Player
     uniqueID: 886236179
     locked: 0
+  - name: Wall Layer
+    uniqueID: 1779116937
+    locked: 0
   - name: Building Layer Lower
     uniqueID: 895660009
     locked: 0

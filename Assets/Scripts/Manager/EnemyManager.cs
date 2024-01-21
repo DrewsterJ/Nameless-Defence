@@ -44,6 +44,9 @@ public class EnemyManager : MonoBehaviour
     void OnGameStart()
     {
         RemoveAllEnemies();
+        if (_enemySpawnCoroutine != null)
+            StopCoroutine(_enemySpawnCoroutine);
+        spawnRate = 1.0f;
     }
 
     // Event is invoked by the GameManager when the player's base's health reaches 0
@@ -51,6 +54,7 @@ public class EnemyManager : MonoBehaviour
     {
         foreach (var enemy in enemies)
             enemy.StopMovement();
+        spawnRate = 1.0f;
     }
     
     void OnNewWave()
@@ -71,10 +75,12 @@ public class EnemyManager : MonoBehaviour
         while (numEnemiesToSpawn > 0)
         {
             yield return new WaitForSeconds(spawnRate);
+            if (!GameManager.instance.GameActive) yield return null;
             SpawnEnemy();
         }
         
         OnWaveOver.Invoke();
+        yield return null;
     }
     
     // Spawns an enemy at a random spawn point

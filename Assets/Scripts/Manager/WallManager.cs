@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,16 @@ public class WallManager : MonoBehaviour
             Destroy(gameObject);
         else
             instance = this;
+    }
+
+    private void OnEnable()
+    {
+        GameManager.instance.onGameStart += OnGameStart;
+    }
+
+    private void OnGameStart()
+    {
+        ResetWalls();
     }
 
     void Start()
@@ -43,5 +54,12 @@ public class WallManager : MonoBehaviour
         Debug.Assert(tile != null && !tile.IsDestroyed() && !tile.IsUnityNull());
         var wall = Instantiate(wallPrefab, tile.transform.position, wallPrefab.transform.rotation);
         walls.Add(wall.GetComponent<Wall>());
+    }
+
+    // Sets all walls to their default states
+    public void ResetWalls()
+    {
+        foreach (var wall in walls)
+            wall.SetHealth(100);
     }
 }

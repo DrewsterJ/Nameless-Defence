@@ -49,9 +49,14 @@ public class GameManager : MonoBehaviour
     public void IncrementGameWave()
     {
         if (!GameActive) return;
-        wave += 1;
-        UIManager.instance.SetGameWave(wave);
+        SetGameWave(wave + 1);
         onNewWave.Invoke();
+    }
+
+    private void SetGameWave(int newWave)
+    {
+        wave = newWave;
+        UIManager.instance.SetGameWave(newWave);
     }
 
     public void OnWaveOver()
@@ -123,7 +128,10 @@ public class GameManager : MonoBehaviour
         // Set game variables
         _baseHealth = _maxBaseHealth;
         _gameActive = true;
-        wave = 0;
+        
+        if (_delayWaveStartCoroutine != null)
+            StopCoroutine(_delayWaveStartCoroutine);
+        SetGameWave(0);
         IncrementGameWave();
         
         // Set initial gold amount to 400

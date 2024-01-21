@@ -582,7 +582,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &6474510129194230508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,7 +600,7 @@ MonoBehaviour:
   minHealth: 0
   maxHealth: 100
   _health: 100
-  attackDamage: 2
+  attackDamage: 5
   baseDamage: 10
   attackSpeed: 1
   attackRange: 0.5

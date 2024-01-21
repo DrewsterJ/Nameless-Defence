@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -92,21 +93,22 @@ public class Enemy : MonoBehaviour
     private void MeleeAttackFront()
     {
         if (!GameManager.instance.GameActive) return;
-        var facingDirection = transform.rotation * Vector2.up;
+        var facingDirection = transform.rotation * Vector2.down;
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, facingDirection, attackRange);
         
-        List<GameObject> validHits = new List<GameObject>();
         foreach (var hit in hits)
         {
-            // TODO: Uncomment code once walls are implemented
-            /* if (hit.collider.gameObject.CompareTag("Wall"))
+            if (hit.collider.gameObject.CompareTag("Wall"))
             {
-                  var obj = hit.collider.gameObject;
-                  var wall = obj.GetComponent<Wall>();
-                  wall.TakeDamage(_damage);
+                AttackWallInFront(hit.collider.gameObject.GetComponent<Wall>());
+                return;
             }
-            */
         }
+    }
+
+    private void AttackWallInFront(Wall wall)
+    {
+        wall.TakeDamage(attackDamage);
     }
     
     // Despawns the enemy gameobject

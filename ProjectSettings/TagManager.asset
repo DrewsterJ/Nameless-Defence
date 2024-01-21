@@ -11,6 +11,8 @@ TagManager:
   - SpawnPoint
   - TurretPlacementPosition
   - BaseBoundaryTile
+  - Wall
+  - WallSpawnPosition
   layers:
   - Default
   - TransparentFX

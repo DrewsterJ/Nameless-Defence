@@ -9,6 +9,7 @@ public class Turret : MonoBehaviour
     public float fireRange; // range the turret can shoot
     public int damage; // per bullet
     public GameObject bulletPrefab; // projectile the turret shoots
+    public int id;
     
     // Private fields
     private const float _aimAngleOffset = -90f; // offset for aiming at an enemy

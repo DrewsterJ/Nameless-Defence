@@ -9,6 +9,7 @@ public class TurretPlacementUI : MonoBehaviour
     
     // Private fields
     private GroundTile turretPlacementPosition; // contains tile where purchased turrets from this build menu will spawn at
+    private Turret spawnedTurret; // contains the turret that was built using this UI
     
     // Other labeled fields
     [Space] [Header("Build Menu Button")] 
@@ -144,7 +145,8 @@ public class TurretPlacementUI : MonoBehaviour
         GameManager.instance.ModifyPlayerGold(-rangedTurretGoldCost);
         buildMenuButton.SetActive(false);
         turretBuildMenu.SetActive(false);
-        TurretManager.instance.SpawnTurretAtTile(turretPlacementPosition);
+        spawnedTurret = TurretManager.instance.SpawnTurretAtTile(turretPlacementPosition);
+        Debug.Assert(spawnedTurret != null);
     }
 
     // Spawns a melee turret in the game world using the TurretManager
@@ -157,7 +159,5 @@ public class TurretPlacementUI : MonoBehaviour
         GameManager.instance.ModifyPlayerGold(-meleeTurretGoldCost);
         buildMenuButton.SetActive(false);
         turretBuildMenu.SetActive(false);
-        // TurretManager.instance.SpawnTurretAtTile(MeleeTurret, turretPlacementPosition);
-        // Do nothing for now
     }
 }

@@ -82,13 +82,14 @@ public class TurretManager : MonoBehaviour
         });
     }
     
-    // Spawns a turret in the world at the given ground tile
-    public void SpawnTurretAtTile(GroundTile tile)
+    // Spawns a turret in the world at the given ground tile and returns that turret's script object
+    public Turret SpawnTurretAtTile(GroundTile tile)
     {
-        if (!GameManager.instance.GameActive) return;
+        if (!GameManager.instance.GameActive) return null;
         Debug.Assert(tile != null && !tile.IsDestroyed() && !tile.IsUnityNull());
         var turret = Instantiate(turretPrefab, tile.transform.position, turretPrefab.transform.rotation);
         turrets.Add(turret.GetComponent<Turret>());
+        return turret.GetComponent<Turret>();
     }
     
     // Despawns all turrets from the game world

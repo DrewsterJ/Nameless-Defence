@@ -291,7 +291,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &287358421422253688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +322,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretBuildMenu: {fileID: 7818993968560053398}
+  upgradeButton: {fileID: 0}
+  upgradeIcon: {fileID: 0}
+  turretUpgradeCost: 0
+  turretUpgradeCostText: {fileID: 0}
+  upgradeGoldIcon: {fileID: 0}
   buildMenuButton: {fileID: 2586223835135793884}
   buildMenuButtonBackground: {fileID: 4319025487430325286}
   buildMenuIcon: {fileID: 6575926646254325103}
@@ -528,7 +533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5335104804576522754
 RectTransform:
   m_ObjectHideFlags: 0
